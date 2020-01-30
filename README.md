@@ -2,7 +2,7 @@
 
 This project contains files, scripts and other resources for creating Docker containers for Blazegraph and ResearchSpace.
 
-The blazegraph JAR file (blazegraph-2.1.5.jar) was downloaded from:
+The blazegraph JAR file (blazegraph-2.1.5.jar) i downloaded from:
 
     https://sourceforge.net/projects/bigdata/files/bigdata/2.1.5/blazegraph.jar/download
 
