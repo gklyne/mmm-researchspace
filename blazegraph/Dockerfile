@@ -1,7 +1,7 @@
 FROM centos:8
 
 RUN yum --assumeyes \
-    install net-tools git wget \
+    install net-tools git which wget \
     java-1.8.0-openjdk \
     java-1.8.0-openjdk-devel
 

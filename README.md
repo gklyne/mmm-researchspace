@@ -25,6 +25,22 @@ These instructions are based on the "Docker toolbox" kit (not the more recent "D
 
 3. Subsequenet commands are entered in the new terminal window.  (Note: the Docker daemon is not accessible from other terminal windows.)
 
+NOTE: in order for the ResearchSpace compilation to proceed, I have increase the VirtualBox memory allocation for docker-machine by editing `Applications/docker/Docker Quickstart Terminal.app`, content `Contents/Resources/cripts/start.sh`, changing:
+
+    --virtualbox-memory 2048
+
+to:
+
+    --virtualbox-memory 4096
+
+That didn't work once the docker 'default' configuration has been created. Also try:
+
+1. stop all docker virtualmachines
+2. in a terminal window, type `virtualbox`
+3. select the `default` VM, right-click on it and select `close` to power it off
+4. in the `settings` > `system` tab, cange the memory from 2048 to 4096 Mb
+5. re-run `Docker Quickstart Terminal.app`
+
 
 ## Blazegraph
 
