@@ -43,7 +43,7 @@ RUN git clone https://github.com/researchspace/researchspace.git
 # https://github.com/researchspace/researchspace#building-war-artefact
 
 # Force SBT modules and dependencies to load
-# Run build twice because first time doesn't always work.
+# Run build twice because first time doesn't always work?
 RUN cd researchspace && \
     sh ./build.sh \
         -Dbuildjson=researchspace/researchspace-root-build.json \
