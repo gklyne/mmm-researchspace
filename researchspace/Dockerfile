@@ -1,6 +1,7 @@
 FROM blazegraph
 
-ENV JAVA_HOME=/usr/lib/jvm/java 
+ENV VERSION_NUMBER=1.0.0-gk
+ENV JAVA_HOME=/usr/lib/jvm/java
 
 RUN wget -O - https://rpm.nodesource.com/setup_10.x | bash -
 
@@ -43,12 +44,8 @@ RUN git clone https://github.com/researchspace/researchspace.git
 # https://github.com/researchspace/researchspace#building-war-artefact
 
 # Force SBT modules and dependencies to load
-# Run build twice because first time doesn't always work?
 RUN cd researchspace && \
-    sh ./build.sh \
-        -Dbuildjson=researchspace/researchspace-root-build.json \
-        -DbuildEnv=prod \
-        clean && \
+    rm -rf project/webpack/assets && \
     sh ./build.sh \
         -Dbuildjson=researchspace/researchspace-root-build.json \
         -DbuildEnv=prod \
@@ -56,8 +53,6 @@ RUN cd researchspace && \
 
 # Now build package
 RUN cd researchspace && \
-    rm -rf project/webpack/assets && \
-    export VERSION_NUMBER=1.0.0-gk && \
     sh ./build.sh \
         -DplatformVersion=$VERSION_NUMBER \
         -Dbuildjson=researchspace/researchspace-root-build.json \
