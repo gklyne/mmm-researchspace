@@ -22,24 +22,6 @@ RUN yum --assumeyes \
 
 RUN git clone https://github.com/researchspace/researchspace.git
 
-# See:
-# /researchspace/metaphacts-platform/dist/docker/platform/Readme.md
-
-# RUN cd researchspace && \
-#     ./build.sh \
-#         -DbuildEnv=prod \
-#         -Dbuildjson=./researchspace/researchspace-root-build.json \
-#         -DplatformVersion=3.2.0 \
-#         platformZip
-# 
-# 
-# RUN cd researchspace && \
-#     ./build.sh -no-colors \
-#         -DbuildEnv=prod \
-#         -Dbuildjson=./researchspace/researchspace-root-build.json \
-#         -DplatformVersion=3.2.0 \
-#         platformZip
-
 # See: 
 # https://github.com/researchspace/researchspace#building-war-artefact
 
@@ -59,12 +41,27 @@ RUN cd researchspace && \
         -DbuildEnv=prod \
         package
 
-# Now run ResearchSpace (or not: hangs in docker build)
+# Copy script to run ResearchSpace
+COPY start-researchspace.sh /
+
+# ---- other stuff tried, not used ----
+
+# See:
+# /researchspace/metaphacts-platform/dist/docker/platform/Readme.md
 
 # RUN cd researchspace && \
-#     sbt -Dbuildjson=researchspace/researchspace-root-build.json  ~jetty:start
-
-COPY start-researchspace.sh /
+#     ./build.sh \
+#         -DbuildEnv=prod \
+#         -Dbuildjson=./researchspace/researchspace-root-build.json \
+#         -DplatformVersion=3.2.0 \
+#         platformZip
+# 
+# RUN cd researchspace && \
+#     ./build.sh -no-colors \
+#         -DbuildEnv=prod \
+#         -Dbuildjson=./researchspace/researchspace-root-build.json \
+#         -DplatformVersion=3.2.0 \
+#         platformZip
 
 # See: 
 # https://github.com/researchspace/researchspace#running-the-researchspace-in-development-mode
@@ -84,3 +81,4 @@ COPY start-researchspace.sh /
 #     unzip example-data/blazegraph.jnl.zip -d example-data/ && \
 #     unzip example-data/assets.zip -d metaphactory/data/
 
+# ----
