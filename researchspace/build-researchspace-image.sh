@@ -4,7 +4,7 @@ docker build . -t researchspace
 
 echo "Run ResearchSpace container with this command:"
 echo " "
-echo "docker run -it --network=host researchspace"
+echo ". run-researchspace-container.sh"
 echo " "
 echo "Use 'ifconfig' in the running system to find the IP address for 'eth1'"
 echo "Run '. start-researchspace.sh' in the running system."

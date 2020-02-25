@@ -3,6 +3,8 @@ FROM blazegraph
 ENV VERSION_NUMBER=1.0.0-gk
 ENV JAVA_HOME=/usr/lib/jvm/java
 
+EXPOSE 10214 3000
+
 RUN wget -O - https://rpm.nodesource.com/setup_10.x | bash -
 
 RUN wget https://bintray.com/sbt/rpm/rpm \
