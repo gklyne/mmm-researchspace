@@ -14,9 +14,22 @@ EXPOSE 10214 3000
 COPY researchspace-3.4-preview-demo-bundle.zip /
 
 # Unzip
+RUN unzip /researchspace-3.4-preview-demo-bundle.zip && \
+    mv    researchspace-3.4-preview-demo-bundle researchspace-3.2-bundle
 
-RUN unzip /researchspace-3.4-preview-demo-bundle.zip
-# cd researchspace-3.4-preview-demo-bundle
+# ZIP file created using:
+#
+#   git archive -o researchspace-3.2-bundle.zip \
+#               --prefix=researchspace-3.2-bundle/ \
+#               HEAD
+#
+# Copy ZIP file with ResearchSpace demo
+COPY researchspace-3.2-bundle.zip /
+
+# Unzip
+RUN unzip /researchspace-3.2-bundle.zip
+
+# cd researchspace-3.2-bundle
 
 # Copy start script
 #
@@ -26,7 +39,7 @@ RUN unzip /researchspace-3.4-preview-demo-bundle.zip
 # NOTE: to run the demo, I've edited the researchspace `start.sh`
 # to add `-Xmx4g` to the java command line
 
-COPY start.sh /researchspace-3.4-preview-demo-bundle
+COPY start.sh /researchspace-3.2-bundle
 COPY start-researchspace.sh /
 
 # ----
