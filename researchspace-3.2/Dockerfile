@@ -23,6 +23,9 @@ RUN unzip /researchspace-3.4-preview-demo-bundle.zip && \
 #               --prefix=researchspace-3.2-bundle/ \
 #               HEAD
 #
+# (With git HEAD set to the 3.2 release)
+# (commit 0b7668eb9e1e1a9f606bbaae4d7e2ab78ab5f68a)
+#
 # Copy ZIP file with ResearchSpace demo
 COPY researchspace-3.2-bundle.zip /
 

@@ -1,0 +1,89 @@
+These are my very rough notes about configuring ResearchSpace/metaphacts 3.4 release with custom UI templates.
+
+
+>>>>>
+
+I'm confused again.  There appear to be 3 different interfaces:
+
+https://researchspace.linkedmusic.org/resource/Help:Start, which announces as metaphactory 2.0
+
+https://public.researchspace.org/ ResearchSpace interactive faceted browse/search (old RS UI?)
+
+Latest version running locally: completely new UI
+
+
+>>>>>
+
+Tried examining network traffic from browser, but this doesn't help.  It appears that the template expansion logic is all in the server.  (@ainlq made reference to a java implementation of handlebars).
+
+
+See also:
+
+http://localhost:10214/resource/Help:TemplateAndApplicationPages
+
+http://localhost:10214/resource/Help:BackendTemplating - lots of detail here
+
+http://localhost:10214/resource/Help:SemanticSearch
+
+
+>>>
+
+Understanding dawns...
+
+The packaged ResearchSpace has apps "metaphacts-platform" and "researchspace" bundled in the jar file in the preview demo bundle.  These include namespace prefix definitions, and more.
+
+But the resources provided by these packages can be (or must be?) overridden by a custom application by placing or replacing files in `/researchspace-3.4-preview-demo-bundle/apps/custom-app-id/data/templates`, such as `http%3A%2F%2Fwww.researchspace.org%2Fresource%2FProjectDashboard.html` (note the filename here is the encoded URL of the page resource).
+
+The source for these files can be found in GitHub at, e.g.:
+
+- https://github.com/researchspace/researchspace/tree/master/metaphacts-platform
+- https://github.com/researchspace/researchspace/tree/master/researchspace/app
+
+The source for the "custom" demo application is accessible in the preview demo bundle, at:
+
+- `/researchspace-3.4-preview-demo-bundle/apps/custom-app-id/data/templates`, etc.
+
+The initial home page (after login) is (apparently) configured by `apps/custom-app-id/config/global.prop` as:
+
+- http://localhost:10214/resource/rsp:Start
+
+`Default:` prefix expends as ` http%3A%2F%2Flocalhost%3A10214%2Fresource%2F` in a filename in the `templates` directory; e.g.
+
+- http%3A%2F%2Flocalhost%3A10214%2Fresource%2Faltstarttest.html
+
+Also note that any edits made in the running system are applied to the `runtime-data/data/templates/` directory, and would be lost on restarting the Docker container (though it may be possible to pre-populate the runtime-data directories via Dockerfile).
+
+... (end of rough notes)
+
+
+
+## Accessing the 3.2 release:
+
+```
+$ pwd
+/Users/graham/workspace/github/gklyne/researchspace
+
+$ git remote -v
+origin  git@github.com:researchspace/researchspace.git (fetch)
+origin  git@github.com:researchspace/researchspace.git (push)
+
+$ git status
+HEAD detached at 0b7668e
+nothing to commit, working directory clean
+
+$ git log
+commit 0b7668eb9e1e1a9f606bbaae4d7e2ab78ab5f68a
+Author: Artem Kozlov <artem@rem.sh>
+Date:   Thu Oct 31 10:53:42 2019 +0200
+
+    Release 3.2.0.
+
+commit 76a238ee05af13bbb652484b41d26f5f86ab11e9
+Author: Diana Tanase <dtanase@britishmuseum.org>
+Date:   Tue Nov 27 15:02:19 2018 +0000
+
+    Updated the location of the blazegraph docker image.
+
+   :
+
+```
