@@ -87,3 +87,20 @@ Date:   Tue Nov 27 15:02:19 2018 +0000
    :
 
 ```
+
+
+## Further investigations (2020-03-23)
+
+It looks as if the start page URI is hard-wired into the underlying platform: `rsp:Start` maps to "http://www.researchspace.org/resource/Start".
+
+In the preview demo bunbdle, this is mapped to file `/researchspace-3.2/researchspace-3.4-preview-demo-bundle/apps/custom-app-id/data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FStart.html`.  Removing just this file results in the following message after login:
+
+```
+It seems that no entity with IRI "http://www.researchspace.org/resource/Start" in any subject, predicate or object position is known in the knowledge graph. Also no static application page with this identifier can be found. 
+```
+
+Reinstating the one file allows the demo bundlke to start as expected.
+
+NEXT STEPS:  return to Thanassis' version and lookm at the start page source, and try to replicate that structure in the new container...
+
+
