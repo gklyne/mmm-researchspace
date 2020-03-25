@@ -101,6 +101,23 @@ It seems that no entity with IRI "http://www.researchspace.org/resource/Start" i
 
 Reinstating the one file allows the demo bundlke to start as expected.
 
-NEXT STEPS:  return to Thanassis' version and lookm at the start page source, and try to replicate that structure in the new container...
+
+## Further investigations (2020-03-25)
+
+Scripts to create docker file with V3.4 software (using ZIP file bundle provided by BM) and older application template data from Research Repo in Github (as referenced by Thanassis' instructions), with modified `Start` resource.
+
+Page outline structure is still based on new ResearchSpace UI.  I'm struggling to find the older templates.  I need to log in to a running system, but can't do so with sufficient privileges.
+
+NEXT STEPS:  
+- ask about login for https://antheia-researchspace.oerc.ox.ac.uk/
+- return to Thanassis' version and look at the start page source, and try to replicate that structure in the new container...
+- Try previous activity with commit from end of 2018: 76a238ee05af13bbb652484b41d26f5f86ab11e9.
+    - https://github.com/researchspace/researchspace/commit/76a238ee05af13bbb652484b41d26f5f86ab11e9
+
+
+
+
+
+
 
 

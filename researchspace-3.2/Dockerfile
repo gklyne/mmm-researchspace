@@ -15,7 +15,14 @@ COPY researchspace-3.4-preview-demo-bundle.zip /
 
 # Unzip
 RUN unzip /researchspace-3.4-preview-demo-bundle.zip && \
-    mv    researchspace-3.4-preview-demo-bundle researchspace-3.2-bundle
+    rm -rfv researchspace-3.4-preview-demo-bundle/apps/custom-app-id && \
+    mv -v researchspace-3.4-preview-demo-bundle researchspace-bundle
+
+# Copy ResearchSpace 3.4 demo bundle files from current repo to target
+# These may include locally-edited custom app details
+
+# COPY researchspace-3.4-preview-demo-bundle /researchspace-bundle && \
+#      rm -rfv researchspace-3.4-preview-demo-bundle/apps/custom-app-id
 
 # ZIP file created using:
 #
@@ -27,12 +34,17 @@ RUN unzip /researchspace-3.4-preview-demo-bundle.zip && \
 # (commit 0b7668eb9e1e1a9f606bbaae4d7e2ab78ab5f68a)
 #
 # Copy ZIP file with ResearchSpace demo
-COPY researchspace-3.2-bundle.zip /
+# COPY researchspace-3.2-bundle.zip /
 
 # Unzip
-RUN unzip /researchspace-3.2-bundle.zip
+# RUN unzip /researchspace-3.2-bundle.zip
 
-# cd researchspace-3.2-bundle
+# Copy ResearchSpace 3.2 bundle files from current repo to target
+# These include edited custom app details
+
+COPY researchspace-bundle /researchspace-bundle
+
+# @@TODO later?  Unzip original then copy over updated files?
 
 # Copy start script
 #
@@ -42,7 +54,7 @@ RUN unzip /researchspace-3.2-bundle.zip
 # NOTE: to run the demo, I've edited the researchspace `start.sh`
 # to add `-Xmx4g` to the java command line
 
-COPY start.sh /researchspace-3.2-bundle
+COPY start.sh /researchspace-bundle
 COPY start-researchspace.sh /
 
 # ----
