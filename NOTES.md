@@ -137,3 +137,62 @@ NEXT STEPS:
 - return to Thanassis' version and look at the start page source, and try to replicate that structure in the new container...
 
 
+## Further investigations (2020-03-27)
+
+Initial request to "/" returns redirect to "/resource/Start".  It's not clear if this is hard-wired in the code, or somewhere in the configuration.
+
+The request to "/resource/Start" is served with data which might come from 
+- metaphactory/core/src/main/resources/com/metaphacts/ui/templates/main.hbs
+- apps/custom-app-id/config/page-layout/main.hbs
+    But changing the content of that file in the Docker build doesn't seem to change the response served. I conclude that the file used is hard-wired into the researchspace deployment bundle.  It contains the following:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="version" content="develop-build" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- the following header makes IE select latest document mode -->
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+        <title>ResearchSpace</title>
+<link href="/assets/no_auth/basic-styles.css" rel="stylesheet" title="Default Style">
+
+        <script defer type='text/javascript' src='/assets/no_auth/dll.vendor-75ac12437e453d766d67.js'></script>
+        <script defer type='text/javascript' src='/assets/app-25d4577ab1ecd7f9414e-bundle.js'></script>
+    </head>
+    <body>
+      <div id="application"></div>
+    </body>
+</html>
+```
+
+I assume that the key element here is `<div id="application"></div>`
+
+- The `<div id="application"></div>` is populated with stuff that appears to come from app-25d4577ab1ecd7f9414e-bundle.js:
+
+```
+<div><nav role="navigation" class="metaphacts-header-navbar navbar navbar-default navbar-fixed-top"><div class="container-fluid"><div class="navbar-header">
+<a href="/" style="line-height: 2;" class="navbar-brand">
+            ResearchSpace Platform
+</a>
+ :
+```
+
+which is in turn referenced by jetty-distribution/webapps/ROOT/assets/bundles-manifest.json, thus:
+
+```
+{
+  :
+  "page-renderer": {
+    "js": "/assets/page-renderer-bundle.js"
+  },
+  "app": {
+    "js": "/assets/app-25d4577ab1ecd7f9414e-bundle.js"
+  }
+}
+```
+
+So it looks like this much is baked into the ResearchSpace preview bundle.  The system appears to request atemplate for a resource named: http%3A%2F%2Fwww.researchspace.org%2Fresource%2FStart, which responds with a response indicating it couldn't be found.
+
+
