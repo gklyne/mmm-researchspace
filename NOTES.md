@@ -196,12 +196,12 @@ which is in turn referenced by jetty-distribution/webapps/ROOT/assets/bundles-ma
 So it looks like this much is baked into the ResearchSpace preview bundle.  The system appears to request atemplate for a resource named: http%3A%2F%2Fwww.researchspace.org%2Fresource%2FStart, which responds with a response indicating it couldn't be found.
 
 
-## Trying to get data loaded (2020-04-15)
+## Trying to get data loaded (2020-04-15/16)
 
 Subdirectory researchspace-3.4-mmm
 
 https://github.com/researchspace/researchspace/blob/master/README.md#building-war-artefact (not immediately relevant)
-
+ls "/"
 https://stackoverflow.com/questions/37796254/loading-triples-into-blazegraph-using-the-bulk-data-loader
 
 https://github.com/natuk/oxlod-plumbing/wiki/Bodleian-MMM
@@ -232,5 +232,7 @@ See web.xml:
 
 Am now getting data into BlazeGraph:  see DockerFile.
 
-Now need to make it show up in  ResearchSpace.
+Now need to make it show up in ResearchSpace.
+
+
 
