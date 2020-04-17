@@ -26,9 +26,9 @@ RUN unzip /researchspace-3.4-preview-bundle.zip
 COPY mmm_data.zip /
 RUN unzip /mmm_data.zip -d /mmm_data
 
-# Copy and unzip "mmm-fuseki-master", whish has additional schema files
+# Copy and unzip "mmm-fuseki-master", which has additional schema files
 COPY mmm-fuseki-master.zip /
-RUN unzip /mmm-fuseki-master.zip -d /mmm-fuseki-master
+RUN unzip /mmm-fuseki-master.zip -d /mmm_data
 
 # Load data into Blazegraph/ResearchSpace instance
 #
@@ -82,29 +82,23 @@ RUN cd $RS_BUNDLE && \
          -namespace kb                               \
          -defaultGraph http://ldf.fi/schema/mmm/     \
          $RS_BUNDLE/fastload.properties              \
-         /mmm-fuseki-master/schema/mmm-schema.ttl && \
-    java -Xmx4g -Dlog4j.configuration=$LOG4J_CONFIG \
+         /mmm_data/mmm-fuseki-master/schema/mmm-schema.ttl && \
+    java -Xmx4g -Dlog4j.configuration=$LOG4J_CONFIG  \
          -cp "$BLAZEGRAPH_CP:$BLAZEGRAPH_LIB/*" ${BLAZEGRAPH_DATALOADER} \
          -namespace kb                               \
          -defaultGraph http://ldf.fi/schema/mmm/     \
          $RS_BUNDLE/fastload.properties              \
-         /mmm-fuseki-master/schema/cidoc-crm.rdf  && \
-    java -Xmx4g -Dlog4j.configuration=$LOG4J_CONFIG \
+         /mmm_data/mmm-fuseki-master/schema/cidoc-crm.rdf  && \
+    java -Xmx4g -Dlog4j.configuration=$LOG4J_CONFIG  \
          -cp "$BLAZEGRAPH_CP:$BLAZEGRAPH_LIB/*" ${BLAZEGRAPH_DATALOADER} \
          -namespace kb                               \
          -defaultGraph http://ldf.fi/schema/mmm/     \
          $RS_BUNDLE/fastload.properties              \
-         /mmm-fuseki-master/schema/frbroo.rdf     && \
+         /mmm_data/mmm-fuseki-master/schema/frbroo.rdf     && \
     java -Xmx4g -Dlog4j.configuration=$LOG4J_CONFIG  \
          -cp "$BLAZEGRAPH_CP:$BLAZEGRAPH_LIB/*" ${BLAZEGRAPH_TEXTINDEX} \
          -namespace kb -forceCreate    \
          $RS_BUNDLE/RWStore.properties
-
-# java -cp blazegraph.jar com.bigdata.rdf.store.RebuildTextIndex [-namespace namespace] [-forceCreate] propertyFile
-
-
-# java -cp /home/blazegraph/blazegraph-2.1.4.jar com.bigdata.rdf.store.DataLoader -defaultGraph https://medieval.bodleian.ox.ac.uk/ -namespace mmm /home/blazegraph/fastload.properties /home/thanasis/mmm/*.ttl
-
 
 # Copy start script
 #

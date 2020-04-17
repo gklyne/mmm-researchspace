@@ -2,6 +2,10 @@
 
 docker build . -t researchspace-mmm
 
+docker tag researchspace-mmm:latest gklyne/researchspace-mmm:latest
+
+# docker push gklyne/mmm-researchspace
+
 echo "Run ResearchSpace container with this command:"
 echo " "
 echo ". run-researchspace-container.sh"
