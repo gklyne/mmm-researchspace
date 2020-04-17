@@ -6,3 +6,5 @@ https://github.com/researchspace/researchspace/releases/download/v3.4.0-preview/
 
 The source for the data is https://zenodo.org/record/3667486
 
+The source for additional schema not in the Zenodo bundle is at https://github.com/mapping-manuscript-migrations/mmm-fuseki
+

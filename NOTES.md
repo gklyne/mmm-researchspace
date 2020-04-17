@@ -196,3 +196,41 @@ which is in turn referenced by jetty-distribution/webapps/ROOT/assets/bundles-ma
 So it looks like this much is baked into the ResearchSpace preview bundle.  The system appears to request atemplate for a resource named: http%3A%2F%2Fwww.researchspace.org%2Fresource%2FStart, which responds with a response indicating it couldn't be found.
 
 
+## Trying to get data loaded (2020-04-15)
+
+Subdirectory researchspace-3.4-mmm
+
+https://github.com/researchspace/researchspace/blob/master/README.md#building-war-artefact (not immediately relevant)
+
+https://stackoverflow.com/questions/37796254/loading-triples-into-blazegraph-using-the-bulk-data-loader
+
+https://github.com/natuk/oxlod-plumbing/wiki/Bodleian-MMM
+
+https://github.com/natuk/oxlod-plumbing/wiki/Bodleian-MMM#endpoint
+
+http://localhost:10214/blazegraph/
+
+http://localhost:10214/sparql/
+
+http://localhost:10214/sparql/rsp:Start
+
+
+http://localhost:10214/resource/Help:Start ** lots of good info here **
+
+
+Default BlazeGraph "namespace" used by ResearchSpace appears to be "kb".
+
+See web.xml:
+```
+  <context-param>
+   <description>The default bigdata namespace of for the triple or quad store
+   instance to be exposed.</description>
+   <param-name>namespace</param-name>
+   <param-value>kb</param-value>
+  </context-param>
+```
+
+Am now getting data into BlazeGraph:  see DockerFile.
+
+Now need to make it show up in  ResearchSpace.
+
