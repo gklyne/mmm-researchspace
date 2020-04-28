@@ -232,7 +232,7 @@ See web.xml:
 
 Am now getting data into BlazeGraph:  see DockerFile.
 
-Now need to make it show up in ResearchSpace.
+Data now shows up in ResearchSpace sparql queries, but appears to be invisible to researchspace-specific views.
 
 
 
