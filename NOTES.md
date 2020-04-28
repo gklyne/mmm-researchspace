@@ -235,4 +235,53 @@ Am now getting data into BlazeGraph:  see DockerFile.
 Data now shows up in ResearchSpace sparql queries, but appears to be invisible to researchspace-specific views.
 
 
+## Use different CIDOC CRM namespace URI (2020-04-28)
+
+As an experiment, I've taken a copy of the MMM data (mainly from the Zenodo published dataset [1], but some schema files directly from GitHub Fuseki recipe [2]).  (There's a GitHub issue [3] about this.)
+
+[1] https://zenodo.org/record/3667486
+[2] https://github.com/mapping-manuscript-migrations/mmm-fuseki/tree/master/schema
+[3] https://github.com/mapping-manuscript-migrations/mmm-fuseki/issues/1
+
+The source files have been edited to replkace all prefix definition references to "http://erlangen-crm.org/current/" with "http://www.cidoc-crm.org/cidoc-crm/"; e.g.
+
+    # @prefix ecrm: <http://erlangen-crm.org/current/> .
+    @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+    @prefix ecrm: <http://www.cidoc-crm.org/cidoc-crm/> .
+
+The data is then loaded into a ResearchSpace instance in a Docker container using the following scripts:
+
+- https://github.com/gklyne/mmm-researchspace/blob/master/researchspace-3.4-mmm/make_mmm_data_zip.sh
+- https://github.com/gklyne/mmm-researchspace/blob/master/researchspace-3.4-mmm/build-researchspace-image.sh
+
+The resulting Docker image is pushed to DockerHub as `gklyne/mmm-researchspace`.
+
+To run the image:
+
+    docker run -it --publish=10214:10214 --publish=3000:3000 gklyne/researchspace-mmm
+
+Then at the interactive prompt for the running system:
+
+    . start-researchspace.sh
+
+(Takes about 40 seconds to start on my system)
+
+To explore the contents in ResearchSpace, I start with a simple SPARQL query.  Browse to http://localhost:10214/, login with user:admin, password:admin, ythen browse to http://localhost:10214/sparql and execute this query:
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+SELECT * WHERE { 
+    GRAPH ?graph {
+        ?subject rdf:type crm:E21_Person .
+  }
+ } LIMIT 1000
+```
+
+Click on one of the results, and drag the heading item into the Clipboard area of the ResearchSpace Clipboard window.
+
+From the resulting Clipboard entry, click on "Resource details" in the corresponding dropdown.  The next stage may take a while.  It appears that the ResearchSpace interface is present and doing (some of) what it should, but it's really not clear how to navigate it, and on my system it appears to be *very* slow.  The slowness be because the VM really needs more memory for the amount of data loaded (Docker is apparemtly using 11.5Gb on my laptop).  Maybe it's better to load less data for experimentation?
+
+
 
