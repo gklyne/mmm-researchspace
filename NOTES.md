@@ -286,6 +286,8 @@ From the resulting Clipboard entry, click on "Resource details" in the correspon
 
 ## Next steps (discussed 2020-04-28)
 
+NOTE: Moved to [TODO.md](./TODO.md) - the following may be out of date, and should be removed in due course.
+
 Lacking sufficient knowledge to create a preconfigured container instance ResearchSpace 3 preview bundle, I plan to revert to experiments using ResearchSpace 2.1 (the version that Thanasis deployed for OxLOD).  Earlier experiments have shown we can get it running using Thanasis' recipe, but that the system thus deployed isn't really suitable for containerization (due to the transient nature of containers: they reset each time they are run).
 
 To get a persistent deployment, we propose to use a full virtual machine deployment, intended to be available for a short period so that MMM project members can evaluate its affordances.  Based on what we currently know, this approach seems to offer the least uncertainty in terms of what needs to be done.
