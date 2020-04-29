@@ -1,0 +1,31 @@
+# Outline plan for MMM ResearchSpace investigations
+
+These notes are based initially on a discussion that took place on 2020-04-28, in light of the challenges we have working with ResearchSpace.  For more background, see [these notes](./NOTES.md).
+
+## 2020-04-28 - notes from discussion
+
+Lacking sufficient knowledge to create a preconfigured container instance ResearchSpace 3 preview bundle, I plan to revert to experiments using ResearchSpace 2.1 (the version that Thanasis deployed for OxLOD).  Earlier experiments have shown we can get it running using Thanasis' recipe, but that the system thus deployed isn't really suitable for containerization (due to the transient nature of containers: they reset each time they are run).
+
+To get a persistent deployment, we propose to use a full virtual machine deployment, intended to be available for a short period so that MMM project members can evaluate its affordances.  Based on what we currently know, this approach seems to offer the least uncertainty in terms of what needs to be done.
+
+Thus:
+
+1. [ ] Create new CentOS 7 (or 8?) VM on OeRC-based infrastructure, and request public access for ports needed to view ResearchSpace.
+
+    - NOTE: should probably ensure that Kevin has access to Seldon/Trantor environment, and a few recipes for running up VMs, for whenmy contract expires.  Will need a public/private key pair.
+
+2. [ ] Ask Thanasis what he found out about configuring RS semantic search.  (Apparently requires some helper triples to be added?)
+
+3. [ ] Install RS 2.1 onb VM environment.  Script as much as possible.
+
+4. [ ] Load (unmodified) MMM data into RSA 2.1
+
+5. [ ] Configure semantic search over MMM data
+
+    - Once basic technical deployment is done, liaise with David L about domin specifics that are applicable to semantic search over MMM data.
+
+6. [ ] Stretch goal:  try to repeat the above for RS 3.4.
+
+    - Ask if there are instructions or commands for building the preview bundle from the source repo.
+
+
