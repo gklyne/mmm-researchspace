@@ -16,7 +16,14 @@ Thus:
 
     - Note to self: Source copy of VMWare fusion for local experiments.  (Or use older MacBook?)
 
-2. [ ] Ask Thanasis what he found out about configuring RS semantic search.  (Apparently requires some helper triples to be added?)
+    - _2020-04-30: base VM is created, and have requested IP address and access through firewall._
+
+2. [x] Ask Thanasis what he found out about configuring RS semantic search.  (Apparently requires some helper triples to be added?)
+
+    - _2020-04-29: Sent email enquiry_
+    - _2020-04-30: Response; no specific notes, but see online help (https://antheia-researchspace.oerc.ox.ac.uk/resource/Help:SemanticSearch)_
+    - It looks as if RS 3.4 also has this capability; e.g. see http://localhost:10214/resource/Help:SemanticSearch.  But it's not clear if this enables the same capabilities as the interactive query builder on the public researchspace site.
+    - Original query builder:  https://public.researchspace.org/resource/Start
 
 3. [ ] Install RS 2.1 on VM environment.  Script as much as possible.
 

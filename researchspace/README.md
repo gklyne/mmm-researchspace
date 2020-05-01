@@ -1,5 +1,10 @@
 This directory contains files for building a Docker image with researchspace from source pulled from GitHub.
 
+The build process is based on these notes:
+
+- https://github.com/natuk/oxlod-plumbing/wiki/ResearchSpace
+
+
 STATUS [2020-02-25]:
 
 1. the build seems to work as far as it goes

@@ -15,7 +15,7 @@ This local copy is referenced in the blazegraph/Dockerfile script.
 
 ## MacOS preliminaries
 
-These instructions are based on the "Docker toolbox" kit (not the more recent "Docker desktop", which requires a newer version of MacOS than I am running, and handles virtualization and networking somewhat differently).
+These instructions are based on the "Docker toolbox" kit (not the more recent "Docker desktop", which requires a newer version of MacOS than I was running at the time, and handles virtualization and networking somewhat differently).  Updated recipes that work with the more recent versions of Docker are in various subdirectories.
 
 1. Install VirtualBox if not already installed (@@details?)
 

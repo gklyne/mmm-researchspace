@@ -48,6 +48,9 @@ Mar 2020: Identify some possibly-useful customizations? (esp UI support)
  
 Apr 2020: Review and plan next steps
    
+[Later]
+
+May 2020: Go back to Version 2.1, build system in persistent virtual machine, and load MMM data.  Then try to access ResearchSpace functionality on this data, and configure semantic search options.
  
 # Links
  
