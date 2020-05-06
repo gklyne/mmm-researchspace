@@ -18,7 +18,7 @@ sudo wget https://bintray.com/sbt/rpm/rpm \
 sudo wget https://dl.yarnpkg.com/rpm/yarn.repo \
     --output-document=/etc/yum.repos.d/yarn.repo
 
-yum --assumeyes install \
+sudo yum --assumeyes install \
         unzip \
         sbt \
         epel-release \
@@ -27,26 +27,32 @@ yum --assumeyes install \
         yarn
 
 # Get ResearchSpace git repo, and make version 2.1 current checkout.
-git clone https://github.com/researchspace/researchspace.git && \
-    cd ${RS_WORKINGDIR}/researchspace \
-    git checkout 8671757b3091f38639923410c7d985fba267c1fd
+cd ${RS_WORKINGDIR}/github
+git clone https://github.com/researchspace/researchspace.git
+
+cd ${RS_WORKINGDIR}/github/researchspace
+git checkout 8671757b3091f38639923410c7d985fba267c1fd
 
 # See: 
 # https://github.com/researchspace/researchspace#building-war-artefact
 
 # Force SBT modules and dependencies to load
-cd ${RS_WORKINGDIR}/researchspace && \
-    rm -rf project/webpack/assets && \
-    sh ./build.sh \
-        -Dbuildjson=researchspace/researchspace-root-build.json \
-        -DbuildEnv=prod \
-        clean
+cd ${RS_WORKINGDIR}/github/researchspace
+
+rm -rf project/webpack/assets
+
+sh ./build.sh \
+    -Dbuildjson=researchspace/researchspace-root-build.json \
+    -DbuildEnv=prod \
+    clean
 
 # Now build package
-    sh ./build.sh \
-        -DplatformVersion=$VERSION_NUMBER \
-        -Dbuildjson=researchspace/researchspace-root-build.json \
-        -DbuildEnv=prod \
-        package
+sh ./build.sh \
+    -DplatformVersion=$VERSION_NUMBER \
+    -Dbuildjson=researchspace/researchspace-root-build.json \
+    -DbuildEnv=prod \
+    package
+
+cd ${RS_WORKINGDIR}
 
 # ----

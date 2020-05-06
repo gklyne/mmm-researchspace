@@ -35,7 +35,7 @@ Copy files in this github directory to the researchspace user home directory
     cd github
     git clone https://github.com/gklyne/mmm-researchspace.git
     cd $HOME
-    cp ./github/mmm-researchspace/researchspace-vm/*.sh .
+    cp ./github/mmm-researchspace/researchspace-vm/* .
 
 
 ## Install Blazegraph
