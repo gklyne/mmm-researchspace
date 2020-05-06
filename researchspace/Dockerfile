@@ -22,7 +22,7 @@ RUN yum --assumeyes \
         gcc-c++ make \
         yarn
 
-RUN git clone https://github.com/researchspace/researchspace.git && \''
+RUN git clone https://github.com/researchspace/researchspace.git && \
     cd researchspace \
     git checkout 8671757b3091f38639923410c7d985fba267c1fd
 
