@@ -10,7 +10,7 @@ To get a persistent deployment, we propose to use a full virtual machine deploym
 
 Thus:
 
-1. [ ] Create new CentOS 7 (or 8?) VM on OeRC-based infrastructure, and request public access for ports needed to view ResearchSpace.
+1. [x] Create new CentOS 7 (or 8?) VM on OeRC-based infrastructure, and request public access for ports needed to view ResearchSpace.
 
     - NOTE: should probably ensure that Kevin has access to Seldon/Trantor OpenStack environment, and a few recipes for running up VMs, for when my contract expires.  Will need a public/private key pair.
 

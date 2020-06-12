@@ -26,7 +26,7 @@ Set password for new user (will be needed for sudo):
 
 Switch to new user:
 
-    su - researchspace
+    sudo su - researchspace
 
 Copy files in this github directory to the researchspace user home directory
 
@@ -49,9 +49,81 @@ Test run:
 
 ## Build ResearchSpace
 
+See: https://github.com/natuk/oxlod-plumbing/wiki/ResearchSpace
 
+@@@
 
+Various files changed to get base system running:
 
+commit 5f03133496544b88a34f1fdfd82298520763fb58
+Author: Graham Klyne <graham.klyne@oerc.ox.ac.uk>
+Date:   Fri Jun 5 12:44:42 2020 +0000
+
+Files changed in first working ResearchSpace build (still has css-loader problems)
+
+        metaphactory/web/.npmrc
+        metaphactory/web/.yarnrc
+        metaphactory/web/package.json
+        metaphactory/web/saved.npmrc
+        metaphactory/web/saved.package.json
+        metaphactory/web/saved.yarn.lock
+        metaphactory/web/saved.yarnrc
+        metaphactory/web/yarn.lock
+        package-lock.json
+        project/build.properties
+        project/plugins.sbt.orig
+        project/repositories
+        project/repositories.unused
+        project/webpack/.npmrc
+        project/webpack/.yarnrc
+        project/webpack/package.json
+        project/webpack/saved.npmrc
+        project/webpack/saved.package.json
+        project/webpack/saved.yarn.lock
+        project/webpack/saved.yarnrc
+        project/webpack/yarn.lock
+        researchspace/web/.npmrc
+        researchspace/web/.yarnrc
+        researchspace/web/package.json
+        researchspace/web/saved.npmrc
+        researchspace/web/saved.package.json
+        researchspace/web/saved.yarn.lock
+        researchspace/web/saved.yarnrc
+        researchspace/web/yarn.lock
+        yarn.lock
+
+Also changed for browser access to assets:
+
+        project/PlatformBuildPlugin.scala
+        project/webpack/package.json
+        project/webpack/server.js
+        project/webpack/webpack.dev.config.js
+        project/webpack/webpack.dll.dev.js
+        project/webpack/yarn.lock
+
+Install OS packages:
+
+    libpng-devel (libpng-dev on Debian)
+    autoconf
+
+References to repository that no longer exist:
+
+    https://nexus.grapphs.com/repository/npm/
+
+Three projects had to change .yarnrc and .npmrc to remove repository reference, 
+then re-run yarn on each:
+
+    metaphactory/web
+    researchspace/web
+    project/webpack
+
+Installed css-loader fails.  Use npm to install, select version @1.0.1
+
+    npm install css-loader@1.0.1
+
+Still not working.
+
+Tried version of css-loader installed on antheia.  Still just errors.
 
 
 ## STATUS

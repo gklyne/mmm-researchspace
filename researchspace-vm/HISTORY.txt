@@ -1,0 +1,519 @@
+Command history from ResearchSPace build
+
+[researchspace@researchspace-100gb ~]$ history
+    1  pwd
+    2  id
+    3  ls
+    4  vi install-blazegraph.sh
+    5  sudo
+    6  sudo yum
+    7  . install-blazegraph.sh
+    8  ls
+    9  mkdir github
+   10  cd github
+   11      git clone https://github.com/gklyne/mmm-researchspace.git
+   12      cd $HOME
+   13      cp ./github/mmm-researchspace/researchspace-vm/* .
+   14  pwd
+   15      cp ./github/mmm-researchspace/researchspace-vm/* .
+   16  cd github/mmm-researchspace/
+   17  git pull
+   18  cd $HOME
+   19      cp ./github/mmm-researchspace/researchspace-vm/* .
+   20  ls
+   21  . start-blazeraph.sh
+   22  vi start-blazeraph.sh
+   23  . start-blazeraph.sh
+   24  ps
+   25  ps x
+   26  . build-researchspace.sh
+   27  ls
+   28  git status
+   29  git log
+   30  git checkout 8671757b3091f38639923410c7d985fba267c1fd
+   31  git log
+   32  ls
+   33  cd ..
+   34  ls
+   35  rm -rf researchspace
+   36  cd github/mmm-researchspace/
+   37  git pull
+   38  cd $HOME
+   39  cp ./github/mmm-researchspace/researchspace-vm/* .
+   40  . build-researchspace.sh
+   41  nodejs
+   42  sudo yum install nodejs
+   43  sudo wget -O - https://rpm.nodesource.com/setup_10.x | bash -
+   44  sudo wget -O - https://rpm.nodesource.com/setup_10.x | sudo bash -
+   45  sudo yum --assumeyes install         unzip         sbt         epel-release         nodejs         gcc-c++ make         yarn
+   46  nodejs
+   47  node
+   48  cd github/
+   49  ls
+   50  cd researchspace/
+   51  rm -rf project/webpack/assets
+   52  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+   53  cd github/researchspace/
+   54  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+   55  sh ./build.sh     -DplatformVersion=$VERSION_NUMBER     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     package
+   56  sbt about
+   57  sbt -v about
+   58  apt-get install ca-certificates-java
+   59  sudo update-ca-certificates -f
+   60  sudo yum install ca-certificates-java
+   61  java -version
+   62  sudo yum install sbt
+   63  ls -al
+   64  vim build.s
+   65  vi build.sh
+   66  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+   67  ls
+   68  cd github/researchspace/
+   69  sh -v ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+   70  cd ~
+   71  ls -al
+   72  cd .sbt
+   73  ls
+   74  ls -al
+   75  ls boot
+   76  less boot/update.log
+   77  ls boot -al
+   78  cd ..
+   79  rm -rf .sbt
+   80  ls -al
+   81  cd github/researchspace/
+   82  ls -al
+   83  less build.sh
+   84  ls
+   85  ls researchspace/
+   86  cd researchspace/
+   87  less build.sbt
+   88  which sbt
+   89  ls -al `which sbt`
+   90  cd ~
+   91  ls -al
+   92  cd .ivy2
+   93  ls
+   94  ls cache
+   95  mldir local
+   96  mkdir local
+   97  ls /usr/local/sbt/lib/local-preloaded
+   98  ls /usr/local/sbt
+   99  ls /usr/share/sbt
+  100  ls /usr/share/sbt/bin
+  101  ls /usr/share/sbt/bin/sbt
+  102  ls /usr/share/sbt/bin/sbt -al
+  103  less /usr/share/sbt/bin/sbt -al
+  104  sudo su -
+  105  cd ../github/researchspace/
+  106  grep -R "0.13" *
+  107  grep -R "0.13.16" *
+  108  vi project/build.properties
+  109  ls
+  110  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+  111  ls
+  112  ls project/ -al
+  113  ls project/repositories
+  114  less project/repositories
+  115  mv project/repositories project/repositories.unused
+  116  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+  117  less project/repositories.unused
+  118  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+  119  grep -R "addSbtPlugin"
+  120  less project/plugins.sbt
+  121  cp project/plugins.sbt project/plugins.sbt.orig
+  122  vi project/plugins.sbt
+  123  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+  124  history
+  125  vi project/plugins.sbt
+  126  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+  127  history
+  128  less less project/repositories.unused
+  129  cp project/repositories.unused project/repositories
+  130  vi project/build.properties
+  131  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+  132  history
+  133  cp project/plugins.sbt.orig project/plugins.sbt
+  134  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+  135  ls ~/.m2
+  136  ls -al
+  137  pwd
+  138  less build.sh
+  139  ls project/repositories
+  140  ls project/repositories -ak
+  141  ls project/repositories -al
+  142  less project/repositories
+  143  less build.sbt
+  144  ls /root -al
+  145  ls -al
+  146  ls
+  147  ls -al
+  148  cd github/researchspace/
+  149  ls -al
+  150  history
+  151  cd github/researchspace/
+  152  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+  153  ls -al
+  154  history
+  155  ls -al
+  156  pwd
+  157  cd ../..
+  158  ls -al
+  159  ls .cache/
+  160  history
+  161  cd github/researchspace/
+  162  ls
+  163  sh ./build.sh
+  164  less build.sh
+  165  less build.sbt
+  166  ls -al
+  167  less build.sh
+  168  ls -al project/
+  169  less project/plugins.sbt
+  170  grep -R * 0.13
+  171  grep -R 0.13 *
+  172  grep -R "0\.13" *
+  173  ls
+  174  sbt -version
+  175  sbt -v
+  176  ls -al
+  177  ls -al project/
+  178  ls -alrt project/
+  179  less project/plugins.sbt.orig
+  180  less project/build.properties
+  181  vi project/build.properties
+  182  sh ./build.sh
+  183  ls project/
+  184  ls project/*
+  185  ls
+  186  ls -al
+  187  ls -al project/
+  188  vi project/repositories
+  189  sh ./build.sh
+  190  ls
+  191  cd github/researchspace/
+  192  less project/repositories
+  193  grep -R metaphacts-ivy-proxy-releases *
+  194  grep -R nexus.grapphs *
+  195  ls
+  196  less project/repositories
+  197  less build.sh
+  198  vi project/repositories
+  199  ls
+  200  vi build.sh
+  201  top
+  202  ls
+  203  vi build.sh
+  204  ps ax
+  205  ps x
+  206  top
+  207  ls
+  208  cat README.md
+  209  top
+  210  vi project/repositories
+  211  cd ../..
+  212  ls -al
+  213  pwd
+  214  history
+  215  cd .ivy2/cache/org.scala-sbt/
+  216  ls -al /root
+  217  cp -rv /root/.ivy2/cache/org.scala-sbt/* .ivy2/cache/org.scala-sbt
+  218  top
+  219  cp -rv /root/.ivy2/cache/org.scala-tools.sbinary/* .ivy2/cache/org.scala-tools.sbinary
+  220  pwd
+  221  ls -al
+  222  cp -rv /root/.coursier .
+  223  ls -al
+  224  vi project/repositories
+  225  vi github/researchspace/project/repositories
+  226  vi github/researchspace/project/plugins.sbt
+  227  ls -al
+  228  find . -name "*sbteclipse*" -print
+  229  find . -wholename "*sbteclipse*" -print
+  230  find . -wholename "*apache-4*" -print
+  231  vi github/researchspace/project/repositories
+  232  find . -name "*sbteclipse*" -print
+  233  cp -rv /root/.ivy2 .
+  234  find . -wholename "*openseadragon*" -print
+  235  cd github/researchspace/
+  236  sh ./build.sh
+  237  less /home/researchspace/.sbt/boot/update.log
+  238  sh ./build.sh
+  239  sh ./build.sh clean
+  240  find . wholename node_modules
+  241  find . -wholename node_modules
+  242  find . -wholename node_modules -print
+  243  find . -wholename node-modules -print
+  244  find . -wholename node -print
+  245  ls
+  246  pwd
+  247  find . -name node -print
+  248  find . -name modules -print
+  249  find . -wholename modules -print
+  250  find . -wholename "*modules*" -print
+  251  find . -wholename "*node*" -print
+  252  ls -al ~
+  253  cd ../..
+  254  find . -wholename "*node*" -print
+  255  find . -wholename "*node_modules*" -print
+  256  pwd
+  257  sh ./build.sh
+  258  ls
+  259  pwd
+  260  ls
+  261  cd github/researchspace/
+  262  ls
+  263  sh ./build.sh
+  264  ls -al
+  265  mpm
+  266  npm -?
+  267  npm install @jsdevtools/assert@1.3.0
+  268  npm install -g npm
+  269  sudo npm install -g npm
+  270  sudo npm install @jsdevtools/assert@1.3.0
+  271  ls
+  272  sudo npm install sniper@0.2.17
+  273  sudo npm install JSONStream@0.10.0
+  274  sudo npm install browserify@9.0.8
+  275  sudo npm install basil.js@0.4.1
+  276  history
+  277  sh ./build.sh
+  278  less /home/researchspace/github/researchspace/project/webpack/yarn-error.log
+  279  rm /home/researchspace/github/researchspace/project/webpack/yarn-error.log
+  280  sh ./build.sh
+  281  ls
+  282  cd metaphactory/web/
+  283  vi .yarnrc
+  284  vi .npmrc
+  285  cd ../..
+  286  pwd
+  287  sh ./build.sh
+  288  grep -R nexus.grapphs *
+  289  grep -R nexus.grapphs * | less
+  290  cd metaphactory/web
+  291  mv yarn.lock yarn.lock.saved
+  292  cd ../..
+  293  sh ./build.sh
+  294  cd metaphactory/web
+  295  ls -al
+  296  less yarn-error.log
+  297  history
+  298  pwd
+  299  cd ~
+  300  ls
+  301  history | grep scp
+  302  cd github/mmm-researchspace/
+  303  ls -al
+  304  cd ~
+  305  ls -al
+  306  less start-researchspace.sh
+  307  less build-researchspace.sh
+  308  export VERSION_NUMBER=1.0.0-gk
+  309  export JAVA_HOME=/usr/lib/jvm/java
+  310  export RS_WORKINGDIR=$(pwd)
+  311  echo $RS_WORKINGDIR/
+  312  less build-researchspace.sh
+  313  history
+  314  q
+  315  ls
+  316  find . -wholename "*node_modules*" -print
+  317  find . -wholename "*openseadragon*" -print
+  318  cd github/researchspace/
+  319  ls -al
+  320  ls researchspace/
+  321  cd metaphactory/web/
+  322  ls -al
+  323  cp -r /root/tmp/node_modules .
+  324   cd ../..
+  325  ls
+  326  cd metaphactory/
+  327  mkdir -p data/templates
+  328  ls
+  329  ls data/templates/
+  330  cd ..
+  331  find . -wholename "*better-npm*" -print
+  332  cd ..
+  333  find . -wholename "*better-npm*" -print
+  334  lks -al
+  335  ls -al
+  336  pwd
+  337  ls -al
+  338  cd github/researchspace/
+  339  ls -al
+  340  pwd
+  341  history
+  342  history | grep node_mod
+  343  cp -r /root/tmp/node_modules .
+  344  ls\
+  345  history
+  346  pwd
+  347  ls
+  348  pwd
+  349  ls /home
+  350  ls /home/researchspace/.ssh/
+  351  pwd
+  352  ls -al /home/centos/.ssh
+  353  pwd
+  354  pushd ~/.ssh
+  355  vi id_rsa_researchspace.pub
+  356  vi known_hosts
+  357  less /var/log/secure
+  358  su -
+  359  ls
+  360  cd github/researchspace/
+  361  ls -al
+  362  pwd
+  363  history
+  364  ls
+  365  sh build.sh
+  366  ls -al
+  367  cd metaphactory/web/
+  368  ls -al
+  369  mv yarn.lock.saved yarn.lock
+  370  vi .npmrc
+  371  vi .yarnrc
+  372  pwd
+  373  cd ../..
+  374  ls
+  375  sh build.sh
+  376  ls -al
+  377  ls metaphactory/web/ -al
+  378  npm
+  379  yarn
+  380  yarn -?
+  381  cd metaphactory/web
+  382  yarn
+  383  ls -al
+  384  cp -rv ../../node_modules .
+  385  yarn
+  386  yarn cache --list
+  387  yarn cache list
+  388  cd ../..
+  389  ls -al
+  390  pwd
+  391  cd ../..
+  392  ls -al
+  393  ls -al .cache/
+  394  yarn cache dir
+  395  ls /home/researchspace/.cache/
+  396  cd /home/researchspace/
+  397  mv .cache saved.cache
+  398  ls -al
+  399  mkdir .cache
+  400  mv saved.cache/yarn .cache
+  401  yarn cache list
+  402  ls /home/researchspace/.cache/yarn/v6/npm-openseadragon-2.2.1/node_modules
+  403  ls /home/researchspace/.cache/yarn/v6/npm-openseadragon-2.2.1/node_modules -al
+  404  ls /home/researchspace/.cache/yarn/v6/npm-openseadragon-2.2.1/
+  405  ls -al
+  406  mv saved.cache/* .cache
+  407  rmdir saved.cache
+  408  pwd
+  409  cd github/researchspace/
+  410  ls -al
+  411  yarn
+  412  pwfd
+  413  pwd
+  414  ls -al
+  415  cd metaphactory/web
+  416  ls
+  417  yarn
+  418  cat ~/.yarnrc
+  419  ls -al
+  420  cat .yarnrc
+  421  vi .yarnrc
+  422  yarn
+  423  vi .npmrc
+  424  yarn
+  425  ping nexus.dev
+  426  vi .yarnrc
+  427  yarn
+  428  yarn --help
+  429  yarn -v
+  430  yarn --verbose
+  431  pwd
+  432  less ~/.yarnrc
+  433  mv .yarnrc saved.yarnrc
+  434  yarn --verbose
+  435  ped
+  436  pwd
+  437  mv .npmrc saved.npmrc
+  438  ls -al
+  439  yarn --verbose
+  440  vi yarn.lock
+  441  mv yarn.lock saved.yarn.lock
+  442  yarn --verbose
+  443  mv saved.yarn.lock yarn.lock
+  444  yarn --verbose
+  445  cp yarn.lock saved.yarn.lock
+  446  vi yarn.lock
+  447  rm yarn.lock
+  448  yarn --verbose
+  449  ls -al
+  450  grep -R "html-to-react-1" *
+  451  vi package.json
+  452  cp package.json saved.package.json
+  453  vi package.json
+  454  yarn --verbose
+  455  less yarn.lock
+  456  pwd
+  457  cd ../..
+  458  ls -al
+  459  sh build.sh
+  460  pwd
+  461  cd researchspace/web/
+  462  mv .yarnrc saved.yarnrc
+  463  mv .npmrc saved.npmrc
+  464  mv yarn.lock saved.yarn.lock
+  465  yarn
+  466  cp package.json saved.package.json
+  467  vi package.json
+  468  yarn
+  469  cd ../..
+  470  ls
+  471  sh build.sh
+  472  cd project/webpack
+  473  LS -AL
+  474  ls -al
+  475  mv .npmrc saved.npmrc
+  476  mv .yarnrc saved.yarnrc
+  477  mv yarn.lock saved.yarn.lock
+  478  cp package.json saved.package.json
+  479  vi package.json
+  480  yarn
+  481  sudo yum install libpng-dev
+  482  npm install libpng-dev
+  483  sudo yum install libpng-devel
+  484  yarn
+  485  cd ../..
+  486  sh build.sh
+  487  cd project/webpack/
+  488  ls node_modules/
+  489  npm install css-loader
+  490  sudp yum install autoconf
+  491  sudo yum install autoconf
+  492  npm install css-loader
+  493  cd ../..
+  494  sh build.sh
+  495  cd project/webpack
+  496  ls -al
+  497  vi package.json
+  498  vi package.json
+  499  rm -rf node_modules/css-loader
+  500  yarn
+  501  rm package-lock.json
+  502  cd ../..
+  503  sh build.sh
+  504  ifconfig
+  505  sh build.sh
+  506  pwd
+  507  ls -al
+  508  cat start-researchspace.sh
+  509  ls
+  510  cat start-researchspace.sh
+  511  sbt
+  512  ls
+  513  cd github/researchspace/
+  514  sbt
+  515  ls
+  516  history

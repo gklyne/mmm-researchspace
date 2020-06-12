@@ -121,7 +121,7 @@ NEXT STEPS:
 
 ## Further investigations (2020-03-26)
 
-Created new subdirectory for ResearchSpace 2.1, which appears to be the instnance that Thanassis installed.  Uses 3.4 software with 2.1 data.  Initially get missing resource error:  it appears that a key namespace URI has changed.
+Created new subdirectory for ResearchSpace 2.1, which appears to be the instance that Thanassis installed.  Uses 3.4 software with 2.1 data.  Initially get missing resource error:  it appears that a key namespace URI has changed.
 
 See:
 
@@ -300,7 +300,7 @@ Thus:
 
 2. Ask Thanasis what he found out about configuring RS semantic search.  (Apparently requires some helper triples to be added?)
 
-3. Install RS 2.1 onb VM environment.  Script as much as possible.
+3. Install RS 2.1 on VM environment.  Script as much as possible.
 
 4. Load (unmodified) MMM data into RSA 2.1
 
