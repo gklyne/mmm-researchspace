@@ -352,140 +352,130 @@ Currently, the exploration page is parameterized by a single Actor URI:  maybe t
 Survey of questions; for each, I have tried to identify query elements that would need to be composed to achieve the desired results:
 
 A1:
-    (a) manuscripts by (production event) date
-    (b) manuscripts by (production event) place (Europe)
+- (a) manuscripts by (production event) date
+- (b) manuscripts by (production event) place (Europe)
 
 A2:
-    (a) manuscripts by surviving?
-    (b) manuscripts by language content
-    (c) manuscripts by place (Castile)
-    (d) manuscripts by "produced for abbey or convent"
-
-    (e) manuscripts by collector
-    (f) collectors by nationality
-    (g) collectors by is-private (or is-person?)
-
-    (h) manuscripts by current owner (collector?)
-    (i) collector by is-institution
+- (a) manuscripts by surviving?
+- (b) manuscripts by language content
+- (c) manuscripts by place (Castile)
+- (d) manuscripts by "produced for abbey or convent"
+- (e) manuscripts by collector
+- (f) collectors by nationality
+- (g) collectors by is-private (or is-person?)
+- (h) manuscripts by current owner (collector?)
+- (i) collector by is-institution
 
 A3:
-    (a) collectors by nationality
-    (b) manuscripts by acquisition date by collector (composite key)   
-    (c) current location by manuscript
+- (a) collectors by nationality
+- (b) manuscripts by acquisition date by collector (composite key)   
+- (c) current location by manuscript
 
 B1:
-    (a) manuscripts by author of work
-    (b) manuscripts by purchase (acquisition?) date
+- (a) manuscripts by author of work
+- (b) manuscripts by purchase (acquisition?) date
 
-B2:
-    (there is no B2)
+B2: (there is no B2)
 
 B3:
-    (a) collector by manuscript
+- (a) collector by manuscript
 
 B4:
-    (a) manuscripts by author of work
+- (a) manuscripts by author of work
+- (This case challenges the composition capabilities: given two authors, fimd manuscripts that contain works by both authors.)
 
-    This case challenges the composition capabilities: given two authors, fimd manuscripts that contain works by both authors.
+B5:
+- (a) manuscript of works by "a medieval author"
+- (b) work by manuscript
+- (This case additionally requires finding the maximum count of any result value.)
 
-B5: (a) manuscript of works by "a medieval author"
-    (b) work by manuscript
-
-    This case additionally requires finding the maximum count of any result value.
-
-C1:
-    (none)
+C1: (none)
 
 C2:
-    (a) manuscripts by collector (or "asscociated with?")
-    (b) manuscripts by "thirteenth-century bible"
-    (c) manuscripts by "historiated initials" 
+- (a) manuscripts by collector (or "asscociated with?")
+- (b) manuscripts by "thirteenth-century bible"
+- (c) manuscripts by "historiated initials" 
 
 F1:
-    (a) manuscripts by collection (or by owner?)
-    (b) manuscripts by "specific physical feature" (e.g. enluminés)
+- (a) manuscripts by collection (or by owner?)
+- (b) manuscripts by "specific physical feature" (e.g. enluminés)
 
 
 F3:
-    (a) actors (and their roles) by (association with) collection
+- (a) actors (and their roles) by (association with) collection
 
 F4:
-    (a) manuscripts by collection (or by owner?)
-    (b) manuscripts by work
-    (c) works by subject category 
+- (a) manuscripts by collection (or by owner?)
+- (b) manuscripts by work
+- (c) works by subject category 
 
 F5:
-    (a) manuscripts by collection (or by owner?)
-    (b) places by (production of) manuscript
-    (c) dates by (production of) manuscript
+- (a) manuscripts by collection (or by owner?)
+- (b) places by (production of) manuscript
+- (c) dates by (production of) manuscript
 
 F7:
-    (a) manuscripts by collection (or by owner?)
-    (b) events (provenance and production) by manuscript
+- (a) manuscripts by collection (or by owner?)
+- (b) events (provenance and production) by manuscript
 
 F8:
-    (a) manuscripts by (no) current location;  last observed/known location as a kind of proxy?
+- (a) manuscripts by (no) current location;  last observed/known location as a kind of proxy?
 
 F9:  ?
 
 G1:
-    (a) manuscripts by work
-    (b) manuscripts by "specific physical feature" (e.g. enluminés)
+- (a) manuscripts by work
+- (b) manuscripts by "specific physical feature" (e.g. enluminés)
 
 G2:
-    (a) all works
-    (b) manuscripts by work
-
-    (plus some composition filtering to exclude works with >1 manuscript)
+- (a) all works
+- (b) manuscripts by work
+- (plus some composition filtering to exclude works with >1 manuscript)
 
 G4:
-    (a) People by life-dates
-    (b) Works by person
-    (c) Works by language
-    (d) People by association with work
-    (e) Life-dates by person
+- (a) People by life-dates
+- (b) Works by person
+- (c) Works by language
+- (d) People by association with work
+- (e) Life-dates by person
 
 G5:
-    (a) manuscripts by work
-    (b) production date+place by manuscript
+- (a) manuscripts by work
+- (b) production date+place by manuscript
 
 ??:
-    (a) manuscripts by place of production event
+- (a) manuscripts by place of production event
 
-??
-    (a) manuscripts by place of production event and date range (composite key)
+??:
+- (a) manuscripts by place of production event and date range (composite key)
 
-??
-    (a) manuscripts by (previous/sometime) owner
-    (b) manuscripts by current location/owner
+??:
+- (a) manuscripts by (previous/sometime) owner
+- (b) manuscripts by current location/owner
 
-??
-    (a) manuscripts by work
-    (b) filter manuscripts by text in title
-    (c) number of folios by manuscript
+??:
+- (a) manuscripts by work
+- (b) filter manuscripts by text in title
+- (c) number of folios by manuscript
+- (plus some counting/computation)
 
-    plus some counting/computation
+??:
+- (a) manuscipts by seller
+- (b) owners (actors) by manuscript
+- (c) location by actor
+- (d) "kind of manuscript and earlier history" by manuscript
 
-??
-    (a) manuscipts by seller
-    (b) owners (actors) by manuscript
-    (c) location by actor
-    (d) "kind of manuscript and earlier history" by manuscript
+??:
+- (a) works by language
+- (b) works by date
+- (c) manuscript by production data
+- (d) works by manuscript
 
-??
-    (a) works by language
-    (b) works by date
-    (c) manuscript by production data
-    (d) works by manuscript
-
-??  (a) manuscripts by (sometime) owner
-    (b) purchase/sale events by manuscript and owner (composite key)
-    (c) advertisements placed by manuscript and owner (composite key)
-    (d) date by advertisement placed
-
-
-
-
+??:
+- (a) manuscripts by (sometime) owner
+- (b) purchase/sale events by manuscript and owner (composite key)
+- (c) advertisements placed by manuscript and owner (composite key)
+- (d) date by advertisement placed
 
 
 NOTE: the approach I'm thinking of here is not to reduce the queries to a simgle SPARQL expression.  Rather to allow successive refinements/explorations that built up a set of results.  Some of these may involve manual inspection.
