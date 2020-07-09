@@ -1,0 +1,159 @@
+<!-- 
+  $ cat http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+-->
+
+[[#if (ask 'ASK {?? owl:sameAs ?re .}')]]
+<div data-flex-layout='row'>
+  <div class="tab-pane active fade in">
+    <h2>Links to authority lists (reconciled entities)</h2>
+    <semantic-table
+        query="
+          SELECT DISTINCT ?re ?g WHERE {
+               ?? owl:sameAs ?re .
+               GRAPH ?g {
+                 ?re a ?o
+               }
+             } LIMIT 100"
+        column-configuration='[
+          {"variableName": "re", "displayName": "Entity"},
+          {"variableName": "g", "displayName": "Dataset"}
+        ]'
+        no-result-template="No reconciled entities."
+    ></semantic-table>
+  </div>
+</div>
+[[/if]]
+
+[[!--
+<div data-flex-layout='row'>
+  <div class="tab-pane active fade in">
+    <h2><a href="/resource/who_collects?actor=[[this]]">Who collects?</a></h2>
+    <hr/>
+  </div>
+</div>
+--]]
+
+<div data-flex-layout='row'>
+  <div class="tab-pane active fade in">
+    <h2>
+      <a href='/resource/who_collects?actor=[[this]]&actorName=[[jsonValueFromSelect "SELECT ?actorName WHERE { ?? skos:prefLabel ?actorName }" ]]'>Who collects [[jsonValueFromSelect "SELECT ?actorName WHERE { ?? skos:prefLabel ?actorName }" ]]?
+      </a>
+    </h2>
+    <hr/>
+  </div>
+</div>
+
+<div data-flex-layout='row'>
+  [[> rsp:RecordImage]]
+
+  <bs-tabs id="tabs">
+    <bs-tab event-key="1" title="Key facts">
+            <bs-row>
+            <bs-col sm="2">
+            <div>
+            <h2>Known names</h2>
+                <semantic-table
+        query="
+          SELECT ?name WHERE {
+            ?? ecrm:P1_is_identified_by ?name .
+            ?name a ecrm:E41_Appellation
+          } LIMIT 100"
+        column-configuration='[
+          {"variableName": "name", "displayName": "Name"}
+        ]'
+        no-result-template="No known names."
+                ></semantic-table>
+          </div>
+            </bs-col>
+          <bs-col sm="2" sm-offset="2">
+            <div>
+            <h2>Date of birth</h2>
+                    <semantic-table
+        query="
+          SELECT (?d AS ?db) WHERE {
+            ?? ecrm:P98i_was_born ?birth .
+            ?birth ecrm:P4_has_time-span ?ts .
+            ?ts ecrm:P82a_begin_of_the_begin ?d
+          } LIMIT 100"
+        column-configuration='[
+          {"variableName": "db", "displayName": "Not before"}
+        ]'
+        no-result-template="No known birth date."
+                ></semantic-table>
+          </div>
+            </bs-col>
+            <bs-col sm="2" sm-offset="3">
+            <div>
+            <h2>Date of death</h2>
+                <semantic-table
+        query="
+          SELECT (?d AS ?dd) WHERE {
+            ?? ecrm:P100i_died_in ?death .
+            ?death ecrm:P4_has_time-span ?ts .
+            ?ts ecrm:P82b_end_of_the_end ?d
+          } LIMIT 100"
+        column-configuration='[
+          {"variableName": "dd", "displayName": "Not after"}
+        ]'
+        no-result-template="No known death date."
+                ></semantic-table>
+            </div>
+            </bs-col>
+            </bs-row>
+    </bs-tab>
+
+    <bs-tab event-key="2" title="Authored works">  <!-- Label for tab -->
+      <h2>Works authored (up to 100)</h2>
+      <semantic-table
+          query="
+              PREFIX skos: <http://www.w3.org/2004/02/skos/core#> #prefLabel
+              PREFIX efrbroo: <http://erlangen-crm.org/efrbroo/>
+              PREFIX mmm: <http://ldf.fi/mmm/>
+              PREFIX mmm-actors: <http://ldf.fi/mmm/actor/>
+              PREFIX mmmp: <http://ldf.fi/mmm/place/>
+              PREFIX mmms: <http://ldf.fi/schema/mmm/>
+              PREFIX mmmt: <http://ldf.fi/mmm/time/>
+              select distinct ?wlabel where {
+                ?event mmms:carried_out_by_as_author ?? ;
+                  a efrbroo:F27_Work_Conception ;
+                  efrbroo:R16_initiated ?w .
+                ?w skos:prefLabel ?wlabel
+                } LIMIT 300"
+          column-configuration='[
+          {"variableName": "wlabel", "displayName": "Work"}
+        ]'
+        no-result-template="No recorded works."
+      ></semantic-table>
+    </bs-tab>
+
+    <bs-tab event-key="3" title="Links from here">
+      <h2>Links from here</h2>
+      <semantic-table
+        query="
+          SELECT ?p ?o WHERE {
+            ?? ?p ?o
+          } LIMIT 100"
+        column-configuration='[
+          {"variableName": "p", "displayName": "Property"},
+          {"variableName": "o", "displayName": "Object"}
+        ]'
+        no-result-template="No recorded links."
+      ></semantic-table>
+    </bs-tab>
+    <bs-tab event-key="4" title="Links to here">
+      <h2>Links to here</h2>
+      <semantic-table
+        query="
+          SELECT ?s ?p WHERE {
+            ?s ?p ??
+          } LIMIT 100"
+        column-configuration='[
+          {"variableName": "s", "displayName": "Subject"},
+          {"variableName": "p", "displayName": "Property"}
+        ]'
+        no-result-template="No recorded links."
+      ></semantic-table>
+    </bs-tab>
+
+  </bs-tabs>
+</div>

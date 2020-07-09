@@ -38,3 +38,19 @@ Thus:
     - Ask if there are instructions or commands for building the preview bundle from the source repo.
 
 
+...
+
+Research questions: 
+https://docs.google.com/spreadsheets/d/1Tdt3dNGkq5aEpC-IXCpxXZeEptnOhI60rVeT_m_mjw4
+
+Research Question B3:  "Who collects manuscripts with texts by Ramon Llul?"
+
+1. Place "who collects" link on Actor page, parameterized by actor id
+Question: how can parameter be passed to template?
+2. Create new template for "who collects" Ramon Llul
+3. Modify template for "who collects" to be parameterized by actor Id
+
+See: http://vm-seldon.oerc.ox.ac.uk:10214/resource/Help:BackendTemplating
+- urlParam Helper
+- generate link with appropriate query parameter?
+

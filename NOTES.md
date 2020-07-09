@@ -313,3 +313,182 @@ Thus:
     - Ask if there are instructions or commands for building the preview bundle from the source repo.
 
 
+# Looking at research questions (2020-07-07)
+
+Research questions: 
+https://docs.google.com/spreadsheets/d/1Tdt3dNGkq5aEpC-IXCpxXZeEptnOhI60rVeT_m_mjw4
+
+Research Question B3:  "Who collects manuscripts with texts by Ramon Llul?"
+
+1. Place "who collects" link on Actor page, parameterized by actor id
+Question: how can parameter be passed to template?
+2. Create new template for "who collects" Ramon Llul
+3. Modify template for "who collects" to be parameterized by actor Id
+
+See: http://vm-seldon.oerc.ox.ac.uk:10214/resource/Help:BackendTemplating
+- urlParam Helper
+- generate link with appropriate query parameter?
+
+See:
+- ActorSummary.template.edits
+- who_collects.html
+
+Example:
+- http://vm-seldon.oerc.ox.ac.uk:10214/resource/?uri=http%3A%2F%2Fldf.fi%2Fmmm%2Factor%2Fbodley_person_120696927
+    (Note 'Who collects "Llull, Ramon, 1232?-1316"?' link)
+- http://vm-seldon.oerc.ox.ac.uk:10214/resource/who_collects?actor=http://ldf.fi/mmm/actor/bodley_person_120696927&actorName=%22Llull,%20Ramon,%201232?-1316%22
+
+
+# Reflections on addressing research questions (2020-07-09)
+
+The previous activity started to demonstrate how ResearchSpace can be used to create custom information pages.  NBote that a key difference from things tried previosuly is the introduction of a new "application" page that is parameterized using URI query elements.  This avoids the need to depend on the built-in ResearchSpace dispatching mechganisms.
+
+What we now wish to explore is using a hyperlinked set of such pages to allow a user to explore various research questions.  Ideally each query element will be handled by a single application page (like the "who collects" page), in such a way that different queries can be composed by following links (combined with ResearchSpace built-in semantic table filter capabilities).
+
+So far, the "who collects" logic is linked directly into the Actor Summary template.  This is likely to become cumbersome in due course.  I propose that the embedded logic that generates the parameterized link is moved to a separate "Explore actor" page.  Similar, possibly, for works, manuscripts, places, etc.  But I'm not sure how to handle composites - I propose to ignore that concern until a real case arises from examination of the research questions.
+
+Currently, the exploration page is parameterized by a single Actor URI:  maybe this should be extended to allow multiple actors (queries effectively becoming list monads?).  I'm not sure how do-able this is (i.e. can we collect all selected matches and pass them forward?).  For now, stick with the simpler single-instance case.
+
+Survey of questions; for each, I have tried to identify query elements that would need to be composed to achieve the desired results:
+
+A1:
+    (a) manuscripts by (production event) date
+    (b) manuscripts by (production event) place (Europe)
+
+A2:
+    (a) manuscripts by surviving?
+    (b) manuscripts by language content
+    (c) manuscripts by place (Castile)
+    (d) manuscripts by "produced for abbey or convent"
+
+    (e) manuscripts by collector
+    (f) collectors by nationality
+    (g) collectors by is-private (or is-person?)
+
+    (h) manuscripts by current owner (collector?)
+    (i) collector by is-institution
+
+A3:
+    (a) collectors by nationality
+    (b) manuscripts by acquisition date by collector (composite key)   
+    (c) current location by manuscript
+
+B1:
+    (a) manuscripts by author of work
+    (b) manuscripts by purchase (acquisition?) date
+
+B2:
+    (there is no B2)
+
+B3:
+    (a) collector by manuscript
+
+B4:
+    (a) manuscripts by author of work
+
+    This case challenges the composition capabilities: given two authors, fimd manuscripts that contain works by both authors.
+
+B5: (a) manuscript of works by "a medieval author"
+    (b) work by manuscript
+
+    This case additionally requires finding the maximum count of any result value.
+
+C1:
+    (none)
+
+C2:
+    (a) manuscripts by collector (or "asscociated with?")
+    (b) manuscripts by "thirteenth-century bible"
+    (c) manuscripts by "historiated initials" 
+
+F1:
+    (a) manuscripts by collection (or by owner?)
+    (b) manuscripts by "specific physical feature" (e.g. enluminés)
+
+
+F3:
+    (a) actors (and their roles) by (association with) collection
+
+F4:
+    (a) manuscripts by collection (or by owner?)
+    (b) manuscripts by work
+    (c) works by subject category 
+
+F5:
+    (a) manuscripts by collection (or by owner?)
+    (b) places by (production of) manuscript
+    (c) dates by (production of) manuscript
+
+F7:
+    (a) manuscripts by collection (or by owner?)
+    (b) events (provenance and production) by manuscript
+
+F8:
+    (a) manuscripts by (no) current location;  last observed/known location as a kind of proxy?
+
+F9:  ?
+
+G1:
+    (a) manuscripts by work
+    (b) manuscripts by "specific physical feature" (e.g. enluminés)
+
+G2:
+    (a) all works
+    (b) manuscripts by work
+
+    (plus some composition filtering to exclude works with >1 manuscript)
+
+G4:
+    (a) People by life-dates
+    (b) Works by person
+    (c) Works by language
+    (d) People by association with work
+    (e) Life-dates by person
+
+G5:
+    (a) manuscripts by work
+    (b) production date+place by manuscript
+
+??:
+    (a) manuscripts by place of production event
+
+??
+    (a) manuscripts by place of production event and date range (composite key)
+
+??
+    (a) manuscripts by (previous/sometime) owner
+    (b) manuscripts by current location/owner
+
+??
+    (a) manuscripts by work
+    (b) filter manuscripts by text in title
+    (c) number of folios by manuscript
+
+    plus some counting/computation
+
+??
+    (a) manuscipts by seller
+    (b) owners (actors) by manuscript
+    (c) location by actor
+    (d) "kind of manuscript and earlier history" by manuscript
+
+??
+    (a) works by language
+    (b) works by date
+    (c) manuscript by production data
+    (d) works by manuscript
+
+??  (a) manuscripts by (sometime) owner
+    (b) purchase/sale events by manuscript and owner (composite key)
+    (c) advertisements placed by manuscript and owner (composite key)
+    (d) date by advertisement placed
+
+
+
+
+
+
+NOTE: the approach I'm thinking of here is not to reduce the queries to a simgle SPARQL expression.  Rather to allow successive refinements/explorations that built up a set of results.  Some of these may involve manual inspection.
+
+It might be that OWL-QL would provide a way to describe the compositions, in a way that can be mapped to SPARQL queries?  Could that reduction be done using JS in the browser?  Maybe worth talking to Ian Horrocks' team in CS?
+

@@ -3,7 +3,11 @@ This note is an attempt to collect summaries of our various attempts to deploy R
 See also:
 
 - https://github.com/gklyne/mmm-researchspace/blob/master/NOTES.md
-0
+
+# To try
+
+- Copy global node modules from antheia to vm-seldon...
+
 
 # List of ResearchSpace deployments attempted
 
@@ -107,6 +111,11 @@ I was able to get the maven/ivy builds to work with a few tweaks, but there were
 @@TODO: should re-apply the maven/ivy tweaks to get those builds to complete cleanly, then try again to replace the node_modules directories?
 
 
+## MMM test data on Euterpe
+
+One testing version is running on Euterpe. It was based on replicating Thanasis' instructions and looked like an ok install. It was pointed at MMM triples, but was never really tested and was clearly a bit flaky (It's the one that I've shown you in the past). Currently I can't log into it, though. I don't know why.
+
+
 # Dead end experiments
 
 ## ResearchSpace 3.4 preview bundle with older templates
@@ -121,3 +130,9 @@ I was able to get the maven/ivy builds to work with a few tweaks, but there were
 
 This was a dead-end attempt to drop templates used by OxLOD into the ResearchSpace 3.4 preview bundle release.  I documented this as ResearchSPace 3.2 data, but this was before I looked more closely.  It's probably not worth any further attention.
 
+
+## Summer school early music data
+
+(Included as dead-end because now wiped)
+
+One now wiped was a modified docker instance set up by Iain. That's the one we pointed at the early music data and is the only one I know of with substantially modified templates and non-CIDOC ontologies. (wiped because it was a Summer School machine)

@@ -1,0 +1,41 @@
+rdf=http://www.w3.org/1999/02/22-rdf-syntax-ns#
+owl=http://www.w3.org/2002/07/owl#
+rdfs=http://www.w3.org/2000/01/rdf-schema#
+xsd=http://www.w3.org/2001/XMLSchema#
+skos=http://www.w3.org/2004/02/skos/core#
+sp=http://spinrdf.org/sp#
+Platform = http://www.metaphacts.com/ontologies/platform#
+Help = http://help.metaphacts.com/resource/
+User = http://www.metaphacts.com/resource/user/
+Admin = http://www.metaphacts.com/resource/admin/
+Default = http://www.metaphacts.com/resource/
+= http://www.metaphacts.com/resource/
+rsp = http://www.researchspace.org/resource/
+rso = http://www.researchspace.org/ontology/
+bds = http://www.bigdata.com/rdf/search#
+ocrm = http://www.cidoc-crm.org/cidoc-crm/
+ecrm = http://erlangen-crm.org/current/
+crm = http://www.cidoc-crm.org/cidoc-crm/
+crminf = http://www.ics.forth.gr/isl/CRMinf/
+bmo = http://collection.britishmuseum.org/id/ontology/
+thes = http://collection.britishmuseum.org/id/thesauri/
+thesDimension = http://collection.britishmuseum.org/id/thesauri/dimension/
+thesIdentifier = http://collection.britishmuseum.org/id/
+thesUnit = http://collection.britishmuseum.org/id/thesauri/unit/
+rs = http://www.researchspace.org/ontology/
+rshelp = http://researchspace.org/help/
+fts = http://www.bigdata.com/rdf/fts#
+geo = http://www.bigdata.com/rdf/geospatial#
+wgs84_pos = http://www.w3.org/2003/01/geo/wgs84_pos#
+geoliteral = http://www.bigdata.com/rdf/geospatial/literals/v1#
+dc = http://purl.org/dc/elements/1.1/
+crmdig = http://www.ics.forth.gr/isl/CRMdig/
+prov = http://www.w3.org/ns/prov#
+
+mmm = http://ldf.fi/mmm/
+mmm_actors = http://ldf.fi/mmm/actor/
+mmmp = http://ldf.fi/mmm/place/
+mmms = http://ldf.fi/schema/mmm/
+mmmt = http://ldf.fi/mmm/time/
+
+
