@@ -7,34 +7,51 @@
 
 <h1>Who collects manuscripts by actor</h1>
 
-    <p>Who collects [[urlParam "actor"]]?</p>
-    <p>Who collects <a href="[[urlParam "actor"]]">[[urlParam "actorName"]]</a>?</p>
+    <p>Who collects 
+        <a href="/resource/?uri=[[urlParam "actor"]]">
+            [[urlParam "actorName"]]
+        </a>?
+    </p>
 
     <semantic-table
-        query="
-          PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-          PREFIX efrbroo: <http://erlangen-crm.org/efrbroo/>
-          PREFIX mmm-actors: <http://ldf.fi/mmm/actor/>
-          PREFIX mmms: <http://ldf.fi/schema/mmm/>
-          PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-          PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
-          PREFIX ecrm: <http://erlangen-crm.org/current/>
-          SELECT DISTINCT ?collector ?clabel ?wlabel WHERE {
-            ?wce mmms:carried_out_by_as_author <[[urlParam "actor" ]]> ;
-                 efrbroo:R16_initiated ?w.
-            ?w skos:prefLabel ?wlabel .
+        query='
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            PREFIX efrbroo: <http://erlangen-crm.org/efrbroo/>
+            PREFIX mmm-actors: <http://ldf.fi/mmm/actor/>
+            PREFIX mmms: <http://ldf.fi/schema/mmm/>
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+            PREFIX ecrm: <http://erlangen-crm.org/current/>
+            SELECT DISTINCT ?actor ?collector WHERE {
+            VALUES ( ?actor )
+              { 
+                ( <[[urlParam "actor" ]]> ) 
+              }
+            ?wce mmms:carried_out_by_as_author ?actor ;
+                 efrbroo:R16_initiated ?w .
             ?mpe ecrm:P108_has_produced ?m .
             ?m a efrbroo:F4_Manifestation_Singleton ;
-                 ecrm:P46i_forms_part_of ?col .
-            ?col ecrm:P51_has_former_or_current_owner ?collector .
-            ?collector skos:prefLabel ?clabel .
-          } LIMIT 100"
+                 mmms:manuscript_work ?w .
+            {
+                {
+                    ?m ecrm:P51_has_former_or_current_owner ?collector .
+                }
+            UNION
+                {
+                    ?m ecrm:P46i_forms_part_of ?col .
+                    ?col ecrm:P51_has_former_or_current_owner ?collector .
+                }
+            }
+          } LIMIT 1000'
         column-configuration='[
-          {"variableName": "collector",     "displayName": "Collector"},
-          {"variableName": "clabel",        "displayName": "Name"},
-          {"variableName": "wlabel",        "displayName": "Work"}
-        ]'
+            {"displayName": "Collector", "variableName": "collector" },
+            {"displayName": "OthersBy",  
+             "cellTemplate": "{{> others_by_same_in_collection}}"     }
+            ]'
         no-result-template="No collectors."
-    ></semantic-table>
-
+    >
+        <template id="others_by_same_in_collection">
+            <a href="mss_by_collection_author.html?actor={{actor.value}}&collector={{collector.value}}">others in collection</a>
+        </template>
+    </semantic-table>
 <hr/>

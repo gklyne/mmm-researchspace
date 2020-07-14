@@ -341,6 +341,9 @@ Example:
 
 # Reflections on addressing research questions (2020-07-09)
 
+Research questions: 
+https://docs.google.com/spreadsheets/d/1Tdt3dNGkq5aEpC-IXCpxXZeEptnOhI60rVeT_m_mjw4
+
 The previous activity started to demonstrate how ResearchSpace can be used to create custom information pages.  NBote that a key difference from things tried previosuly is the introduction of a new "application" page that is parameterized using URI query elements.  This avoids the need to depend on the built-in ResearchSpace dispatching mechganisms.
 
 What we now wish to explore is using a hyperlinked set of such pages to allow a user to explore various research questions.  Ideally each query element will be handled by a single application page (like the "who collects" page), in such a way that different queries can be composed by following links (combined with ResearchSpace built-in semantic table filter capabilities).
@@ -378,7 +381,8 @@ B1:
 B2: (there is no B2)
 
 B3:
-- (a) collector by manuscript
+- (a) manuscript by author of work
+- (b) collector by manuscript
 
 B4:
 - (a) manuscripts by author of work
@@ -399,7 +403,6 @@ C2:
 F1:
 - (a) manuscripts by collection (or by owner?)
 - (b) manuscripts by "specific physical feature" (e.g. enluminés)
-
 
 F3:
 - (a) actors (and their roles) by (association with) collection
@@ -478,7 +481,13 @@ G5:
 - (d) date by advertisement placed
 
 
-NOTE: the approach I'm thinking of here is not to reduce the queries to a simgle SPARQL expression.  Rather to allow successive refinements/explorations that built up a set of results.  Some of these may involve manual inspection.
+NOTE: the approach I'm thinking of here is not to reduce the queries to a single SPARQL expression.  Rather to allow successive refinements/explorations that built up a set of results.  Some of these may involve manual inspection.
 
 It might be that OWL-QL would provide a way to describe the compositions, in a way that can be mapped to SPARQL queries?  Could that reduction be done using JS in the browser?  Maybe worth talking to Ian Horrocks' team in CS?
+
+....
+
+Thought about worksets... maintain a local (or parallel) Solid Pod for storing workset lists of references.  Use URI of workset collection to pass workset con text forward when composing queries.  When a new selection is made, use Javascript in web page to create a new workset entry, and pass its URI forward?
+
+....
 
