@@ -490,4 +490,167 @@ It might be that OWL-QL would provide a way to describe the compositions, in a w
 Thought about worksets... maintain a local (or parallel) Solid Pod for storing workset lists of references.  Use URI of workset collection to pass workset con text forward when composing queries.  When a new selection is made, use Javascript in web page to create a new workset entry, and pass its URI forward?
 
 ....
+  
+The random ordering is disconcerting, but if you click on 'Links to here' from Ramon Llull's page an …, by David Lewis.
+Profile picture of David Lewis.
+David Lewis
+16:51
+
+The random ordering is disconcerting, but if you click on 'Links to here' from Ramon Llull's page and then page through them till you see a MS, almost every one you click through to has at least one P51.
+So why are there only 3?, by David Lewis.
+
+So why are there only 3?
+I don't know - I'll come back and look at that.  I'm currently wrestling a semantic query for the pa …, by Graham Klyne.
+16:53
+
+I don't know - I'll come back and look at that.  I'm currently wrestling a semantic query for the page content.  Remember not all of them will be in the same collection.
+Not sure I understand that last sentence (and it makes me wonder if I've misunderstood what this is …, by David Lewis.
+Profile picture of David Lewis.
+David Lewis
+16:54
+
+Not sure I understand that last sentence (and it makes me wonder if I've misunderstood what this is looking for)
+OK, which URI are you looking at?, by Graham Klyne.
+16:57
+
+OK, which URI are you looking at?
+Starting with Link http://vm-seldon.oerc.ox.ac.uk:10214/resource/?uri=http://ldf.fi/mmm/actor/bodley …, by David Lewis.
+Profile picture of David Lewis.
+David Lewis
+16:57
+
+Starting with http://vm-seldon.oerc.ox.ac.uk:10214/resource/?uri=http://ldf.fi/mmm/actor/bodley_person_120696927
+Right, so I click on "who collects"... and get a list of 3 collections. , by Graham Klyne.
+16:58
+
+Right, so I click on "who collects"... and get a list of 3 collections. 
+Whereas if you click links to here, you get a lot of MSS, by David Lewis.
+Profile picture of David Lewis.
+David Lewis
+16:59
+
+Whereas if you click links to here, you get a lot of MSS
+Almost every MS has at least one collector, by David Lewis.
+
+Almost every MS has at least one collector
+I'm studying the query now... I'm thinking I may need a sub-query here... this is the query I'm usin …, by Graham Klyne.
+17:00
+
+I'm studying the query now... I'm thinking I may need a sub-query here... this is the query I'm using:
+    <semantic-table         query=' PREFIX skos: <Link http://www.w3.org/2004/02/skos/core#&amp;gt; P …, by Graham Klyne.
+
+    <semantic-table
+        query='
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX efrbroo: <http://erlangen-crm.org/efrbroo/>
+PREFIX mmm-actors: <http://ldf.fi/mmm/actor/>
+PREFIX mmms: <http://ldf.fi/schema/mmm/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX ecrm: <http://erlangen-crm.org/current/>
+SELECT DISTINCT ?actor ?collector WHERE {
+            VALUES ( ?actor )
+              {
+                ( <[[urlParam "actor" ]]> )
+              }
+            ?wce mmms:carried_out_by_as_author ?actor ;
+                 efrbroo:R16_initiated ?w .
+            ?mpe ecrm:P108_has_produced ?m .
+            ?m a efrbroo:F4_Manifestation_Singleton ;
+                 mmms:manuscript_work ?w ;
+                 ecrm:P46i_forms_part_of ?col .
+            ?col ecrm:P51_has_former_or_current_owner ?collector .
+          } LIMIT 100'
+ 
+Ah, I'd guess that only some are in explicit collections, so you also need a route via ?m P51 ?colle …, by David Lewis.
+Profile picture of David Lewis.
+David Lewis
+17:02
+
+Ah, I'd guess that only some are in explicit collections, so you also need a route via ?m P51 ?collector
+(a) find all works by author (b) find all manuscripts containing each of those works (c) find all …, by Graham Klyne.
+17:03
+
+(a) find all works by author
+(b) find all manuscripts containing each of those works
+(c) find all collections that contain those manuscripts
+(d) get owner(s) for each of those collections
+Ah, that would explain it., by Graham Klyne.
+
+Ah, that would explain it.
+Yeah, I'm guessing (c) and (d) only apply to a minority of cases (those in named collections), by David Lewis.
+Profile picture of David Lewis.
+David Lewis
+17:03
+
+Yeah, I'm guessing (c) and (d) only apply to a minority of cases (those in named collections)
+OK.  That's the sort of thing it helps to have someone more familiar with the data involved with., by Graham Klyne.
+17:04
+
+OK.  That's the sort of thing it helps to have someone more familiar with the data involved with.
+It's a gotcha that came up in one or two project meetings. Ownership is complicated, by David Lewis.
+Profile picture of David Lewis.
+David Lewis
+17:05
+
+It's a gotcha that came up in one or two project meetings. Ownership is complicated
+Though now I'm not sure why I didn't bypass the collection and go straight for the owner., by Graham Klyne.
+17:05
+
+Though now I'm not sure why I didn't bypass the collection and go straight for the owner.
+Some ownership is recorded at the level of collection, by David Lewis.
+Profile picture of David Lewis.
+David Lewis
+17:06
+
+Some ownership is recorded at the level of collection
+I think particularly you might see that for some Bod MSS, by David Lewis.
+
+I think particularly you might see that for some Bod MSS
+So I need to allow for both direct and indirect ownership?, by Graham Klyne.
+17:07
+
+So I need to allow for both direct and indirect ownership?
+I think so, by David Lewis.
+Profile picture of David Lewis.
+David Lewis
+17:07
+
+I think so
+OK., by Graham Klyne.
+17:07
+
+OK.
+Sorry to have dropped a bomb, by David Lewis.
+Profile picture of David Lewis.
+David Lewis
+17:07
+
+Sorry to have dropped a bomb
+That really just requires refining the queries.  The hard work has (and is) wrestling with the templ …, by Graham Klyne.
+17:08
+
+That really just requires refining the queries.  The hard work has (and is) wrestling with the templating system, and getting the required data to come through in the right form.
+Leaving to walk the dog now, but do feel free to drop progress nuggets or questions here..., by David Lewis.
+Profile picture of David Lewis.
+David Lewis
+17:08
+
+Leaving to walk the dog now, but do feel free to drop progress nuggets or questions here...
+
+[17:09] Graham Klyne
+    Sure.  I've another meeting at 6.  Today hasn't been particularly productive - I got bogged down in RS/Metaphacts formatting issues - the diagnostics are not at all helpful (my errors, but I could use some help locating them).
+​[17:32] Graham Klyne
+    I've just noticed that there's a sort option on the result tables: click on the heading for alphabetical sort.
+​[17:50] Graham Klyne
+    I'm going to hazard a guess that the random ordering is due to internal caching that doesn't preserve result order.
+​[17:50] Graham Klyne
+    The query is updated for "who collects": see http://vm-seldon.oerc.ox.ac.uk:10214/resource/who_collects?actor=http://ldf.fi/mmm/actor/bodley_person_120696927&actorName=%22Llull,%20Ramon,%201232?-1316%22
+​[17:57] Graham Klyne
+    The query for "Manuscripts in collection" has also been updated.  I'm going to leave it there for now.
+
+
+
+
+
 
