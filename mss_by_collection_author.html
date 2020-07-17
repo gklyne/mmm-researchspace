@@ -52,7 +52,7 @@
           PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
           PREFIX ecrm: <http://erlangen-crm.org/current/>
 
-          SELECT DISTINCT ?actor ?collector ?w WHERE {
+          SELECT DISTINCT ?actor ?collector ?w ?m ?curloc WHERE {
             VALUES ( ?actor ?collector )
               { 
                 ( <[[urlParam "actor" ]]> <[[urlParam "collector" ]]> ) 
@@ -72,11 +72,17 @@
                     ?col ecrm:P51_has_former_or_current_owner ?collector .
                 }
             }
-          } LIMIT 1000'
+            # ?m <http://ldf.fi/schema/mmm/last_known_location_bodley> ?curloc .
+        } LIMIT 1000'
         column-configuration='[
+          {"variableName": "m",             "displayName": "Manuscript"},
           {"variableName": "w",             "displayName": "Work"}
         ]'
         no-result-template="No manuscripts."
     ></semantic-table>
 
+<!--
+          {"variableName": "curloc",        "displayName": "Current location"}
+ -->
+ 
 <hr/>

@@ -490,7 +490,13 @@ It might be that OWL-QL would provide a way to describe the compositions, in a w
 Thought about worksets... maintain a local (or parallel) Solid Pod for storing workset lists of references.  Use URI of workset collection to pass workset con text forward when composing queries.  When a new selection is made, use Javascript in web page to create a new workset entry, and pass its URI forward?
 
 ....
-  
+
+
+
+# Teleconference discussion (2020-07-14)
+
+_(Copied from Teams chat)_
+
 The random ordering is disconcerting, but if you click on 'Links to here' from Ramon Llull's page an …, by David Lewis.
 Profile picture of David Lewis.
 David Lewis
@@ -650,7 +656,44 @@ Leaving to walk the dog now, but do feel free to drop progress nuggets or questi
     The query for "Manuscripts in collection" has also been updated.  I'm going to leave it there for now.
 
 
+# Experiments with landing page (2020-07-17)
 
+Have been trying to create a landing page based on OxLOD search page.
 
+Search page queries aren't working.  Don't know why.  This  query was tested in the SPARQL query page and works fine.
 
+```
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX efrbroo: <http://erlangen-crm.org/efrbroo/>
+PREFIX mmm-actors: <http://ldf.fi/mmm/actor/>
+PREFIX mmms: <http://ldf.fi/schema/mmm/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX ecrm: <http://erlangen-crm.org/current/>
+SELECT DISTINCT ?person ?label ?p ?o WHERE {
+  # VALUES ?person { <http://ldf.fi/mmm/actor/bodley_person_120696927> }
+  # VALUES ?p { rdf:type }
+  ?person a ecrm:E21_Person ;
+    skos:prefLabel ?label ;
+    # ?p ?o .
+} LIMIT 100
+```
+
+TODO: for demo meeting and wrap up on 2020-07-28
+
+See: https://github.com/gklyne/mmm-researchspace/blob/master/STATUS.md
+
+Added: material for quick live-coding demo.
+
+1. Sort out simple landin page, with options for:
+
+    * list of people
+    * list of works
+    * why does filter not behave itself?
+
+2. Initial sketch of ideas for worksets and data exploration (and Solid)
+
+3. Updates to status page
+
+4. Screencast of intended demo (if time permits)
 
