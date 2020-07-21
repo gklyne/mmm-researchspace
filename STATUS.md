@@ -2,7 +2,7 @@
 
 ## Background technology
 
-@@ResearchSPace (templates populated by SPARQL), OxLOD (prev), Blazegraph, Linked data (RDF, SPARQL), CIDOC CRM
+@@Flesh out this for wider audience... ResearchSpace (templates populated by SPARQL), OxLOD (prev), Blazegraph, Linked data (RDF, SPARQL), CIDOC CRM
 
 ## Current status
 
@@ -36,13 +36,20 @@
 
     Thse are intended to illustrate an idea of refining a search by following links.
 
-5.  I attempted, but so far failed, to modify the OXLOD search page to present a list of people.  @@@still investigating@@@
+5.  I attempted, but so far failed, to modify the OXLOD search page to present a list of people.
 
-6.  For the future: introduce a notion of local worksets that carry the context of an investigation, to facilitate composition of diufferent types of query.  There is an anlysis of the proposed research questionbs that attempts to identify the individual query elements that might be composed by such a mechanism:
+    * Gave up trying to use the existing search page.  Created semantic table pages for people and works.  Seems OK.
+
+6.  * For the future: introduce a notion of local worksets that carry the context of an investigation, to facilitate composition of diufferent types of query.  There is an anlysis of the proposed research questionbs that attempts to identify the individual query elements that might be composed by such a mechanism:
 
     https://github.com/gklyne/mmm-researchspace/blob/master/NOTES.md#reflections-on-addressing-research-questions-2020-07-09
 
+    https://github.com/gklyne/mmm-researchspace/blob/master/NOTES.md#thoughts-for-using-solid-based-working-sets
+
+
+
 ## Links
+
 
 * Template edits for actor information: https://github.com/gklyne/mmm-researchspace/blob/master/ActorSummary.template.edits
 

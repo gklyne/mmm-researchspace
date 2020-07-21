@@ -1,19 +1,19 @@
-[[!-- 
-    $ pwd 
+[[!--
+    $ pwd
     /home/researchspace/antheia/researchspace/data/templates
 
-    $ cat http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html 
+    $ cat http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html
 --]]
 
 <h1>Who collects manuscripts by actor</h1>
 
-    <p>Who collects 
+    <p>Who collects
         <a href="/resource/?uri=[[urlParam "actor"]]">
             [[urlParam "actorName"]]
         </a>?
     </p>
 
-    <semantic-table
+    <semantic-query
         query='
             PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             PREFIX efrbroo: <http://erlangen-crm.org/efrbroo/>
@@ -22,10 +22,10 @@
             PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
             PREFIX ecrm: <http://erlangen-crm.org/current/>
-            SELECT DISTINCT ?actor ?collector WHERE {
+            SELECT (COUNT (DISTINCT ?collector) AS ?num_coll) WHERE {
             VALUES ( ?actor )
-              { 
-                ( <[[urlParam "actor" ]]> ) 
+              {
+                ( <[[urlParam "actor" ]]> )
               }
             ?wce mmms:carried_out_by_as_author ?actor ;
                  efrbroo:R16_initiated ?w .
@@ -42,10 +42,50 @@
                     ?col ecrm:P51_has_former_or_current_owner ?collector .
                 }
             }
-          } LIMIT 1000'
+        } LIMIT 10000 '
+    template='<p>Number of collectors: {{> template}}</p>'
+    >
+        <template id="template">
+          {{#each bindings}}
+            {{num_coll.value}}
+          {{/each}}
+        </template>
+    </semantic-query>
+
+    <semantic-table
+        query='
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            PREFIX efrbroo: <http://erlangen-crm.org/efrbroo/>
+            PREFIX mmm-actors: <http://ldf.fi/mmm/actor/>
+            PREFIX mmms: <http://ldf.fi/schema/mmm/>
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+            PREFIX ecrm: <http://erlangen-crm.org/current/>
+            SELECT DISTINCT ?actor ?collector ?cname WHERE {
+            VALUES ( ?actor )
+              {
+                ( <[[urlParam "actor" ]]> )
+              }
+            ?wce mmms:carried_out_by_as_author ?actor ;
+                 efrbroo:R16_initiated ?w .
+            ?mpe ecrm:P108_has_produced ?m .
+            ?m a efrbroo:F4_Manifestation_Singleton ;
+                 mmms:manuscript_work ?w .
+            {
+                {
+                    ?m ecrm:P51_has_former_or_current_owner ?collector .
+                }
+            UNION
+                {
+                    ?m ecrm:P46i_forms_part_of ?col .
+                    ?col ecrm:P51_has_former_or_current_owner ?collector .
+                }
+            }
+            ?collector skos:prefLabel ?cname .
+        } LIMIT 10000'
         column-configuration='[
             {"displayName": "Collector", "variableName": "collector" },
-            {"displayName": "OthersBy",  
+            {"displayName": "OthersBy",
              "cellTemplate": "{{> others_by_same_in_collection}}"     }
             ]'
         no-result-template="No collectors."
