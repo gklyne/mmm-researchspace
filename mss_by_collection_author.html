@@ -42,7 +42,7 @@
     ?
     </p>
 
-    <semantic-table
+    <semantic-query
         query='
           PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
           PREFIX efrbroo: <http://erlangen-crm.org/efrbroo/>
@@ -52,7 +52,7 @@
           PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
           PREFIX ecrm: <http://erlangen-crm.org/current/>
 
-          SELECT DISTINCT ?actor ?collector ?w ?m ?curloc WHERE {
+          SELECT (COUNT (DISTINCT *) AS ?num_mss) WHERE {
             VALUES ( ?actor ?collector )
               { 
                 ( <[[urlParam "actor" ]]> <[[urlParam "collector" ]]> ) 
@@ -72,6 +72,48 @@
                     ?col ecrm:P51_has_former_or_current_owner ?collector .
                 }
             }
+        } LIMIT 10000'
+    template='<p>Number of manuscript/work combinations: {{> template}}</p>'
+    >
+        <template id="template">
+          {{#each bindings}}
+            {{num_mss.value}}
+          {{/each}}
+        </template>
+    </semantic-query>
+
+    <semantic-table
+        query='
+          PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+          PREFIX efrbroo: <http://erlangen-crm.org/efrbroo/>
+          PREFIX mmm-actors: <http://ldf.fi/mmm/actor/>
+          PREFIX mmms: <http://ldf.fi/schema/mmm/>
+          PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+          PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+          PREFIX ecrm: <http://erlangen-crm.org/current/>
+
+          SELECT DISTINCT ?actor ?collector ?w ?wname ?m ?mname ?curloc WHERE {
+            VALUES ( ?actor ?collector )
+              { 
+                ( <[[urlParam "actor" ]]> <[[urlParam "collector" ]]> ) 
+              }
+            ?wce mmms:carried_out_by_as_author ?actor ;
+                 efrbroo:R16_initiated ?w.
+            ?mpe ecrm:P108_has_produced ?m .
+            ?m a efrbroo:F4_Manifestation_Singleton ;
+                 mmms:manuscript_work ?w .
+            {
+                {
+                    ?m ecrm:P51_has_former_or_current_owner ?collector .
+                }
+            UNION
+                {
+                    ?m ecrm:P46i_forms_part_of ?col .
+                    ?col ecrm:P51_has_former_or_current_owner ?collector .
+                }
+            }
+            ?w skos:prefLabel ?wname .
+            ?m skos:prefLabel ?mname .
             # ?m <http://ldf.fi/schema/mmm/last_known_location_bodley> ?curloc .
         } LIMIT 1000'
         column-configuration='[

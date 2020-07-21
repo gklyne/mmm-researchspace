@@ -1,0 +1,48 @@
+[[!--
+    $ pwd
+    /home/researchspace/antheia/researchspace/data/templates
+
+    $ cat http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Flist_people.html
+
+    View at: http://vm-seldon.oerc.ox.ac.uk:10214/resource/list_works
+--]]
+
+<h1>List of known works in MMM data</h1>
+
+    <semantic-query
+        query='
+            PREFIX ecrm: <http://erlangen-crm.org/current/>
+            PREFIX efrbroo: <http://erlangen-crm.org/efrbroo/>
+            SELECT (COUNT (DISTINCT ?work) AS ?num_works) WHERE {
+                ?work a efrbroo:F1_Work .
+            }'
+      template='<p>Number of works found: {{> template}}</p>'
+      >
+      <template id="template">
+        {{#each bindings}}
+          {{num_works.value}}
+        {{/each}}
+      </template>
+    </semantic-query>
+
+    <semantic-table
+        query='
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            PREFIX efrbroo: <http://erlangen-crm.org/efrbroo/>
+            PREFIX mmm-actors: <http://ldf.fi/mmm/actor/>
+            PREFIX mmms: <http://ldf.fi/schema/mmm/>
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+            PREFIX ecrm: <http://erlangen-crm.org/current/>
+            SELECT ?work ?workname WHERE {
+                ?work a efrbroo:F1_Work ; skos:prefLabel ?workname .
+            } LIMIT 100000 '
+        column-configuration='[
+            {"displayName": "Work", "variableName": "work" }
+            ]'
+        no-result-template="No works."
+        options='{"enableSort": true}'
+    >
+    </semantic-table>
+<hr/>
+
