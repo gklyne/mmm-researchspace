@@ -1,0 +1,2175 @@
+Command history for 'researchspace' account on antheia.  (captured 2020-07-28)
+
+
+
+
+[researchspace@researchspace-100gb antheia]$ history
+   17  scp -i .ssh/id_rsa_antheia_graham graham:antheia.oerc.ox.ac.uk:antheia-metaphactory-node_modules.tgz .
+   18  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-metaphactory-node_modules.tgz .
+   19  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-researchspace-node_modules.tgz .
+   20  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-webpack-node_modules.tgz
+   21  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-webpack-node_modules.tgz .
+   22  ls
+   23  mkdir antheia
+   24  mv antheia*.tgz antheia
+   25  ls
+   26  cd antheia/
+   27  ls
+   28  tar tvf antheia-webpack-node_modules.tgz
+   29  tar xvf antheia-webpack-node_modules.tgz
+   30  ls -al
+   31  ls ../github/researchspace/project/webpack/
+   32  mv ../github/researchspace/project/webpack/node_modules/ save_node_modules -v
+   33  ls ../github/researchspace/project/webpack/
+   34  ls
+   35  mv save_node_modules  save_webpack_node_modules -v
+   36  ls -al
+   37  mv node_modules  ../github/researchspace/project/webpack/node_modules
+   38  ls -al
+   39  cd ../github/researchspace/
+   40  ls
+   41  ./build.sh
+   42  pwd
+   43  ls
+   44  history
+   45  xargs sed -i 's!https://vm-seldon.oerc.ox.ac.uk:3000!http://vm-seldon.oerc.ox.ac.uk:3000!g' <editfiles.txt
+   46  pwd
+   47  cp editfiles.txt ~
+   48  ls -al
+   49  cd ..
+   50  ls -al
+   51  rm researchspace saved-researchspace
+   52  mv researchspace saved-researchspace
+   53  git clone https://github.com/researchspace/researchspace.git
+   54  cd researchspace
+   55  pwd
+   56  ls
+   57  cd ..
+   58  ls
+   59  cd ..
+   60  ls
+   61  ls ./github/mmm-researchspace/researchspace-vm/*
+   62  ls ./github/mmm-researchspace/researchspace-vm/* -al
+   63  ls -al
+   64   cp ./github/mmm-researchspace/researchspace-vm/* . -v
+   65  cat install-blazegraph.sh
+   66  . start-blazeraph.sh
+   67  ps x
+   68  kill 28966
+   69  ps x
+   70  . start-blazeraph.sh
+   71  netstat -nlp
+   72  ps x
+   73  pwd
+   74  cd github/researchspace/
+   75  ls
+   76  git checkout 8671757b3091f38639923410c7d985fba267c1fd
+   77  git log
+   78  ls -al
+   79  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+   80  ls
+   81  cd metaphactory/web/
+   82  vi .yarnrc
+   83  vi .npmrc
+   84  yarn
+   85  vi .yarnrc
+   86  grep nexus.grapphs.com *
+   87  rm yarn.lock
+   88  grep nexus.grapphs.com *
+   89  grep -R nexus.grapphs.com *
+   90  yarn
+   91  ls -al
+   92  grep -R ainldq *
+   93  git status
+   94  git checkout .
+   95  git status
+   96  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz .
+   97  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz
+   98  ls
+   99  yarn
+  100  ls -al
+  101  cd ../../researchspace/web/
+  102  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  103  ls
+  104  cd ../../project/webpack/
+  105  tar xvf ~/antheia/antheia-webpack-node_modules.tgz
+  106  cd ../..
+  107  pwd
+  108  ls
+  109  ./build.sh
+  110  cd metaphactory/web/
+  111  rm .yarnrc
+  112  rm yarn.lock
+  113  yarn
+  114  history
+  115  grep -R nexus.grapphs.com *
+  116  rm -rf node_modules/
+  117  yarn
+  118  cd ../..
+  119  ls -al
+  120  grep -R nexus.grapphs.com *
+  121  grep -Rl nexus.grapphs.com *
+  122  cd metaphactory/web/
+  123  yarn
+  124  grep -Rl basil.js *
+  125  less package.json
+  126  cd ../../project/
+  127  vi repositories
+  128  cd ../metaphactory/web/
+  129  yarn
+  130  grep -Rl nexus.grapphs.com *
+  131  rm yarn-error.log
+  132  ls -al
+  133  yarn
+  134  grep -Rl nexus.grapphs.com *
+  135  ls -al
+  136  less .npmrc
+  137  rm .npmrc
+  138  yarn
+  139  vi package.json
+  140  yarn
+  141  vi package.json
+  142  yarn
+  143  pwd
+  144  cd ../../researchspace/web/
+  145  grep -Rl nexus.grapphs.com *
+  146   rm -rf node_modules/.yarn-integrity
+  147  rm yarn.lock
+  148  grep -Rl nexus.grapphs.com .*
+  149  rm .npmrc
+  150  rm .yarnrc
+  151  grep -Rl nexus.grapphs.com .*
+  152  yarn
+  153  vi package.json
+  154  yarn
+  155  ls -al
+  156  cd ../../project/webpack/
+  157  grep -Rl nexus.grapphs.com .*
+  158  rm .npmrc
+  159  rm .yarnrc
+  160  rm yarn.lock
+  161  rm node_modules/.yarn-integrity
+  162  yarn
+  163  cd ../..
+  164  ls -al
+  165  ./build.sh
+  166  cd project/webpack/
+  167  rm -rf node_modules
+  168  tar xvf ~/antheia/antheia-webpack-node_modules.tgz
+  169  ls -al
+  170  cd ../..
+  171  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+  172  sh ./build.sh     -DplatformVersion=$VERSION_NUMBER     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     package
+  173  sbt
+  174  cd metaphactory/web/
+  175  rm -rf node_modules
+  176  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz
+  177  cd ../../researchspace/web/
+  178  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  179  rm -rf node_modules
+  180  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  181  cd ../..
+  182  sbt
+  183  find . -name node_modules -print
+  184  find . -fullname /node_modules/ -print
+  185  find . -name /node_modules/ -print
+  186  find . -wholename /node_modules/ -print
+  187  find . -wholenam
+  188  sbt
+  189  ls
+  190  pwd
+  191  grep -R "nexus.grapphs.com" *
+  192  grep -Rl "nexus.grapphs.com" *
+  193  less project/repositories
+  194  ls
+  195  ./build.sh
+  196  ls -al
+  197  cd ..
+  198  ls
+  199  cd saved-researchspace/
+  200  ls
+  201  git status
+  202  git log
+  203  git show 5f031334
+  204  git show --name-only 5f031334
+  205  git show --name-only 5f031334 project/build.properties
+  206  git show 5f031334 project/build.properties
+  207  git show 5f031334 project/plugins.sbt
+  208  git show 5f031334 project/plugins.sbt.orig
+  209  git show --name-only 5f031334 project/build.properties
+  210  git show --name-only 5f031334
+  211  git show 5f031334 build.sh
+  212  git status
+  213  git diff
+  214  git status
+  215  git diff project/PlatformBuildPlugin.scala
+  216  git status
+  217  git diff project/webpack/package.json
+  218  less project/webpack/package.json
+  219  git diff project/webpack/package.json
+  220  git diff project/webpack/server.js
+  221  git diff project/webpack/webpack.dev.config.js
+  222  git diff project/webpack/webpack.dll.dev.js
+  223  git show 5f031334 metaphactory/web/package.json
+  224  git show 5f031334 project/build.properties
+  225  git show 5f031334 project/repositories
+  226  ls -al
+  227   cd project
+  228  ls
+  229  grep password *
+  230  grep -R password *
+  231  grep -Rl password *
+  232  ls
+  233  ls project/
+  234  ls project/target/
+  235  ls project/target/config-classes/
+  236  pwd
+  237  cd ../..
+  238  ls
+  239  cd researchspace/
+  240  ls
+  241  cd researchspace/
+  242  ls
+  243  pwd
+  244  cd ~
+  245  ls
+  246  ls .ssh
+  247  histrory
+  248  history
+  249  history | grep scp
+  250  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-home-researchspace.tgz .
+  251  pwd
+  252  ls
+  253  mv antheia-home-researchspace.tgz antheia
+  254  cd antheia/
+  255  ls -al
+  256  tar xvf antheia-home-researchspace.tgz .
+  257  tar xvf antheia-home-researchspace.tgz
+  258  cd researchspace/
+  259  ls -al
+  260  less start.sh
+  261  ps x
+  262  ps xa
+  263  ps xa | grep java
+  264  kill 30928
+  265  ps xa | grep java
+  266  ps xa
+  267  . start.sh
+  268  cd ../..
+  269  ls
+  270  less start-blazeraph.sh
+  271  . start-blazeraph.sh
+  272  cd antheia/researchspace/
+  273  . start.sh
+  274  ls -al
+  275  ls
+  276  mv mmm_data_orig.zip mmm-data_orig.zip
+  277  ls
+  278  which java
+  279  ls -al /usr/lib/jvm/java
+  280  ls antheia/researchspace/apps/researchspace/
+  281  less antheia/researchspace/start.sh
+  282  less antheia/researchspace/start.sh
+  283  pwd
+  284  less antheia/researchspace/jetty-distribution-9.2.13.v20150730/webapps/blazegraph/WEB-INF/lib/bigdata-runtime-2.2.0-SNAPSHOT.jar
+  285  ls
+  286  ls -al\
+  287  ls
+  288  mv fastload.properties antheia/
+  289  mv
+  290  pwd
+  291  ls
+  292  cd antheia/
+  293  ls
+  294  cd ..
+  295  ls
+  296  LS
+  297  mv mmm-* antheia/
+  298  cd antheia/
+  299  ls
+  300  unzip mmm-dataq_orig.zip -d ./mmm_data
+  301  unzip mmm-data_orig.zip -d ./mmm_data
+  302  unzip mmm-fuseki-master_orig.zip -d ./mmm_data
+  303  ls
+  304  cd ..
+  305  ls
+  306  cd antheia/
+  307  cd ..
+  308  ls
+  309  vi load-mmm-data.sh
+  310  ls
+  311  . load-mmm-data.sh
+  312  set +x
+  313  . load-mmm-data.sh
+  314  set -x
+  315  . load-mmm-data.sh
+  316  vi load-mmm-data.sh
+  317  . load-mmm-data.sh
+  318  set +x
+  319  ls
+  320  pwd
+  321  cd ..
+  322  ls
+  323  rm load-mmm-data.sh
+  324  vi load-mmm-data.sh
+  325  . load-mmm-data.sh
+  326  java -Xmx4g -Dlog4j.configuration=$LOG4J_CONFIG       -cp "$BLAZEGRAPH_CP:$BLAZEGRAPH_LIB/*" ${BLAZEGRAPH_TEXTINDEX}      -namespace exemplar -forceCreate                 $RS_BUNDLE/RWStore.properties
+  327  pwd
+  328  ls
+  329  cat fastload.properties
+  330  less researchspace/RWStore.properties
+  331  ls
+  332  ls runtime-data/
+  333  rm -rf runtime-data/
+  334  vi fastload.properties
+  335  cat fastload.properties
+  336  pwd
+  337  ls
+  338  cd ..
+  339  ls
+  340  rm load-mmm-data.sh
+  341  vi load-mmm-data.sh
+  342  . load-mmm-data.sh
+  343  pwd
+  344  ls
+  345  cat start-
+  346  cat start-researchspace.sh
+  347  vi start-researchspace.sh
+  348  . start-researchspace.sh
+  349  ls
+  350  cd ..
+  351  ls
+  352  cd ..
+  353  ls
+  354  rm load-mmm-data.sh
+  355  vi load-mmm-data.sh
+  356  . load-mmm-data.sh
+  357  ls -al
+  358  tar tvf antheia/antheia-researchspace-node_modules.tgz | less
+  359  tar tvf antheia/antheia-home-researchspace.tgz | less
+  360  tar tvf antheia/antheia-home-researchspace.tgz researchspace/blazegraph.jnl
+  361  cd antheia/researchspace/
+  362  ls -al
+  363  cp blazegraph.jnl antheia-blazegraph.jnl
+  364  cd ../..
+  365  ls -al
+  366  cat load-mmm-data.sh
+  367  cd antheia/researchspace/
+  368  . start.sh
+  369  ps ax
+  370  kill 25711
+  371  ps ax
+  372  pwd
+  373  ls -al
+  374  cd ../..
+  375  . start-blazeraph.sh
+  376  ping vm-seldon.oerc.ox.ac.uk
+  377  ps x
+  378  netstat -nl
+  379  netstat -nlp
+  380  ps
+  381  ps a
+  382  ls
+  383  ls -al
+  384  cat start-blazeraph.sh
+  385  vi start-blazeraph.sh
+  386  ps ax
+  387  kill 2864
+  388  . start-blazeraph.sh
+  389  ls
+  390  . start.sh
+  391  pwd
+  392  ls -al
+  393  cat start.sh
+  394  cat RWStore.properties
+  395  ls -al
+  396  diff antheia-blazegraph.jnl blazegraph.jnl
+  397  vi RWStore.properties
+  398  . start.sh
+  399  ls -al
+  400  rm mmm-blazegraph.jnl
+  401  cp antheia-blazegraph.jnl mmm-blazegraph.jnl
+  402  ls -al
+  403  . start.sh
+  404  ls -al
+  405  ps ax
+  406  kill 3110
+  407  pwd
+  408  ps ax
+  409  java -server -Xmx4g -jar /home/researchspace/blazegraph-2.1.5.jar
+  410  cat ~/start-blazeraph.sh
+  411  java -server -Xmx4g -jar /home/researchspace/blazegraph-2.1.5.jar &
+  412  . start.sh
+  413  ls
+  414  pwd
+  415  ls apps/
+  416  pwd
+  417  ls -al
+  418  pwd
+  419  cd config
+  420  mv repositories repositories_saved
+  421  cd ../..
+  422  ls
+  423  cd researchspace/
+  424  . start.sh
+  425  ls -al
+  426  cd config/
+  427  ls -al
+  428  ls repositories
+  429  less repositories/assets.ttl
+  430  ps ax | grep blaze
+  431  less repositories_saved/mmm.ttl
+  432  curl http://localhost:9999/blazegraph/namespace/mmm/sparql
+  433  curl http://localhost:9999/blazegraph/namespace/sparql
+  434  curl http://localhost:9999/blazegraph/sparql/
+  435  curl http://localhost:9999/sparql/
+  436  curl http://localhost:9999/sparql/mmm/
+  437  curl http://localhost:9999/sparql/
+  438  curl -v http://localhost:9999/sparql/
+  439  curl -v http://localhost:9999/blazegraph/sparql/
+  440  curl -v http://localhost:9999/blazegraph/namespace/kb/sparql
+  441  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  442  curl -v http://localhost:9999/blazegraph/namespace/kb/sparql
+  443  ps ax
+  444  kill 3872
+  445  ls
+  446  pwd
+  447  ls -alrt
+  448  cd ../..
+  449  ls
+  450  ls -al
+  451  ls -alrt researchspace/
+  452  ls -al
+  453  mv researchspace 20200617-researchspace
+  454  ls -al
+  455  tar xfvz antheia-home-researchspace.tgz
+  456  ls -al
+  457  ps ax
+  458  cd researchspace/
+  459  ls
+  460  cat start.sh
+  461  . start.sh
+  462  netstat -nlp
+  463  ls
+  464  ls -al
+  465  find . -name blazegraph
+  466  find . -name "blazegraph.*"
+  467  find . -name "blazegraph*"
+  468  history | grep scp
+  469  pwd
+  470  cd ../..
+  471  ls
+  472  cd antheia/
+  473  ls
+  474  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-home-blazegraph.tgz .
+  475  cd ..
+  476  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-home-blazegraph.tgz .
+  477  ls -al
+  478  mv antheia-home-blazegraph.tgz antheia
+  479  cd antheia/
+  480  ls -al
+  481  history | grep tar
+  482  tar xfvz antheia-home-blazegraph.tgz
+  483  cat ../start-blazeraph.sh
+  484  cd blazegraph
+  485  ls -al
+  486  cd ..
+  487  ls
+  488  vi start-blazegraph.sh
+  489  pwd
+  490  cd blazegraph
+  491  ls -al
+  492  cd ..
+  493  vi start-blazegraph.sh
+  494  ls -al
+  495  ls ..
+  496  cat ../start-researchspace.sh
+  497  cp ../start-researchspace.sh .
+  498  vi start-researchspace.sh
+  499  . start-blazegraph.sh
+  500  vi start-blazegraph.sh
+  501  . start-blazegraph.sh
+  502  ops x
+  503  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  504  curl -v http://localhost:9999/blazegraph/namespace/exemplar/sparql
+  505  netstat -npl
+  506  ps aux | grep 7157
+  507  which java
+  508  cat /proc/7157/cwd/
+  509  find . -name "blazeg*"
+  510  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  511  curl -v http://localhost:9999/blazegraph/namespace/mmm
+  512  curl -v http://localhost:9999/blazegraph/namespace/mmm/
+  513  history
+  514  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  515  curl -v http://localhost:9999/blazegraph/namespace/exemplar/sparql
+  516  ps ax
+  517  curl -v http://localhost:9999/blazegraph/
+  518  curl -v http://localhost:9999/blazegraph/ | less
+  519  curl -v http://localhost:9999/blazegraph/namespace | less
+  520  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-data-blazegraph.tgz .
+  521  scp -i /home/researchspace/.ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-data-blazegraph.tgz .
+  522  tar xfvz antheia-data-blazegraph.tgz
+  523  ls
+  524  vi fastload.properties
+  525  cat start-blazegraph.sh
+  526  vi start-blazegraph.sh
+  527  ps ax | grep blaze
+  528  kill 7157
+  529  ps ax | grep blaze
+  530  . start-blazegraph.sh
+  531  curl -v http://localhost:9999/blazegraph/namespace | less
+  532  history
+  533  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  534  ls -al
+  535  rm blazegraph.jnl
+  536  . start-researchspace.sh
+  537  cd researchspace/
+  538  ls -al
+  539  rm blazegraph.jnl
+  540  cd ../blazegraph/
+  541  ls
+  542  rm blazegraph.jnl
+  543  ls -al
+  544  cp ../data/blazegraph/blazegraph.jnl .
+  545  ls -al
+  546  cd ..
+  547  vi start-blazegraph.sh
+  548  ps ax
+  549  kill 8301
+  550  ps ax
+  551  ps ax | grep blaz
+  552  ls
+  553  cd ..
+  554  ls -al
+  555  cp load-mmm-data.sh antheia/
+  556  cd antheia/
+  557  vi load-mmm-data.sh
+  558  vi start-blazegraph.sh
+  559  ls ..
+  560  cat ../start-blazeraph.sh
+  561  vi start-blazegraph.sh
+  562  cd researchspace/
+  563  cp ../data/blazegraph/blazegraph.jnl .
+  564  ls -al
+  565  cd ..
+  566  ps ax
+  567  ps ax | grep blaz
+  568  . start-blazegraph.sh
+  569  vi start-
+  570  vi start-blazegraph.sh
+  571  . start-blazegraph.sh
+  572  p
+  573  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  574  . start-researchspace.sh
+  575  cd researchspace/
+  576  ls -al
+  577  vi RWStore.properties
+  578  cd ..
+  579  cat start-researchspace.sh
+  580  . start-researchspace.sh
+  581  ls -al
+  582  ps ax
+  583  kill 9465
+  584  . start-researchspace.sh
+  585  . start-blazegraph.sh
+  586  . start-researchspace.sh
+  587  ps ax
+  588  kill 9841
+  589  vi start-blazegraph.sh
+  590  . start-blazegraph.sh
+  591  . start-researchspace.sh
+  592  ls
+  593  less load-mmm-data.sh
+  594  . load-mmm-data.sh
+  595  vi load-mmm-data.sh
+  596  vi start-blazegraph.sh
+  597  vi load-mmm-data.sh
+  598  vi fastload.properties
+  599  . load-mmm-data.sh
+  600  . start-researchspace.sh
+  601  vi start-researchspace.sh
+  602  less load-mmm-data.sh
+  603  ls
+  604  less mmm_data/mmm_bodley.ttl
+  605  . start-researchspace.sh
+  606  less mmm_data/mmm_bodley.ttl
+  607  . start-researchspace.sh
+  608  cd researchspace/config/repositories/
+  609  less mmm.ttl
+  610  cd ..
+  611  less load-mmm-data.sh
+  612  ls
+  613  less fastload.properties
+  614  ps ax | grep
+  615  ps ax | grep blaze
+  616  kill 10028
+  617  ps ax | grep blaze
+  618  . start-blazegraph.sh
+  619  . start-researchspace.sh
+  620  id
+  621  sudo su -
+  622  . start-researchspace.sh
+  623  . start-blazegraph.sh
+  624  cd ~
+  625  cat start-blazeraph.sh
+  626  . start-blazeraph.sh
+  627  ps x
+  628  kill 18278
+  629  ps x
+  630  . start-blazeraph.sh
+  631  cd ~
+  632  cat start-blazeraph.sh
+  633  ls
+  634  ls antheia/researchspace/
+  635  ls antheia/researchspace/ -al
+  636  vi start-blazeraph.sh
+  637  . start-blazeraph.sh
+  638  history
+  639  whois oxfordmodelflyingclub.co.uk
+  640  ps x
+  641  kill 23434
+  642  . start-blazeraph.sh
+  643  ls
+  644  less load-mmm-data.sh
+  645  cd antheia/
+  646  less mmm_data/mmm_bodley.ttl
+  647  cd mmm_data/
+  648  grep "https://medieval.bodleian.ox.ac.uk/catalog/person_14744124" *
+  649  less mmm_bodley.ttl
+  650  grep "person_14744124" *
+  651  cd ../..
+  652  ls -al
+  653  cat start-blazeraph.sh
+  654  ls
+  655  pwdf
+  656  pwd
+  657  cd antheia/
+  658  ls
+  659  cat start-blazegraph.sh
+  660  ls
+  661  cat load-mmm-data.sh
+  662  ls -al
+  663  ls data/
+  664  ls data/blazegraph/
+  665  pwd
+  666  ps x
+  667  less start-blazegraph.sh
+  668  kill 23629
+  669  ps x
+  670  . start-blazegraph.sh
+  671  cd ..
+  672  ls -al
+  673  ls *.sh
+  674  mv load-mmm-data.sh load-mmm-data.sh.save
+  675  mv start-blazeraph.sh start-blazeraph.sh.save
+  676  mv start-researchspace.sh start-researchspace.sh.save
+  677  ls *.sh
+  678  cat build-researchspace.sh
+  679  ls *.sh
+  680  cat install-blazegraph.sh
+  681  pwf
+  682  pwd
+  683  cd antheia/
+  684  ls
+  685  . start-researchspace.sh
+  686  less /home/researchspace/antheia/researchspace/jetty-distribution-9.2.13.v20150730/webapps/blazegraph/WEB-INF/classes/log4j.properties
+  687  ls
+  688  cat start-researchspace.sh
+  689  cd researchspace/
+  690  ls
+  691  cat start.sh
+  692  cd ..
+  693  ls
+  694  cd researchspace/
+  695  ls
+  696  . start.sh
+  697  less /home/researchspace/antheia/researchspace/jetty-distribution-9.2.13.v20150730/webapps/ROOT/
+  698  cd /home/researchspace/antheia/researchspace/jetty-distribution-9.2.13.v20150730/webapps/ROOT/
+  699  cd ..
+  700  ls
+  701  les README.TXT
+  702  less README.TXT
+  703  ls ROOT/
+  704  cd ROOT/WEB-INF/
+  705  ls
+  706  cat web.xml
+  707  ls
+  708  cd ..
+  709  pwd
+  710  cd ..
+  711  grep -R namespace *
+  712  grep -Rl namespace *
+  713  ls
+  714  cd ~/antheia/
+  715  ls
+  716  . start-researchspace.sh
+  717  vi researchspace/config/environment.prop
+  718  cp researchspace/config/environment.prop researchspace/config/environment.prop.saved
+  719  vi researchspace/config/environment.prop
+  720  . start-researchspace.sh
+  721  ps x
+  722  kill 26201
+  723  ps x
+  724  . start-blazegraph.sh
+  725  . start-researchspace.sh
+  726  vi start-researchspace.sh
+  727  . start-researchspace.sh
+  728  vi start-researchspace.sh
+  729  ps x
+  730  cat start-blazegraph.sh
+  731  cat start-researchspace.sh
+  732  vi start-researchspace.sh
+  733  . start-researchspace.sh
+  734  pwd
+  735  source
+  736  less start-researchspace.sh
+  737  pwd
+  738  cd researchspace/
+  739  ls
+  740  cat start-researchspace.log
+  741  rm start-researchspace.log
+  742  cd ..
+  743  vi start-researchspace.sh
+  744  . start-researchspace.sh
+  745  ./start-researchspace.sh
+  746  pwd
+  747  id
+  748  ls -al
+  749  chmod +x *.sh
+  750  ls -al
+  751  ./start-researchspace.sh
+  752  ls
+  753  vi start-blazegraph.sh
+  754  ./start-researchspace.sh
+  755  vi start-researchspace.
+  756  vi start-researchspace.sh
+  757  ./start-researchspace.sh
+  758  ccd researchspace/
+  759  cd researchspace/
+  760  chmod +x start.sh
+  761  cd ..
+  762  ./start-researchspace.sh
+  763  ps x
+  764  tail -f start-researchspace.log
+  765  ps x
+  766  pwd
+  767  cd antheia/mmm_data/
+  768  ld
+  769  ls
+  770  less mmm_bodley.ttl
+  771  cd ..
+  772  cd researchspace/
+  773  grep -R E21-Person *
+  774  grep -R E21_Person *
+  775  vi
+  776  vi data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  777  less apps/researchspace/data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  778  grep -R "<h2>Outgoing Statements</h2>" *
+  779  la data
+  780  ls data
+  781  ls data/templates/
+  782  vi data/templates/Template%3Ahttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2FE21_Person.html
+  783  ls data/templates/ | grep ActorSumm
+  784  ls data/templates/ | grep Actor
+  785  vi data/templates/Template%3Ahttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2FE21_Person.html
+  786  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  787  less data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  788  ls data/templates/ | grep IncludeQuery
+  789  grep -R IncludeQuery *
+  790  pwd
+  791  ls
+  792  less config/ui.prop
+  793  ls
+  794  cd data
+  795  ls
+  796  cd templates/
+  797  ls
+  798  dp Template%3Ahttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2FE21_Person.html Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  799  cp Template%3Ahttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2FE21_Person.html Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  800  ls *erlangen*
+  801  mv Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html.zzzz
+  802  mv Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html.zzzz Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  803  vi Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  804  ls
+  805  ls | grep Actor
+  806  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorRelated.html
+  807  ls
+  808  grep -r "www.cidoc-crm.org" *
+  809  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorRelated.html
+  810  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  811  grep -r "www.cidoc-crm.org" *
+  812  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorRelated.html
+  813  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  814  cd ..
+  815  grep -r "www.cidoc-crm.org" *
+  816  ls
+  817  ls templates/
+  818  pwd
+  819  cd ..
+  820  ls
+  821  ls apps
+  822  cd ..
+  823  ls
+  824  ls data
+  825  cd researchspace/
+  826  grep -r "www.cidoc-crm.org" *
+  827  grep -rl "www.cidoc-crm.org" *
+  828  less config/namespaces.prop
+  829  vi config/namespaces.prop
+  830  ls
+  831  grep -r "www.cidoc-crm.org" *
+  832  grep -rl "www.cidoc-crm.org" *
+  833  vi data/templates/y
+  834  ls
+  835  vi data/templates/Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  836  ls data/templates/*Actor*
+  837  vi data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  838  less ../start-researchspace.log
+  839  vi config/namespaces.prop
+  840  vi data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  841  vi config/namespaces.prop
+  842  vi data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  843  ls
+  844  vi apps/researchspace/config/namespaces.prop
+  845  history
+  846  vi apps/researchspace/config/namespaces.prop
+  847  vi data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  848  ls data/templates/ | grep rdfs
+  849  ls data/templates/
+  850  ls data/templates/ | grep esource
+  851  ls data/templates/ | less
+  852  less data/templates/Template%3Ahttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23Resource.html
+  853  ls data/templates/ | less
+  854  ls apps/researchspace/data/templates/ | less
+  855  less config/namespaces.prop
+  856  ls -al
+  857  ls data/templates/ | grep Actor
+  858  pwd
+  859  cd ..
+  860  cd researchspace/
+  861  ls data/templates/
+  862  ls data/templates/ | grep Person
+  863  mv Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html.save
+  864  cd data/templates/
+  865  mv Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html.save
+  866  mv Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html.save Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  867  cd antheia/researchspace/
+  868  grep -R "E21_Person" *
+  869  ls
+  870  less config/environment.prop
+  871  man nohup
+  872  less config/environment.prop
+  873  pwd
+  874  MAN NOHUP
+  875  man nohup
+  876  pwd
+  877  cd ..
+  878  vi start-researchspace.sh
+  879  vi start-blazegraph.sh
+  880  ps x
+  881  ls
+  882  cd antheia/
+  883  ls -al
+  884  cd researchspace/
+  885  ls -al
+  886  ls config/
+  887  less config/namespaces.prop
+  888  grep -Rl "http://www.cidoc-crm.org/cidoc-crm/" *
+  889  less config/namespaces.prop
+  890  pwd
+  891  vi apps/researchspace/config/namespaces.prop
+  892  ls
+  893  cd data/templates/
+  894  ls
+  895  ls *Actor*
+  896  vi http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  897  ls *2FActorSummary.html
+  898  cp http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html.backup
+  899  vi http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  900  cd ../..
+  901  ls -al
+  902  ps x
+  903  cd ..
+  904  ls
+  905  cat start-researchspace.
+  906  cat start-researchspace.sh
+  907  ps x
+  908  kill 32059
+  909  . start-researchspace.sh
+  910  tail -f start-researchspace.log
+  911  vi start-researchspace.sh
+  912  grep -Rl "http://www.cidoc-crm.org/cidoc-crm/" *
+  913  ls
+  914  cd researchspace/
+  915  grep -Rl "http://www.cidoc-crm.org/cidoc-crm/" *
+  916  cd data/templates/
+  917  vi http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  918  cat ../../config/namespaces.prop
+  919  cd ../..
+  920  grep -Rl "carried_out_by_as" *
+  921  less data/repositories/assets/values.dat
+  922  cd data/templates/
+  923  vi http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  924  cat http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  925  vi http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  926  ls | grep example
+  927  ls
+  928  cd ..
+  929  ls
+  930  pwd
+  931  cd ..
+  932  ls
+  933  ls apps
+  934  ls apps/researchspace/
+  935  ls apps/researchspace/resources/
+  936  pwd
+  937  cd ..
+  938  ls
+  939  ls data
+  940  grep -R example.com *
+  941  grep -Rl "http://example.com" *
+  942  grep -Rl "who_collects" *
+  943  cd researchspace/
+  944  grep -Rl "who_collects" *
+  945  less logs/metaphactory.log
+  946  ls -r | grep who_collects
+  947  ls -R * | grep who_collects
+  948  pwd
+  949  cd ..
+  950  ls
+  951  ls -R * | grep "who_collects
+  952  ls -R | grep "who_collects
+  953  ls -R | grep "who_collects"
+  954  ls -Rd | grep "who_collects"
+  955  ls -d | grep "who_collects"
+  956  ls -dr | grep "who_collects"
+  957  ls -r
+  958  ls -R
+  959  ls -R1
+  960  ls -R1d
+  961  man ls
+  962  find . -name "who_collects"
+  963  find . -name "*who_collects*"
+  964  less ./researchspace/data/templates/http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html
+  965  less ./researchspace/data/templates/http%3A%2F%2Fwww.metaphacts.com%2Fresource%2F%3Ammmx%3Awho_collects.html
+  966  pwd
+  967  cd researchspace/data/
+  968  ls
+  969  ls templates/
+  970  cd templates/
+  971  ls
+  972  ls | grep who
+  973  rm Template%22mmmx%3Awho_collects.html
+  974  rm http%3A%2F%2Fwww.metaphacts.com%2Fresource%2F%3Ammmx%3Awho_collects.htm
+  975  ls | grep who
+  976  rm http%3A%2F%2Fwww.metaphacts.com%2Fresource%2F%3Ammmx%3Awho_collects.htm
+  977  ls -al | grep who
+  978  rm http%3A%2F%2Fwww.metaphacts.com%2Fresource%2F%3Ammmx%3Awho_collects.html
+  979  ls -al | grep who
+  980  mv http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html http%3A%2F%2Fmmm.example.com%2Fresource%2Fwho_collects.html
+  981  ls -al | grep who
+  982  cat http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fhttp%253A%252F%252Fmmm.ex
+  983  ls -al | grep who
+  984  cat http%3A%2F%2Fmmm.example.com%2Fresource%2Fwho_collects.html
+  985  ls -al | grep who
+  986  rm http%3A%2F%2Fmmm.example.com%2Fresource%2Fwho_collects.html
+  987  rm http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fhttp%253A%252F%252Fmmm.example.com%252Fresource%252Fwho%2520%2520%2520who_collects.html
+  988  ls -al | grep who
+  989  cat http%3A%2F%2Fhelp.metaphacts.com%2Fresource%2F
+  990  ls -al | grep who
+  991  cat http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html
+  992  pwd
+  993  ls ../..
+  994  ls ../../..
+  995  less ../../..//start-researchspace.log
+  996  tail -f ../../..//start-researchspace.log
+  997  ps x
+  998  pwd
+  999  cd antheia/
+ 1000  ps x
+ 1001  history
+ 1002  cat http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html
+ 1003  cd researchspace/data/templates/
+ 1004  cat http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html
+ 1005  ls
+ 1006  cd ../..
+ 1007  ls
+ 1008  cd ..
+ 1009  ls
+ 1010  ps x
+ 1011  kill 20545
+ 1012  ps x
+ 1013  rm start-researchspace.log
+ 1014  . start-researchspace.sh
+ 1015  pwd
+ 1016  history
+[researchspace@researchspace-100gb antheia]$
+[researchspace@researchspace-100gb antheia]$
+[researchspace@researchspace-100gb antheia]$ history | grep tar
+   28  tar tvf antheia-webpack-node_modules.tgz
+   29  tar xvf antheia-webpack-node_modules.tgz
+   66  . start-blazeraph.sh
+   70  . start-blazeraph.sh
+   96  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz .
+   97  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz
+  102  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  105  tar xvf ~/antheia/antheia-webpack-node_modules.tgz
+  168  tar xvf ~/antheia/antheia-webpack-node_modules.tgz
+  176  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz
+  178  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  180  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  234  ls project/target/
+  235  ls project/target/config-classes/
+  256  tar xvf antheia-home-researchspace.tgz .
+  257  tar xvf antheia-home-researchspace.tgz
+  260  less start.sh
+  267  . start.sh
+  270  less start-blazeraph.sh
+  271  . start-blazeraph.sh
+  273  . start.sh
+  281  less antheia/researchspace/start.sh
+  282  less antheia/researchspace/start.sh
+  345  cat start-
+  346  cat start-researchspace.sh
+  347  vi start-researchspace.sh
+  348  . start-researchspace.sh
+  358  tar tvf antheia/antheia-researchspace-node_modules.tgz | less
+  359  tar tvf antheia/antheia-home-researchspace.tgz | less
+  360  tar tvf antheia/antheia-home-researchspace.tgz researchspace/blazegraph.jnl
+  368  . start.sh
+  375  . start-blazeraph.sh
+  384  cat start-blazeraph.sh
+  385  vi start-blazeraph.sh
+  388  . start-blazeraph.sh
+  390  . start.sh
+  393  cat start.sh
+  398  . start.sh
+  403  . start.sh
+  410  cat ~/start-blazeraph.sh
+  412  . start.sh
+  424  . start.sh
+  455  tar xfvz antheia-home-researchspace.tgz
+  460  cat start.sh
+  461  . start.sh
+  481  history | grep tar
+  482  tar xfvz antheia-home-blazegraph.tgz
+  483  cat ../start-blazeraph.sh
+  488  vi start-blazegraph.sh
+  493  vi start-blazegraph.sh
+  496  cat ../start-researchspace.sh
+  497  cp ../start-researchspace.sh .
+  498  vi start-researchspace.sh
+  499  . start-blazegraph.sh
+  500  vi start-blazegraph.sh
+  501  . start-blazegraph.sh
+  522  tar xfvz antheia-data-blazegraph.tgz
+  525  cat start-blazegraph.sh
+  526  vi start-blazegraph.sh
+  530  . start-blazegraph.sh
+  536  . start-researchspace.sh
+  547  vi start-blazegraph.sh
+  558  vi start-blazegraph.sh
+  560  cat ../start-blazeraph.sh
+  561  vi start-blazegraph.sh
+  568  . start-blazegraph.sh
+  569  vi start-
+  570  vi start-blazegraph.sh
+  571  . start-blazegraph.sh
+  574  . start-researchspace.sh
+  579  cat start-researchspace.sh
+  580  . start-researchspace.sh
+  584  . start-researchspace.sh
+  585  . start-blazegraph.sh
+  586  . start-researchspace.sh
+  589  vi start-blazegraph.sh
+  590  . start-blazegraph.sh
+  591  . start-researchspace.sh
+  596  vi start-blazegraph.sh
+  600  . start-researchspace.sh
+  601  vi start-researchspace.sh
+  605  . start-researchspace.sh
+  607  . start-researchspace.sh
+  618  . start-blazegraph.sh
+  619  . start-researchspace.sh
+  622  . start-researchspace.sh
+  623  . start-blazegraph.sh
+  625  cat start-blazeraph.sh
+  626  . start-blazeraph.sh
+  630  . start-blazeraph.sh
+  632  cat start-blazeraph.sh
+  636  vi start-blazeraph.sh
+  637  . start-blazeraph.sh
+  642  . start-blazeraph.sh
+  653  cat start-blazeraph.sh
+  659  cat start-blazegraph.sh
+  667  less start-blazegraph.sh
+  670  . start-blazegraph.sh
+  675  mv start-blazeraph.sh start-blazeraph.sh.save
+  676  mv start-researchspace.sh start-researchspace.sh.save
+  685  . start-researchspace.sh
+  688  cat start-researchspace.sh
+  691  cat start.sh
+  696  . start.sh
+  716  . start-researchspace.sh
+  720  . start-researchspace.sh
+  724  . start-blazegraph.sh
+  725  . start-researchspace.sh
+  726  vi start-researchspace.sh
+  727  . start-researchspace.sh
+  728  vi start-researchspace.sh
+  730  cat start-blazegraph.sh
+  731  cat start-researchspace.sh
+  732  vi start-researchspace.sh
+  733  . start-researchspace.sh
+  736  less start-researchspace.sh
+  740  cat start-researchspace.log
+  741  rm start-researchspace.log
+  743  vi start-researchspace.sh
+  744  . start-researchspace.sh
+  745  ./start-researchspace.sh
+  751  ./start-researchspace.sh
+  753  vi start-blazegraph.sh
+  754  ./start-researchspace.sh
+  755  vi start-researchspace.
+  756  vi start-researchspace.sh
+  757  ./start-researchspace.sh
+  760  chmod +x start.sh
+  762  ./start-researchspace.sh
+  764  tail -f start-researchspace.log
+  838  less ../start-researchspace.log
+  878  vi start-researchspace.sh
+  879  vi start-blazegraph.sh
+  905  cat start-researchspace.
+  906  cat start-researchspace.sh
+  909  . start-researchspace.sh
+  910  tail -f start-researchspace.log
+  911  vi start-researchspace.sh
+  995  less ../../..//start-researchspace.log
+  996  tail -f ../../..//start-researchspace.log
+ 1013  rm start-researchspace.log
+ 1014  . start-researchspace.sh
+ 1017  history | grep tar
+
+[researchspace@researchspace-100gb antheia]$ history | grep "tar "
+   28  tar tvf antheia-webpack-node_modules.tgz
+   29  tar xvf antheia-webpack-node_modules.tgz
+   96  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz .
+   97  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz
+  102  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  105  tar xvf ~/antheia/antheia-webpack-node_modules.tgz
+  168  tar xvf ~/antheia/antheia-webpack-node_modules.tgz
+  176  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz
+  178  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  180  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  256  tar xvf antheia-home-researchspace.tgz .
+  257  tar xvf antheia-home-researchspace.tgz
+  358  tar tvf antheia/antheia-researchspace-node_modules.tgz | less
+  359  tar tvf antheia/antheia-home-researchspace.tgz | less
+  360  tar tvf antheia/antheia-home-researchspace.tgz researchspace/blazegraph.jnl
+  455  tar xfvz antheia-home-researchspace.tgz
+  482  tar xfvz antheia-home-blazegraph.tgz
+  522  tar xfvz antheia-data-blazegraph.tgz
+ 1018  history | grep "tar "
+
+[researchspace@researchspace-100gb antheia]$ history
+   20  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-webpack-node_modules.tgz
+   21  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-webpack-node_modules.tgz .
+   22  ls
+   23  mkdir antheia
+   24  mv antheia*.tgz antheia
+   25  ls
+   26  cd antheia/
+   27  ls
+   28  tar tvf antheia-webpack-node_modules.tgz
+   29  tar xvf antheia-webpack-node_modules.tgz
+   30  ls -al
+   31  ls ../github/researchspace/project/webpack/
+   32  mv ../github/researchspace/project/webpack/node_modules/ save_node_modules -v
+   33  ls ../github/researchspace/project/webpack/
+   34  ls
+   35  mv save_node_modules  save_webpack_node_modules -v
+   36  ls -al
+   37  mv node_modules  ../github/researchspace/project/webpack/node_modules
+   38  ls -al
+   39  cd ../github/researchspace/
+   40  ls
+   41  ./build.sh
+   42  pwd
+   43  ls
+   44  history
+   45  xargs sed -i 's!https://vm-seldon.oerc.ox.ac.uk:3000!http://vm-seldon.oerc.ox.ac.uk:3000!g' <editfiles.txt
+   46  pwd
+   47  cp editfiles.txt ~
+   48  ls -al
+   49  cd ..
+   50  ls -al
+   51  rm researchspace saved-researchspace
+   52  mv researchspace saved-researchspace
+   53  git clone https://github.com/researchspace/researchspace.git
+   54  cd researchspace
+   55  pwd
+   56  ls
+   57  cd ..
+   58  ls
+   59  cd ..
+   60  ls
+   61  ls ./github/mmm-researchspace/researchspace-vm/*
+   62  ls ./github/mmm-researchspace/researchspace-vm/* -al
+   63  ls -al
+   64   cp ./github/mmm-researchspace/researchspace-vm/* . -v
+   65  cat install-blazegraph.sh
+   66  . start-blazeraph.sh
+   67  ps x
+   68  kill 28966
+   69  ps x
+   70  . start-blazeraph.sh
+   71  netstat -nlp
+   72  ps x
+   73  pwd
+   74  cd github/researchspace/
+   75  ls
+   76  git checkout 8671757b3091f38639923410c7d985fba267c1fd
+   77  git log
+   78  ls -al
+   79  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+   80  ls
+   81  cd metaphactory/web/
+   82  vi .yarnrc
+   83  vi .npmrc
+   84  yarn
+   85  vi .yarnrc
+   86  grep nexus.grapphs.com *
+   87  rm yarn.lock
+   88  grep nexus.grapphs.com *
+   89  grep -R nexus.grapphs.com *
+   90  yarn
+   91  ls -al
+   92  grep -R ainldq *
+   93  git status
+   94  git checkout .
+   95  git status
+   96  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz .
+   97  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz
+   98  ls
+   99  yarn
+  100  ls -al
+  101  cd ../../researchspace/web/
+  102  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  103  ls
+  104  cd ../../project/webpack/
+  105  tar xvf ~/antheia/antheia-webpack-node_modules.tgz
+  106  cd ../..
+  107  pwd
+  108  ls
+  109  ./build.sh
+  110  cd metaphactory/web/
+  111  rm .yarnrc
+  112  rm yarn.lock
+  113  yarn
+  114  history
+  115  grep -R nexus.grapphs.com *
+  116  rm -rf node_modules/
+  117  yarn
+  118  cd ../..
+  119  ls -al
+  120  grep -R nexus.grapphs.com *
+  121  grep -Rl nexus.grapphs.com *
+  122  cd metaphactory/web/
+  123  yarn
+  124  grep -Rl basil.js *
+  125  less package.json
+  126  cd ../../project/
+  127  vi repositories
+  128  cd ../metaphactory/web/
+  129  yarn
+  130  grep -Rl nexus.grapphs.com *
+  131  rm yarn-error.log
+  132  ls -al
+  133  yarn
+  134  grep -Rl nexus.grapphs.com *
+  135  ls -al
+  136  less .npmrc
+  137  rm .npmrc
+  138  yarn
+  139  vi package.json
+  140  yarn
+  141  vi package.json
+  142  yarn
+  143  pwd
+  144  cd ../../researchspace/web/
+  145  grep -Rl nexus.grapphs.com *
+  146   rm -rf node_modules/.yarn-integrity
+  147  rm yarn.lock
+  148  grep -Rl nexus.grapphs.com .*
+  149  rm .npmrc
+  150  rm .yarnrc
+  151  grep -Rl nexus.grapphs.com .*
+  152  yarn
+  153  vi package.json
+  154  yarn
+  155  ls -al
+  156  cd ../../project/webpack/
+  157  grep -Rl nexus.grapphs.com .*
+  158  rm .npmrc
+  159  rm .yarnrc
+  160  rm yarn.lock
+  161  rm node_modules/.yarn-integrity
+  162  yarn
+  163  cd ../..
+  164  ls -al
+  165  ./build.sh
+  166  cd project/webpack/
+  167  rm -rf node_modules
+  168  tar xvf ~/antheia/antheia-webpack-node_modules.tgz
+  169  ls -al
+  170  cd ../..
+  171  sh ./build.sh     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     clean
+  172  sh ./build.sh     -DplatformVersion=$VERSION_NUMBER     -Dbuildjson=researchspace/researchspace-root-build.json     -DbuildEnv=prod     package
+  173  sbt
+  174  cd metaphactory/web/
+  175  rm -rf node_modules
+  176  tar xvf ~/antheia/antheia-metaphactory-node_modules.tgz
+  177  cd ../../researchspace/web/
+  178  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  179  rm -rf node_modules
+  180  tar xvf ~/antheia/antheia-researchspace-node_modules.tgz
+  181  cd ../..
+  182  sbt
+  183  find . -name node_modules -print
+  184  find . -fullname /node_modules/ -print
+  185  find . -name /node_modules/ -print
+  186  find . -wholename /node_modules/ -print
+  187  find . -wholenam
+  188  sbt
+  189  ls
+  190  pwd
+  191  grep -R "nexus.grapphs.com" *
+  192  grep -Rl "nexus.grapphs.com" *
+  193  less project/repositories
+  194  ls
+  195  ./build.sh
+  196  ls -al
+  197  cd ..
+  198  ls
+  199  cd saved-researchspace/
+  200  ls
+  201  git status
+  202  git log
+  203  git show 5f031334
+  204  git show --name-only 5f031334
+  205  git show --name-only 5f031334 project/build.properties
+  206  git show 5f031334 project/build.properties
+  207  git show 5f031334 project/plugins.sbt
+  208  git show 5f031334 project/plugins.sbt.orig
+  209  git show --name-only 5f031334 project/build.properties
+  210  git show --name-only 5f031334
+  211  git show 5f031334 build.sh
+  212  git status
+  213  git diff
+  214  git status
+  215  git diff project/PlatformBuildPlugin.scala
+  216  git status
+  217  git diff project/webpack/package.json
+  218  less project/webpack/package.json
+  219  git diff project/webpack/package.json
+  220  git diff project/webpack/server.js
+  221  git diff project/webpack/webpack.dev.config.js
+  222  git diff project/webpack/webpack.dll.dev.js
+  223  git show 5f031334 metaphactory/web/package.json
+  224  git show 5f031334 project/build.properties
+  225  git show 5f031334 project/repositories
+  226  ls -al
+  227   cd project
+  228  ls
+  229  grep password *
+  230  grep -R password *
+  231  grep -Rl password *
+  232  ls
+  233  ls project/
+  234  ls project/target/
+  235  ls project/target/config-classes/
+  236  pwd
+  237  cd ../..
+  238  ls
+  239  cd researchspace/
+  240  ls
+  241  cd researchspace/
+  242  ls
+  243  pwd
+  244  cd ~
+  245  ls
+  246  ls .ssh
+  247  histrory
+  248  history
+  249  history | grep scp
+  250  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-home-researchspace.tgz .
+  251  pwd
+  252  ls
+  253  mv antheia-home-researchspace.tgz antheia
+  254  cd antheia/
+  255  ls -al
+  256  tar xvf antheia-home-researchspace.tgz .
+  257  tar xvf antheia-home-researchspace.tgz
+  258  cd researchspace/
+  259  ls -al
+  260  less start.sh
+  261  ps x
+  262  ps xa
+  263  ps xa | grep java
+  264  kill 30928
+  265  ps xa | grep java
+  266  ps xa
+  267  . start.sh
+  268  cd ../..
+  269  ls
+  270  less start-blazeraph.sh
+  271  . start-blazeraph.sh
+  272  cd antheia/researchspace/
+  273  . start.sh
+  274  ls -al
+  275  ls
+  276  mv mmm_data_orig.zip mmm-data_orig.zip
+  277  ls
+  278  which java
+  279  ls -al /usr/lib/jvm/java
+  280  ls antheia/researchspace/apps/researchspace/
+  281  less antheia/researchspace/start.sh
+  282  less antheia/researchspace/start.sh
+  283  pwd
+  284  less antheia/researchspace/jetty-distribution-9.2.13.v20150730/webapps/blazegraph/WEB-INF/lib/bigdata-runtime-2.2.0-SNAPSHOT.jar
+  285  ls
+  286  ls -al\
+  287  ls
+  288  mv fastload.properties antheia/
+  289  mv
+  290  pwd
+  291  ls
+  292  cd antheia/
+  293  ls
+  294  cd ..
+  295  ls
+  296  LS
+  297  mv mmm-* antheia/
+  298  cd antheia/
+  299  ls
+  300  unzip mmm-dataq_orig.zip -d ./mmm_data
+  301  unzip mmm-data_orig.zip -d ./mmm_data
+  302  unzip mmm-fuseki-master_orig.zip -d ./mmm_data
+  303  ls
+  304  cd ..
+  305  ls
+  306  cd antheia/
+  307  cd ..
+  308  ls
+  309  vi load-mmm-data.sh
+  310  ls
+  311  . load-mmm-data.sh
+  312  set +x
+  313  . load-mmm-data.sh
+  314  set -x
+  315  . load-mmm-data.sh
+  316  vi load-mmm-data.sh
+  317  . load-mmm-data.sh
+  318  set +x
+  319  ls
+  320  pwd
+  321  cd ..
+  322  ls
+  323  rm load-mmm-data.sh
+  324  vi load-mmm-data.sh
+  325  . load-mmm-data.sh
+  326  java -Xmx4g -Dlog4j.configuration=$LOG4J_CONFIG       -cp "$BLAZEGRAPH_CP:$BLAZEGRAPH_LIB/*" ${BLAZEGRAPH_TEXTINDEX}      -namespace exemplar -forceCreate                 $RS_BUNDLE/RWStore.properties
+  327  pwd
+  328  ls
+  329  cat fastload.properties
+  330  less researchspace/RWStore.properties
+  331  ls
+  332  ls runtime-data/
+  333  rm -rf runtime-data/
+  334  vi fastload.properties
+  335  cat fastload.properties
+  336  pwd
+  337  ls
+  338  cd ..
+  339  ls
+  340  rm load-mmm-data.sh
+  341  vi load-mmm-data.sh
+  342  . load-mmm-data.sh
+  343  pwd
+  344  ls
+  345  cat start-
+  346  cat start-researchspace.sh
+  347  vi start-researchspace.sh
+  348  . start-researchspace.sh
+  349  ls
+  350  cd ..
+  351  ls
+  352  cd ..
+  353  ls
+  354  rm load-mmm-data.sh
+  355  vi load-mmm-data.sh
+  356  . load-mmm-data.sh
+  357  ls -al
+  358  tar tvf antheia/antheia-researchspace-node_modules.tgz | less
+  359  tar tvf antheia/antheia-home-researchspace.tgz | less
+  360  tar tvf antheia/antheia-home-researchspace.tgz researchspace/blazegraph.jnl
+  361  cd antheia/researchspace/
+  362  ls -al
+  363  cp blazegraph.jnl antheia-blazegraph.jnl
+  364  cd ../..
+  365  ls -al
+  366  cat load-mmm-data.sh
+  367  cd antheia/researchspace/
+  368  . start.sh
+  369  ps ax
+  370  kill 25711
+  371  ps ax
+  372  pwd
+  373  ls -al
+  374  cd ../..
+  375  . start-blazeraph.sh
+  376  ping vm-seldon.oerc.ox.ac.uk
+  377  ps x
+  378  netstat -nl
+  379  netstat -nlp
+  380  ps
+  381  ps a
+  382  ls
+  383  ls -al
+  384  cat start-blazeraph.sh
+  385  vi start-blazeraph.sh
+  386  ps ax
+  387  kill 2864
+  388  . start-blazeraph.sh
+  389  ls
+  390  . start.sh
+  391  pwd
+  392  ls -al
+  393  cat start.sh
+  394  cat RWStore.properties
+  395  ls -al
+  396  diff antheia-blazegraph.jnl blazegraph.jnl
+  397  vi RWStore.properties
+  398  . start.sh
+  399  ls -al
+  400  rm mmm-blazegraph.jnl
+  401  cp antheia-blazegraph.jnl mmm-blazegraph.jnl
+  402  ls -al
+  403  . start.sh
+  404  ls -al
+  405  ps ax
+  406  kill 3110
+  407  pwd
+  408  ps ax
+  409  java -server -Xmx4g -jar /home/researchspace/blazegraph-2.1.5.jar
+  410  cat ~/start-blazeraph.sh
+  411  java -server -Xmx4g -jar /home/researchspace/blazegraph-2.1.5.jar &
+  412  . start.sh
+  413  ls
+  414  pwd
+  415  ls apps/
+  416  pwd
+  417  ls -al
+  418  pwd
+  419  cd config
+  420  mv repositories repositories_saved
+  421  cd ../..
+  422  ls
+  423  cd researchspace/
+  424  . start.sh
+  425  ls -al
+  426  cd config/
+  427  ls -al
+  428  ls repositories
+  429  less repositories/assets.ttl
+  430  ps ax | grep blaze
+  431  less repositories_saved/mmm.ttl
+  432  curl http://localhost:9999/blazegraph/namespace/mmm/sparql
+  433  curl http://localhost:9999/blazegraph/namespace/sparql
+  434  curl http://localhost:9999/blazegraph/sparql/
+  435  curl http://localhost:9999/sparql/
+  436  curl http://localhost:9999/sparql/mmm/
+  437  curl http://localhost:9999/sparql/
+  438  curl -v http://localhost:9999/sparql/
+  439  curl -v http://localhost:9999/blazegraph/sparql/
+  440  curl -v http://localhost:9999/blazegraph/namespace/kb/sparql
+  441  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  442  curl -v http://localhost:9999/blazegraph/namespace/kb/sparql
+  443  ps ax
+  444  kill 3872
+  445  ls
+  446  pwd
+  447  ls -alrt
+  448  cd ../..
+  449  ls
+  450  ls -al
+  451  ls -alrt researchspace/
+  452  ls -al
+  453  mv researchspace 20200617-researchspace
+  454  ls -al
+  455  tar xfvz antheia-home-researchspace.tgz
+  456  ls -al
+  457  ps ax
+  458  cd researchspace/
+  459  ls
+  460  cat start.sh
+  461  . start.sh
+  462  netstat -nlp
+  463  ls
+  464  ls -al
+  465  find . -name blazegraph
+  466  find . -name "blazegraph.*"
+  467  find . -name "blazegraph*"
+  468  history | grep scp
+  469  pwd
+  470  cd ../..
+  471  ls
+  472  cd antheia/
+  473  ls
+  474  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-home-blazegraph.tgz .
+  475  cd ..
+  476  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-home-blazegraph.tgz .
+  477  ls -al
+  478  mv antheia-home-blazegraph.tgz antheia
+  479  cd antheia/
+  480  ls -al
+  481  history | grep tar
+  482  tar xfvz antheia-home-blazegraph.tgz
+  483  cat ../start-blazeraph.sh
+  484  cd blazegraph
+  485  ls -al
+  486  cd ..
+  487  ls
+  488  vi start-blazegraph.sh
+  489  pwd
+  490  cd blazegraph
+  491  ls -al
+  492  cd ..
+  493  vi start-blazegraph.sh
+  494  ls -al
+  495  ls ..
+  496  cat ../start-researchspace.sh
+  497  cp ../start-researchspace.sh .
+  498  vi start-researchspace.sh
+  499  . start-blazegraph.sh
+  500  vi start-blazegraph.sh
+  501  . start-blazegraph.sh
+  502  ops x
+  503  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  504  curl -v http://localhost:9999/blazegraph/namespace/exemplar/sparql
+  505  netstat -npl
+  506  ps aux | grep 7157
+  507  which java
+  508  cat /proc/7157/cwd/
+  509  find . -name "blazeg*"
+  510  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  511  curl -v http://localhost:9999/blazegraph/namespace/mmm
+  512  curl -v http://localhost:9999/blazegraph/namespace/mmm/
+  513  history
+  514  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  515  curl -v http://localhost:9999/blazegraph/namespace/exemplar/sparql
+  516  ps ax
+  517  curl -v http://localhost:9999/blazegraph/
+  518  curl -v http://localhost:9999/blazegraph/ | less
+  519  curl -v http://localhost:9999/blazegraph/namespace | less
+  520  scp -i .ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-data-blazegraph.tgz .
+  521  scp -i /home/researchspace/.ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-data-blazegraph.tgz .
+  522  tar xfvz antheia-data-blazegraph.tgz
+  523  ls
+  524  vi fastload.properties
+  525  cat start-blazegraph.sh
+  526  vi start-blazegraph.sh
+  527  ps ax | grep blaze
+  528  kill 7157
+  529  ps ax | grep blaze
+  530  . start-blazegraph.sh
+  531  curl -v http://localhost:9999/blazegraph/namespace | less
+  532  history
+  533  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  534  ls -al
+  535  rm blazegraph.jnl
+  536  . start-researchspace.sh
+  537  cd researchspace/
+  538  ls -al
+  539  rm blazegraph.jnl
+  540  cd ../blazegraph/
+  541  ls
+  542  rm blazegraph.jnl
+  543  ls -al
+  544  cp ../data/blazegraph/blazegraph.jnl .
+  545  ls -al
+  546  cd ..
+  547  vi start-blazegraph.sh
+  548  ps ax
+  549  kill 8301
+  550  ps ax
+  551  ps ax | grep blaz
+  552  ls
+  553  cd ..
+  554  ls -al
+  555  cp load-mmm-data.sh antheia/
+  556  cd antheia/
+  557  vi load-mmm-data.sh
+  558  vi start-blazegraph.sh
+  559  ls ..
+  560  cat ../start-blazeraph.sh
+  561  vi start-blazegraph.sh
+  562  cd researchspace/
+  563  cp ../data/blazegraph/blazegraph.jnl .
+  564  ls -al
+  565  cd ..
+  566  ps ax
+  567  ps ax | grep blaz
+  568  . start-blazegraph.sh
+  569  vi start-
+  570  vi start-blazegraph.sh
+  571  . start-blazegraph.sh
+  572  p
+  573  curl -v http://localhost:9999/blazegraph/namespace/mmm/sparql
+  574  . start-researchspace.sh
+  575  cd researchspace/
+  576  ls -al
+  577  vi RWStore.properties
+  578  cd ..
+  579  cat start-researchspace.sh
+  580  . start-researchspace.sh
+  581  ls -al
+  582  ps ax
+  583  kill 9465
+  584  . start-researchspace.sh
+  585  . start-blazegraph.sh
+  586  . start-researchspace.sh
+  587  ps ax
+  588  kill 9841
+  589  vi start-blazegraph.sh
+  590  . start-blazegraph.sh
+  591  . start-researchspace.sh
+  592  ls
+  593  less load-mmm-data.sh
+  594  . load-mmm-data.sh
+  595  vi load-mmm-data.sh
+  596  vi start-blazegraph.sh
+  597  vi load-mmm-data.sh
+  598  vi fastload.properties
+  599  . load-mmm-data.sh
+  600  . start-researchspace.sh
+  601  vi start-researchspace.sh
+  602  less load-mmm-data.sh
+  603  ls
+  604  less mmm_data/mmm_bodley.ttl
+  605  . start-researchspace.sh
+  606  less mmm_data/mmm_bodley.ttl
+  607  . start-researchspace.sh
+  608  cd researchspace/config/repositories/
+  609  less mmm.ttl
+  610  cd ..
+  611  less load-mmm-data.sh
+  612  ls
+  613  less fastload.properties
+  614  ps ax | grep
+  615  ps ax | grep blaze
+  616  kill 10028
+  617  ps ax | grep blaze
+  618  . start-blazegraph.sh
+  619  . start-researchspace.sh
+  620  id
+  621  sudo su -
+  622  . start-researchspace.sh
+  623  . start-blazegraph.sh
+  624  cd ~
+  625  cat start-blazeraph.sh
+  626  . start-blazeraph.sh
+  627  ps x
+  628  kill 18278
+  629  ps x
+  630  . start-blazeraph.sh
+  631  cd ~
+  632  cat start-blazeraph.sh
+  633  ls
+  634  ls antheia/researchspace/
+  635  ls antheia/researchspace/ -al
+  636  vi start-blazeraph.sh
+  637  . start-blazeraph.sh
+  638  history
+  639  whois oxfordmodelflyingclub.co.uk
+  640  ps x
+  641  kill 23434
+  642  . start-blazeraph.sh
+  643  ls
+  644  less load-mmm-data.sh
+  645  cd antheia/
+  646  less mmm_data/mmm_bodley.ttl
+  647  cd mmm_data/
+  648  grep "https://medieval.bodleian.ox.ac.uk/catalog/person_14744124" *
+  649  less mmm_bodley.ttl
+  650  grep "person_14744124" *
+  651  cd ../..
+  652  ls -al
+  653  cat start-blazeraph.sh
+  654  ls
+  655  pwdf
+  656  pwd
+  657  cd antheia/
+  658  ls
+  659  cat start-blazegraph.sh
+  660  ls
+  661  cat load-mmm-data.sh
+  662  ls -al
+  663  ls data/
+  664  ls data/blazegraph/
+  665  pwd
+  666  ps x
+  667  less start-blazegraph.sh
+  668  kill 23629
+  669  ps x
+  670  . start-blazegraph.sh
+  671  cd ..
+  672  ls -al
+  673  ls *.sh
+  674  mv load-mmm-data.sh load-mmm-data.sh.save
+  675  mv start-blazeraph.sh start-blazeraph.sh.save
+  676  mv start-researchspace.sh start-researchspace.sh.save
+  677  ls *.sh
+  678  cat build-researchspace.sh
+  679  ls *.sh
+  680  cat install-blazegraph.sh
+  681  pwf
+  682  pwd
+  683  cd antheia/
+  684  ls
+  685  . start-researchspace.sh
+  686  less /home/researchspace/antheia/researchspace/jetty-distribution-9.2.13.v20150730/webapps/blazegraph/WEB-INF/classes/log4j.properties
+  687  ls
+  688  cat start-researchspace.sh
+  689  cd researchspace/
+  690  ls
+  691  cat start.sh
+  692  cd ..
+  693  ls
+  694  cd researchspace/
+  695  ls
+  696  . start.sh
+  697  less /home/researchspace/antheia/researchspace/jetty-distribution-9.2.13.v20150730/webapps/ROOT/
+  698  cd /home/researchspace/antheia/researchspace/jetty-distribution-9.2.13.v20150730/webapps/ROOT/
+  699  cd ..
+  700  ls
+  701  les README.TXT
+  702  less README.TXT
+  703  ls ROOT/
+  704  cd ROOT/WEB-INF/
+  705  ls
+  706  cat web.xml
+  707  ls
+  708  cd ..
+  709  pwd
+  710  cd ..
+  711  grep -R namespace *
+  712  grep -Rl namespace *
+  713  ls
+  714  cd ~/antheia/
+  715  ls
+  716  . start-researchspace.sh
+  717  vi researchspace/config/environment.prop
+  718  cp researchspace/config/environment.prop researchspace/config/environment.prop.saved
+  719  vi researchspace/config/environment.prop
+  720  . start-researchspace.sh
+  721  ps x
+  722  kill 26201
+  723  ps x
+  724  . start-blazegraph.sh
+  725  . start-researchspace.sh
+  726  vi start-researchspace.sh
+  727  . start-researchspace.sh
+  728  vi start-researchspace.sh
+  729  ps x
+  730  cat start-blazegraph.sh
+  731  cat start-researchspace.sh
+  732  vi start-researchspace.sh
+  733  . start-researchspace.sh
+  734  pwd
+  735  source
+  736  less start-researchspace.sh
+  737  pwd
+  738  cd researchspace/
+  739  ls
+  740  cat start-researchspace.log
+  741  rm start-researchspace.log
+  742  cd ..
+  743  vi start-researchspace.sh
+  744  . start-researchspace.sh
+  745  ./start-researchspace.sh
+  746  pwd
+  747  id
+  748  ls -al
+  749  chmod +x *.sh
+  750  ls -al
+  751  ./start-researchspace.sh
+  752  ls
+  753  vi start-blazegraph.sh
+  754  ./start-researchspace.sh
+  755  vi start-researchspace.
+  756  vi start-researchspace.sh
+  757  ./start-researchspace.sh
+  758  ccd researchspace/
+  759  cd researchspace/
+  760  chmod +x start.sh
+  761  cd ..
+  762  ./start-researchspace.sh
+  763  ps x
+  764  tail -f start-researchspace.log
+  765  ps x
+  766  pwd
+  767  cd antheia/mmm_data/
+  768  ld
+  769  ls
+  770  less mmm_bodley.ttl
+  771  cd ..
+  772  cd researchspace/
+  773  grep -R E21-Person *
+  774  grep -R E21_Person *
+  775  vi
+  776  vi data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  777  less apps/researchspace/data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  778  grep -R "<h2>Outgoing Statements</h2>" *
+  779  la data
+  780  ls data
+  781  ls data/templates/
+  782  vi data/templates/Template%3Ahttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2FE21_Person.html
+  783  ls data/templates/ | grep ActorSumm
+  784  ls data/templates/ | grep Actor
+  785  vi data/templates/Template%3Ahttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2FE21_Person.html
+  786  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  787  less data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  788  ls data/templates/ | grep IncludeQuery
+  789  grep -R IncludeQuery *
+  790  pwd
+  791  ls
+  792  less config/ui.prop
+  793  ls
+  794  cd data
+  795  ls
+  796  cd templates/
+  797  ls
+  798  dp Template%3Ahttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2FE21_Person.html Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  799  cp Template%3Ahttp%3A%2F%2Fwww.cidoc-crm.org%2Fcidoc-crm%2FE21_Person.html Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  800  ls *erlangen*
+  801  mv Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html.zzzz
+  802  mv Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html.zzzz Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  803  vi Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  804  ls
+  805  ls | grep Actor
+  806  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorRelated.html
+  807  ls
+  808  grep -r "www.cidoc-crm.org" *
+  809  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorRelated.html
+  810  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  811  grep -r "www.cidoc-crm.org" *
+  812  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorRelated.html
+  813  less http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  814  cd ..
+  815  grep -r "www.cidoc-crm.org" *
+  816  ls
+  817  ls templates/
+  818  pwd
+  819  cd ..
+  820  ls
+  821  ls apps
+  822  cd ..
+  823  ls
+  824  ls data
+  825  cd researchspace/
+  826  grep -r "www.cidoc-crm.org" *
+  827  grep -rl "www.cidoc-crm.org" *
+  828  less config/namespaces.prop
+  829  vi config/namespaces.prop
+  830  ls
+  831  grep -r "www.cidoc-crm.org" *
+  832  grep -rl "www.cidoc-crm.org" *
+  833  vi data/templates/y
+  834  ls
+  835  vi data/templates/Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  836  ls data/templates/*Actor*
+  837  vi data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  838  less ../start-researchspace.log
+  839  vi config/namespaces.prop
+  840  vi data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  841  vi config/namespaces.prop
+  842  vi data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  843  ls
+  844  vi apps/researchspace/config/namespaces.prop
+  845  history
+  846  vi apps/researchspace/config/namespaces.prop
+  847  vi data/templates/http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  848  ls data/templates/ | grep rdfs
+  849  ls data/templates/
+  850  ls data/templates/ | grep esource
+  851  ls data/templates/ | less
+  852  less data/templates/Template%3Ahttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23Resource.html
+  853  ls data/templates/ | less
+  854  ls apps/researchspace/data/templates/ | less
+  855  less config/namespaces.prop
+  856  ls -al
+  857  ls data/templates/ | grep Actor
+  858  pwd
+  859  cd ..
+  860  cd researchspace/
+  861  ls data/templates/
+  862  ls data/templates/ | grep Person
+  863  mv Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html.save
+  864  cd data/templates/
+  865  mv Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html.save
+  866  mv Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html.save Template%3Ahttp%3A%2F%2Ferlangen-crm.org%2Fcurrent%2FE21_Person.html
+  867  cd antheia/researchspace/
+  868  grep -R "E21_Person" *
+  869  ls
+  870  less config/environment.prop
+  871  man nohup
+  872  less config/environment.prop
+  873  pwd
+  874  MAN NOHUP
+  875  man nohup
+  876  pwd
+  877  cd ..
+  878  vi start-researchspace.sh
+  879  vi start-blazegraph.sh
+  880  ps x
+  881  ls
+  882  cd antheia/
+  883  ls -al
+  884  cd researchspace/
+  885  ls -al
+  886  ls config/
+  887  less config/namespaces.prop
+  888  grep -Rl "http://www.cidoc-crm.org/cidoc-crm/" *
+  889  less config/namespaces.prop
+  890  pwd
+  891  vi apps/researchspace/config/namespaces.prop
+  892  ls
+  893  cd data/templates/
+  894  ls
+  895  ls *Actor*
+  896  vi http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  897  ls *2FActorSummary.html
+  898  cp http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html.backup
+  899  vi http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  900  cd ../..
+  901  ls -al
+  902  ps x
+  903  cd ..
+  904  ls
+  905  cat start-researchspace.
+  906  cat start-researchspace.sh
+  907  ps x
+  908  kill 32059
+  909  . start-researchspace.sh
+  910  tail -f start-researchspace.log
+  911  vi start-researchspace.sh
+  912  grep -Rl "http://www.cidoc-crm.org/cidoc-crm/" *
+  913  ls
+  914  cd researchspace/
+  915  grep -Rl "http://www.cidoc-crm.org/cidoc-crm/" *
+  916  cd data/templates/
+  917  vi http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  918  cat ../../config/namespaces.prop
+  919  cd ../..
+  920  grep -Rl "carried_out_by_as" *
+  921  less data/repositories/assets/values.dat
+  922  cd data/templates/
+  923  vi http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  924  cat http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  925  vi http%3A%2F%2Fwww.researchspace.org%2Fresource%2FActorSummary.html
+  926  ls | grep example
+  927  ls
+  928  cd ..
+  929  ls
+  930  pwd
+  931  cd ..
+  932  ls
+  933  ls apps
+  934  ls apps/researchspace/
+  935  ls apps/researchspace/resources/
+  936  pwd
+  937  cd ..
+  938  ls
+  939  ls data
+  940  grep -R example.com *
+  941  grep -Rl "http://example.com" *
+  942  grep -Rl "who_collects" *
+  943  cd researchspace/
+  944  grep -Rl "who_collects" *
+  945  less logs/metaphactory.log
+  946  ls -r | grep who_collects
+  947  ls -R * | grep who_collects
+  948  pwd
+  949  cd ..
+  950  ls
+  951  ls -R * | grep "who_collects
+  952  ls -R | grep "who_collects
+  953  ls -R | grep "who_collects"
+  954  ls -Rd | grep "who_collects"
+  955  ls -d | grep "who_collects"
+  956  ls -dr | grep "who_collects"
+  957  ls -r
+  958  ls -R
+  959  ls -R1
+  960  ls -R1d
+  961  man ls
+  962  find . -name "who_collects"
+  963  find . -name "*who_collects*"
+  964  less ./researchspace/data/templates/http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html
+  965  less ./researchspace/data/templates/http%3A%2F%2Fwww.metaphacts.com%2Fresource%2F%3Ammmx%3Awho_collects.html
+  966  pwd
+  967  cd researchspace/data/
+  968  ls
+  969  ls templates/
+  970  cd templates/
+  971  ls
+  972  ls | grep who
+  973  rm Template%22mmmx%3Awho_collects.html
+  974  rm http%3A%2F%2Fwww.metaphacts.com%2Fresource%2F%3Ammmx%3Awho_collects.htm
+  975  ls | grep who
+  976  rm http%3A%2F%2Fwww.metaphacts.com%2Fresource%2F%3Ammmx%3Awho_collects.htm
+  977  ls -al | grep who
+  978  rm http%3A%2F%2Fwww.metaphacts.com%2Fresource%2F%3Ammmx%3Awho_collects.html
+  979  ls -al | grep who
+  980  mv http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html http%3A%2F%2Fmmm.example.com%2Fresource%2Fwho_collects.html
+  981  ls -al | grep who
+  982  cat http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fhttp%253A%252F%252Fmmm.ex
+  983  ls -al | grep who
+  984  cat http%3A%2F%2Fmmm.example.com%2Fresource%2Fwho_collects.html
+  985  ls -al | grep who
+  986  rm http%3A%2F%2Fmmm.example.com%2Fresource%2Fwho_collects.html
+  987  rm http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fhttp%253A%252F%252Fmmm.example.com%252Fresource%252Fwho%2520%2520%2520who_collects.html
+  988  ls -al | grep who
+  989  cat http%3A%2F%2Fhelp.metaphacts.com%2Fresource%2F
+  990  ls -al | grep who
+  991  cat http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html
+  992  pwd
+  993  ls ../..
+  994  ls ../../..
+  995  less ../../..//start-researchspace.log
+  996  tail -f ../../..//start-researchspace.log
+  997  ps x
+  998  pwd
+  999  cd antheia/
+ 1000  ps x
+ 1001  history
+ 1002  cat http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html
+ 1003  cd researchspace/data/templates/
+ 1004  cat http%3A%2F%2Fwww.metaphacts.com%2Fresource%2Fwho_collects.html
+ 1005  ls
+ 1006  cd ../..
+ 1007  ls
+ 1008  cd ..
+ 1009  ls
+ 1010  ps x
+ 1011  kill 20545
+ 1012  ps x
+ 1013  rm start-researchspace.log
+ 1014  . start-researchspace.sh
+ 1015  pwd
+ 1016  history
+ 1017  history | grep tar
+ 1018  history | grep "tar "
+ 1019  history

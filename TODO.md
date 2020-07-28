@@ -46,7 +46,7 @@ See: http://vm-seldon.oerc.ox.ac.uk:10214/resource/Help:BackendTemplating
 - generate link with appropriate query parameter?
 
 
-## 20200717 - review anf final steps
+## 20200717 - review and final steps
 
 For demo meeting and wrap up on 2020-07-28
 

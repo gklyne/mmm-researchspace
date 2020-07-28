@@ -1,0 +1,76 @@
+Command history for 'centos' (root) account.  (captured 2020-07-28)
+
+    1  id
+    2  sudo su -
+    3  sudo su - researchspace
+    4  sudo iptables
+    5  sudo iptables -L
+    6  ls
+    7  sudo su - researchspace
+    8  sudo su -
+    9  cd .ssh
+   10  ls
+   11  cat id_rsa_researchspace.pub
+   12  cat authorized_keys
+   13  cat id_rsa_researchspace.pub
+   14  vi authorized_keys
+   15  cd .ssh
+   16  ls
+   17  ls /home/researchspace/
+   18  sudo cp /home/researchspace/id* .
+   19  sudo su -
+   20  pwd
+   21  sudo su -
+   22  cat .ssh/authorized_keys
+   23  pwd
+   24  ls
+   25  pwd
+   26  sudo su - researchspace
+   27  ls -al
+   28  ls -al .ssh
+   29  ls /home
+   30  su - researchspace
+   31  sudo su - researchspace
+   32  ls -al
+   33  ls -al .ssh
+   34  history
+   35  pwd
+   36  sudo su -
+   37  su - researchspace
+   38  sudo su -
+   39  history
+   40  ls -al
+   41  sudo su - researchspace
+   42  ls
+   43  pwd
+   44  su - researchspace
+   45  sudo su - researchspace
+   46  vi project/webpack/webpack.dll.dev.js
+   47  pwd
+   48  ls
+   49  id
+   50  su - researchspace
+   51  sudo su - researchspace
+   52  ls .ssh
+   53  sudo su - researchspace
+   54  pwd
+   55  ls
+   56  mv fastload.properties /home/researchspace/
+   57  sudo mv fastload.properties /home/researchspace/
+   58  sudo mv mmm_data_orig.zip /home/researchspace/
+   59  sudo chown researchspace:  /home/researchspace/fastload.properties
+   60  sudo chown researchspace:  /home/researchspace/mmm_data_orig.zip
+   61  sudo su - researchspace
+   62  ls
+   63  sudo mv mmm-fuseki-master_orig.zip  /home/researchspace/
+   64  sudo chown researchspace:  /home/researchspace/mmm-fuseki-master_orig.zip
+   65  sudo su - researchspace
+   66  id
+   67  sudo su -
+   68  ps x
+   69  su - researchspace
+   70  sudo su - researchspace
+   71  history
+   72  sudo su - researchspace
+   73  id
+   74  history

@@ -302,7 +302,7 @@ Thus:
 
 3. Install RS 2.1 on VM environment.  Script as much as possible.
 
-4. Load (unmodified) MMM data into RSA 2.1
+4. Load (unmodified) MMM data into RS 2.1
 
 5. Configure semantic search over MMM data
 

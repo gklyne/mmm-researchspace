@@ -2,61 +2,35 @@
 
 This project contains files, scripts and other resources for creating Docker containers for Blazegraph and ResearchSpace.
 
-The blazegraph JAR file (blazegraph-2.1.5.jar) i downloaded from:
+See also:
 
-    https://sourceforge.net/projects/bigdata/files/bigdata/2.1.5/blazegraph.jar/download
-
-E.g.
-
-    wget https://sourceforge.net/projects/bigdata/files/bigdata/2.1.5/blazegraph.jar/download --output-document=blazegraph-2.1.5.jar
-
-This local copy is referenced in the blazegraph/Dockerfile script.
+- [Briefing notes for ResearchSpace investigations](./BRIEFING.md).
+- [Notes of attempts to configure ResearchSpace](./NOTES.md).
+- [Summary of activities in MMM/ResearchSpace investigations](./SUMMARY.md).
+- [Current status of MMM data in ResearchSpace](./STATUS.md).
 
 
-## MacOS preliminaries
+# Contents
 
-These instructions are based on the "Docker toolbox" kit (not the more recent "Docker desktop", which requires a newer version of MacOS than I was running at the time, and handles virtualization and networking somewhat differently).  Updated recipes that work with the more recent versions of Docker are in various subdirectories.
+There are several subdirectories here, mainly corresponding to different attempts to deploy ResearchSpace:
 
-1. Install VirtualBox if not already installed (@@details?)
+- `researchspace`: initial attempt to build system using instructions for OxLOD deployment.  Fails because of missing intermediate repository used.
+- `blazegraph`: setting uop BlazeGraph in a Docker container.  Not used in final demo.
+- `researchspace-2.1`: failed attempt to use RS 2.1 configuration data witn RS 3.4 software.
+- `researchspace-3.2`: creates an instance of RS 3.2 based on a British Museum preview release 3.4, and configuration data from GitHub for RS 3.2.  This was a dead-end experiment.
+- `researchspace-3.4`: creates an instance of RS 3.2 based on a British Museum preview release, with MMM data loaded.  The deployment itself works, but attampts to customize it to use alternati8ve ontologies were not successful.  With unmodified MMM data, the ResearchSpace entity displays do not recognize MMM entity details which use diufferent namespace URIs.  It was also tried with modified (hand-edited) MMM data, in which the namespace URIs were updated, and MMM entities could be displayed by RS.
+- `researchspace-demo`: an earlier experiment to create a dockerized version based on the British Museum preview release 3.4 and demo data.  This worked OK and was easy to deploy (but subsequent attempts to customize proved problematic).
+- `researchspace-preview`: similar to `researchspace-demo`, but without the British Museum demo data loaded.
+- `researchspace-vm`: creating a clone of the OxLOD deployment using a persistent virtual machine and extensive manual configuration.  This is the basis for the example modified RS displays used with unmodified MMM data.  The notes in this directory do not cover the later stages of manually retrieving and deploying OxLOD RS software and configuration data using the basic Java/Python environment set up on this VM.  It contains a script used for loading MMM data into BlazeGraph.
 
-2. Install Docker toolbox if not already installed (download and run https://github.com/docker/toolbox/releases/download/v19.03.1/DockerToolbox-19.03.1.pkg)
+    Ignore the notes for building ResearchSpace - in the end, we just copied software and files from antheia.ox.ac.uk - the process udsed insn't documented as such, but cpies of the command history files have been added to this directory - see `history-researchspace.txt`.
 
-2. Run Applications > Docker > "Docker Quickstaret Terminal" (e.g. from spotlight search) to create a new terminal session with access to a running docker daemon.
+The mmm-researchspace project root directory contains:
 
-3. Subsequenet commands are entered in the new terminal window.  (Note: the Docker daemon is not accessible from other terminal windows.)
+- various notes
+- copies of the modified configuration files and page templates used for the customized MMM data displays deployed in the `researchspace-vm` setup.
 
-NOTE: in order for the ResearchSpace compilation to proceed, I have increase the VirtualBox memory allocation for docker-machine by editing `Applications/docker/Docker Quickstart Terminal.app`, content `Contents/Resources/cripts/start.sh`, changing:
+# Summary
 
-    --virtualbox-memory 2048
-
-to:
-
-    --virtualbox-memory 4096
-
-That didn't work once the docker 'default' configuration has been created. Also try:
-
-1. stop all docker virtualmachines
-2. in a terminal window, type `virtualbox`
-3. select the `default` VM, right-click on it and select `close` to power it off
-4. in the `settings` > `system` tab, cange the memory from 2048 to 4096 Mb
-5. re-run `Docker Quickstart Terminal.app`
-
-
-## Blazegraph
-
-    cd ./blazegraph
-    . build-blazegraph-image.sh
-    . run-blazegraph-container.sh
-
-Then, in the resulting container session, enter:
-
-    . start-blazegraph.sh
-
-Note the IP adress displayed, and using a browser on the host system, access Blazegraph at `http://<IP-address>:9999/blazegraph/` (substituting the noted IP address; e.g. http://192.168.99.100:9999/blazegraph/).
-
-
-## ResearchSpace
-
-@@@
-
+See: [Summary of activities in MMM/ResearchSPace investigations](/SUMMARY.md).
 

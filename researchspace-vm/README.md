@@ -133,3 +133,31 @@ Tried version of css-loader installed on antheia.  Still just errors.
 1. The Blazegraph install script is [install-blazegraph.sh](./install-blazegraph.sh).
 2. The ResearchSpace build script is [build-researchspace.sh](./build-researchspace.sh).
 
+
+## Clone researchspace from antheia
+
+(This approach has been used in placed of the pevious ResearchSpace build instructions, beyond the initial system setup.  These notes copied from private notes on laptop at 'researchspace-openstack-vm-setup-notes'.  I think I also did someting similar later for 'node_modules'.)
+
+1. Create tar archives of /home/researchspace, /home/blazegraph on antheia, and copy to remote-accessible directory.  e.g.
+
+        tar czvf antheia-home-researchspace.tgz /home/researchspace
+        mv antheia-home-researchspace.tgz graham/
+        chown graham: graham/antheia-*
+
+2. On target system, copy archives from antheia; e.g.
+
+        cd /home/researchspace/antheia
+        scp -i /home/researchspace/.ssh/id_rsa_antheia_graham graham@antheia.oerc.ox.ac.uk:antheia-home=researchspace.tgz .
+        tar xfvz antheia-home=researchspace.tgz
+
+3. Repeat for /home/blazegraph and /data/blazegraph
+
+    NOTE: the instance of Blazegraph running on antheia is from `/home/blazegraph`, and the blazegraph data used is in `/data/blazegraph`
+
+4. Created scripts in /home/researchspace/antheia for starting Blazegraph, loading MMM data and starting ResearchSpace
+
+It seems to work, but after loading the MMM data, I can't see it in SPARQL queries, so I'm not sure what's happening here.
+
+
+
+
