@@ -48,7 +48,7 @@ Modified queries so that incremental search in table works...
 
 ## Thoughts about hypermedia-driven data exploration
 
-See: nodes.md
+See: [NOTES.md](./NOTES.md)
 
 - Reflections on addressing research questions (2020-07-09)
 - 
