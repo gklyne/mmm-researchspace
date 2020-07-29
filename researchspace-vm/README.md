@@ -156,8 +156,6 @@ Tried version of css-loader installed on antheia.  Still just errors.
 
 4. Created scripts in /home/researchspace/antheia for starting Blazegraph, loading MMM data and starting ResearchSpace
 
-It seems to work, but after loading the MMM data, I can't see it in SPARQL queries, so I'm not sure what's happening here.
-
-
+It seems to work, but after loading the MMM data, I can't see it in SPARQL queries, so I'm not sure what's happening here.  (Later:  I think this was to do with the Blazegraph "namespace" acessed.)
 
 

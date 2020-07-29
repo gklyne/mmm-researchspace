@@ -25,9 +25,32 @@ In subsequent experiments, a persistent virtual machine running a clone of the O
 
 ## Modify MMM templates to support MMM research questions
 
+Initially, the Actor display template was modified as an initial proof of concept.  See [ActorSummary.template.edits](./ActorSummary.template.edits).
+
+Then we returned to the ResearchSpace research questions.  An analysis of the kind of queries needed to access these was distilled from existing MMM documents, and summarized in [Nodes.md](./NOTES.md) at the section "Looking at research questions (2020-07-07)" and subsequently.
+
+Works by author... added to Actor page
+
+Who collects... added link to Actor page, plus new page template, parameterized by author (Actor) ref.
+
+Other MSS in collection... link on who collects page, parameterized by author and collector (Actor) refs.
+
+Current/last known location of manuscript...
+
+Landing page... (tried to modify OxLOD search; didn't work, so created new simplified starting page with links.)
+
+List of people page...
+
+List of works page...
+
+Modified queries so that incremental search in table works...
+
 
 ## Thoughts about hypermedia-driven data exploration
 
+See: nodes.md
 
+- Reflections on addressing research questions (2020-07-09)
+- 
 
 

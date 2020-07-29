@@ -65,6 +65,19 @@ Added: material for quick live-coding demo.
 
 3. [x] Updates to status page
 
-4. Screencast of intended demo (if time permits)
+4. [x] Screencast of intended demo (if time permits)
+
+
+## 20200728 - next week wrapping up
+
+1. [ ] Access for MMM project members
+
+2. [ ] Option to save/restore template definitions - and whatever is updatable through Web interface.  (Local git repo?)
+
+3. [ ] Tidy up/complete summary documentation
+
+4. [ ] Write up notes for template structure (exploration page per entity type)
+
+5. [ ] ?Add new template for different entity type?
 
 
