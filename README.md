@@ -6,6 +6,8 @@ This repository contains files, scripts, notes and other resources for deploying
 
 Note that there have been many updates to [ResearchSpace in GitHub](https://github.com/researchspace/researchspace) since our earlier investigations, and it is possible that many of the problems with installing ResearchSpace noted have been resolved.  I would recommend revisiting the [installation instructions](https://github.com/researchspace/researchspace#developing-and-building-from-sources) as part of any future effort to build on this exploration.
 
+NOTE that the deployed ResearchSpace system is experimental, and not suitable for production use.
+
 
 # Summary
 
@@ -17,7 +19,8 @@ See also:
 - [ResearchSpace deployment options review](./Deployment-options-review.md).
 - [Notes of attempts to configure ResearchSpace](./NOTES.md).
 - [Current status of MMM data in ResearchSpace](./STATUS.md).
-
+- [Reflections on addressing MMM research questions](https://docs.google.com/document/d/1ABrdNtaQ80xdPd1neZBuqWdCGWMbVG7ayHuTgaQZlnk/edit?usp=sharing)
+- [Thoughts for using Solid-based working sets](https://docs.google.com/document/d/1S8ZUbXVB1HM0Btei8NX2RelDa-utu129IVSuOdOmlgk/edit?usp=sharing)
 
 # Repository contents
 

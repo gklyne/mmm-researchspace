@@ -344,7 +344,7 @@ Example:
 Research questions: 
 https://docs.google.com/spreadsheets/d/1Tdt3dNGkq5aEpC-IXCpxXZeEptnOhI60rVeT_m_mjw4
 
-The previous activity started to demonstrate how ResearchSpace can be used to create custom information pages.  NBote that a key difference from things tried previosuly is the introduction of a new "application" page that is parameterized using URI query elements.  This avoids the need to depend on the built-in ResearchSpace dispatching mechganisms.
+The previous activity started to demonstrate how ResearchSpace can be used to create custom information pages.  Note that a key difference from things tried previosuly is the introduction of a new "application" page that is parameterized using URI query elements.  This avoids the need to depend on the built-in ResearchSpace dispatching mechganisms.
 
 What we now wish to explore is using a hyperlinked set of such pages to allow a user to explore various research questions.  Ideally each query element will be handled by a single application page (like the "who collects" page), in such a way that different queries can be composed by following links (combined with ResearchSpace built-in semantic table filter capabilities).
 
@@ -750,3 +750,37 @@ A: ...
 
 Q: What about adding new query elements?
 A: This would probably still need technical expertise to create a new composable query element page, but the amount of work required should be limited, and the resulting page available for any subsequent investigations.
+
+
+# Thoughts about patterns for ResearchSpace customization
+
+(Expanding on an idea covered under "Reflections on addressing research questions".)
+
+The ResearchSpace customizations to date have been rather _ad hoc_, with changes to existing ResearchSpace page templates and also creating new page templates.
+
+Reflectng on these experiments, I propose a clearer pattern of separation of customizations from out-of-box ResearchSpace:
+
+1.  For each main entity type (for [MMM](https://mappingmanuscriptmigrations.org/) these might be: Manuscripts, Works, Events, Actors, Places), create anew template for an "explore" page, which embeds exploration links that are appropriate to the entity type.  Each such page would be invoked with a workset of one or more entities of that type, and would present links that are associated with different queries against entities referenced in the workset.
+
+    Within these "explore" pages would be filter boxes than can reduce the workset to a smaller subset for further exploration.
+
+    The workset items would be listed in the explore page, along with links for each to invoke further queries, as well as a link to continue an exploration against the current workset after application of any filter.
+
+2.  For each exploration query, create a new template for that query.  Like the "explore" page, these query pages would be invoked with a workset of one or more entities of some type.  The associated query would be executed against the supplied workset, and results presented as a table (which might be about different types of entity).  Each result entity would link back to the explore page for that entity type.  The page would similarly provide links for exploring all the results of a particular type.
+
+    The intent is that the query pages follow a common pattern (and may share template code), and are always invoked by and link back to an "explore" page.  Adding a new query to those that are available for exploring a dataset would require (a) creating a nw query page, which would define a query and presentation of results, and (b) adding a new query link to the corresponding explore page.  This would require technical expertise in SPARQL, HTML, ResearchSpace, and the domain data model, but the resulting pages should be readily usable by all researchers and domain experts without such technical knowledge.
+
+Notes:
+
+1. I anticipate that singleton worksets would be supplied as a single URI query parameter, and multi-values worksets woukd be supplied as a URI refering to a workset description, possibly saved in a Solid data pod.
+
+2. The hyperlinked chain of "explore" and "query" pages would be chained in a fashion similar to a functional programming modadic sequence, where the hyperlinking corresponds roughly to a monadic "bind" operation.
+
+3. A chain of "explore" and "query" selections from some starting dataset amounts to a provenance description of some result.  Given such a description, it shouldbe possible to re-evaluate an exploration against an updated starting dataset.
+
+4. The pattern as described assumes a chain of queries.  In practice, other kinds of selection may be required, such as manual selection from a workset.  Such queries should be possible to implement, but may affect the automatic replayability of provenance sequences.
+
+5. This pattern does not yet account for queries that combine the results from multiple worksets.  This is an aspect that should be explored further in light of specific research questions that may require such capabilities.
+
+6. Content negotiation and/or alternative links could (should?) be used to alow query results to be returned in formats other than another web page, for machine consumption.
+

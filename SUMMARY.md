@@ -1,8 +1,10 @@
 # Summary of activities in MMM/ResearchSPace investigations
 
+NOTE that the deployed ResearchSpace system is experimental, and not suitable for production use.
+
 ## Researchspace deployments and experiments
 
-A large portion of the activity was addressed to trying out different ResearchSpace deployments.  A major update to ResearchSpace around the start of this activity meant that some of the prior assumptions about it, based on the deployment created for OxLOD data, were called into question, particularly with respect to it being ontology-agnostic.  The problems were compounded by disappearance of an intermiedfuate software repository that was essential to creating the OxLOPD deployment of ResearchSpace.
+A large portion of the activity was addressed to trying out different ResearchSpace deployments.  A major update to ResearchSpace around the start of this activity meant that some of the prior assumptions about it, based on the deployment created for OxLOD data, were called into question, particularly with respect to it being ontology-agnostic.  The problems were compounded by disappearance of an intermediate software repository that was essential to creating the OxLOPD deployment of ResearchSpace.
 
 Early efforts were directed to using Docker, but the transience of Docker instances coupled with the need for significant interactive setup meant that this turned out to be not practical.  Eventually, we used a virtual machine environment with substantial manual tweaks beyond the initial deployment - so this isn't really a repeatable deployment.
 
@@ -29,23 +31,23 @@ In subsequent experiments, a persistent virtual machine running a clone of the O
 
 Initially, minor changes were made to the Actor display template as a proof of concept.  See [ActorSummary.template.edits](./ActorSummary.template.edits).
 
-A more substantive modification was to include a list of authored works on the Actor page, as a new tab alongside "Key facts", "Links from here" and "Links to here".  This involves a sunstantive MMM-specific query of the underlying data.  E.g. see [Llull, Ramon, 1232?-1316](http://vm-seldon.oerc.ox.ac.uk:10214/resource/?uri=http%3A%2F%2Fldf.fi%2Fmmm%2Factor%2Fbodley_person_120696927).
+A more substantive modification was to include a list of authored works on the Actor page, as a new tab alongside "Key facts", "Links from here" and "Links to here".  This involves a substantive MMM-specific query of the underlying data.  E.g. see [Llull, Ramon, 1232?-1316](http://vm-seldon.oerc.ox.ac.uk:10214/resource/?uri=http%3A%2F%2Fldf.fi%2Fmmm%2Factor%2Fbodley_person_120696927).
 
 
 ### New page: who collects works by author
 
-Next we returned to the ResearchSpace research questions.  An analysis of the kind of queries needed to access these was distilled from existing MMM documents, and summarized in [Nodes.md](./NOTES.md) at the section "Looking at research questions (2020-07-07)" and subsequently.  @@ref new Google doc@@
+Next we returned to the ResearchSpace research questions.  An analysis of the kind of queries needed to access these was distilled from existing MMM documents, and summarized in [Nodes.md](./NOTES.md) at the section "Looking at research questions (2020-07-07)" and subsequently.  Ongoing analysis will be in [Google document "Reflections on addressing research questions"](https://docs.google.com/document/d/1ABrdNtaQ80xdPd1neZBuqWdCGWMbVG7ayHuTgaQZlnk/edit?usp=sharing).
 
 Thinking about these led to an idea that many questions could be addressed through a composition of higher level query elements.  An example of such an element might be "Who collects works by a given author?".
 
-This query was implemented as a separate pagetemplate, and a link to this added to the existing ResearchSpace Actor display page.  e.g. see [Who collects "Llull, Ramon, 1232?-1316" ? ](http://vm-seldon.oerc.ox.ac.uk:10214/resource/who_collects?actor=http://ldf.fi/mmm/actor/bodley_person_120696927&actorName=%22Llull,%20Ramon,%201232?-1316%22).
+This query was implemented as a separate page template, and a link to this added to the existing ResearchSpace Actor display page.  e.g. see [Who collects "Llull, Ramon, 1232?-1316" ? ](http://vm-seldon.oerc.ox.ac.uk:10214/resource/who_collects?actor=http://ldf.fi/mmm/actor/bodley_person_120696927&actorName=%22Llull,%20Ramon,%201232?-1316%22) - if requested, log in as user "guest" with password "letmein".
 
 This page uses URL query parameters to indicate whose works are of interest.
 
 
 ### New page: other manuscripts in collection
 
-A next question arises: how might composition of investigatove elements be achieved.  Attempting to use a basic affordance of the World Wide Web with which most users would be familiar, we explored the idea of using hyperlink-following to represent composition.  So an exploration of the data becomes a process of seeking out a path though hyperlinked data, where each step (link) of the path is a refining some existing dataset, or accessing some associated data elements.
+A next question arises: how might composition of investigative elements be achieved.  Attempting to use a basic affordance of the World Wide Web with which most users would be familiar, we explored the idea of using hyperlink-following to represent composition.  So an exploration of the data becomes a process of seeking out a path though hyperlinked data, where each step (link) of the path is a refining some existing dataset, or accessing some associated data elements.
 
 As an example of this idea, we constructed a new querty for "What manuscripts of works by a given author are in a given collection" (where a collection here is identified by its owner, and may be current or historic).  The composed query is represented by links from the "who collects works by author" page, and clicking on one of these links presents a new page which lists manuscripts and works by a given author in a given collection.  E.g. see [What manuscripts by Llull, Ramon, 1232?-1316 in collection of Canonici, Matteo Luigi, 1727-1805](http://vm-seldon.oerc.ox.ac.uk:10214/resource/mss_by_collection_author?actor=http://ldf.fi/mmm/actor/bodley_person_120696927&collector=http://ldf.fi/mmm/actor/bodley_person_2384880).
 
@@ -56,9 +58,9 @@ Finally, we demonstrated how the above query could be quickly modified by someon
 
 ### New landing page
 
-We attem,pted to make these experiments more accessible by modifying an existing search page, but those experiements did not work for us.
+To make these experiments more accessible by MMM researchers, we tried modifying an existing search page, but this experiement did not work for us.
 
-So instead, a completely new [landing page](http://vm-seldon.oerc.ox.ac.uk:10214/resource/:MMM_landing_page) was created, with links to [list of known people](http://vm-seldon.oerc.ox.ac.uk:10214/resource/list_people) and [list of known works(http://vm-seldon.oerc.ox.ac.uk:10214/resource/list_works)] pages.
+So instead, a completely new [landing page](http://vm-seldon.oerc.ox.ac.uk:10214/resource/:MMM_landing_page) was created, with links to [list of known people](http://vm-seldon.oerc.ox.ac.uk:10214/resource/list_people) and [list of known works](http://vm-seldon.oerc.ox.ac.uk:10214/resource/list_works) pages.
 
 
 ### Incremental results filter
