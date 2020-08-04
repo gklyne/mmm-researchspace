@@ -70,14 +70,16 @@ Added: material for quick live-coding demo.
 
 ## 20200728 - next week wrapping up
 
-1. [ ] Access for MMM project members
+1. [x] Access for MMM project members
 
-2. [ ] Option to save/restore template definitions - and whatever is updatable through Web interface.  (Local git repo?)
+2. [x] Option to save/restore template definitions - and whatever is updatable through Web interface.  (Local git repo?)
 
-3. [ ] Tidy up/complete summary documentation
+3. [-] Tidy up/complete summary documentation; signpost more clearly from README.
 
 4. [ ] Write up notes for template structure (exploration page per entity type)
 
-5. [ ] ?Add new template for different entity type?
+5. [x] Bug with all collectors not being listed click through to collector shows no work/manifestations.  E.g. click through to "others in collection" for Llul / Sotheby's.  Note count works, but not list. Note: count is wrong because of UNION in query with and without ?col.   
+
+6. [ ] ?Add new template for different entity type?
 
 

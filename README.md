@@ -1,16 +1,25 @@
-# Create and run Docker containers for Blazegraph and ResearchSpace
+# Using ResearchSpace with MMM data
 
-This project contains files, scripts, notes and other resources for deploying Blazegraph and ResearchSpace.
+The MMM-ResearchSpace activity was a short exploration of the potential for using [ResearchSpace](https://www.researchspace.org/) to provide alternative ways of accessing the data collected by the [Mapping Manuscript Migrations](https://mappingmanuscriptmigrations.org/en/) project.
+
+This repository contains files, scripts, notes and other resources for deploying Blazegraph and ResearchSpace.
+
+Note that there have been many updates to [ResearchSpace in GitHub](https://github.com/researchspace/researchspace) since our earlier investigations, and it is possible that many of the problems with installing ResearchSpace noted have been resolved.  I would recommend revisiting the [installation instructions](https://github.com/researchspace/researchspace#developing-and-building-from-sources) as part of any future effort to build on this exploration.
+
+
+# Summary
+
+I have attempted to summarize our ResearchSpace investigations in [Summary of activities in MMM/ResearchSpace investigations](./SUMMARY.md).
 
 See also:
 
 - [Briefing notes for ResearchSpace investigations](./BRIEFING.md).
 - [ResearchSpace deployment options review](./Deployment-options-review.md).
 - [Notes of attempts to configure ResearchSpace](./NOTES.md).
-- [Summary of activities in MMM/ResearchSpace investigations](./SUMMARY.md).
 - [Current status of MMM data in ResearchSpace](./STATUS.md).
 
-# Contents
+
+# Repository contents
 
 There are several subdirectories here, mainly corresponding to different attempts to deploy ResearchSpace:
 
@@ -29,8 +38,4 @@ The mmm-researchspace project root directory contains:
 
 - various notes
 - copies of the modified configuration files and page templates used for the customized MMM data displays deployed in the `researchspace-vm` setup.
-
-# Summary
-
-See: [Summary of activities in MMM/ResearchSPace investigations](/SUMMARY.md).
 
