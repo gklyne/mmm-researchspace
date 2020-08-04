@@ -19,8 +19,8 @@ See also:
 - [ResearchSpace deployment options review](./Deployment-options-review.md).
 - [Notes of attempts to configure ResearchSpace](./NOTES.md).
 - [Current status of MMM data in ResearchSpace](./STATUS.md).
-- [Reflections on addressing MMM research questions](https://docs.google.com/document/d/1ABrdNtaQ80xdPd1neZBuqWdCGWMbVG7ayHuTgaQZlnk/edit?usp=sharing)
-- [Thoughts for using Solid-based working sets](https://docs.google.com/document/d/1S8ZUbXVB1HM0Btei8NX2RelDa-utu129IVSuOdOmlgk/edit?usp=sharing)
+- [Reflections on addressing MMM research questions](https://docs.google.com/document/d/1ABrdNtaQ80xdPd1neZBuqWdCGWMbVG7ayHuTgaQZlnk/edit?usp=sharing) (Google doc).
+- [Thoughts for using Solid-based working sets](https://docs.google.com/document/d/1S8ZUbXVB1HM0Btei8NX2RelDa-utu129IVSuOdOmlgk/edit?usp=sharing) (Google doc).
 
 # Repository contents
 
