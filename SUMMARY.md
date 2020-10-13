@@ -1,4 +1,6 @@
-# Summary of activities in MMM/ResearchSPace investigations
+# Exploring MMMdata presentation using ResearchSpace
+
+(Summary of activities in MMM/ResearchSpace investigations)
 
 NOTE that the deployed ResearchSpace system is experimental, and not suitable for production use.
 
