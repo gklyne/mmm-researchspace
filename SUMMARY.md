@@ -1,4 +1,4 @@
-# Exploring MMMdata presentation using ResearchSpace
+# Exploring MMM data presentation using ResearchSpace
 
 (Summary of activities in MMM/ResearchSpace investigations)
 
